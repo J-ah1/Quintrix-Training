@@ -19,7 +19,6 @@ public class Cart {
 			System.out.print(items.get(i) + " ");
 		}
 		System.out.println();
-		
 	}
 
 }
