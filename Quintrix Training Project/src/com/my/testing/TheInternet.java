@@ -2,6 +2,9 @@ package com.my.testing;
 
 import org.testng.annotations.Test;
 import org.testng.annotations.BeforeTest;
+
+import java.util.List;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
@@ -69,6 +72,23 @@ public class TheInternet {
 	  
 	  //Assert
 	  Assert.assertEquals(currentText, expectedText);
+  }
+  
+  @Test
+  public void tc37CanCheckCheckboxes() {
+	  //Arrange
+	  String url = "http://the-internet.herokuapp.com/";
+	  
+	  //Act
+	  List<Boolean> boxStates = new CheckboxPage(driver, url)
+			  .navigate()
+			  .checkAllBoxes()
+			  .getAllBoxStates();
+	  
+	  //Assert
+	  for(Boolean boxState: boxStates) {
+		  Assert.assertEquals(boxState.booleanValue(), true);
+	  }
   }
   
   @BeforeTest
