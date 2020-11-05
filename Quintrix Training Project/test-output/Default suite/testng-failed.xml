@@ -3,13 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.my.testing.TheInternet">
+      <class name="com.my.testing.MyFirstTestingClass">
         <methods>
           <include name="afterTest"/>
+          <include name="bTest"/>
           <include name="beforeTest"/>
-          <include name="tc7CanTypeTextIntoInput"/>
         </methods>
-      </class> <!-- com.my.testing.TheInternet -->
+      </class> <!-- com.my.testing.MyFirstTestingClass -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

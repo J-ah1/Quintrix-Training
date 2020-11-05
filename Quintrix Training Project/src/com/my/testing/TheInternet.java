@@ -8,6 +8,7 @@ import org.testng.Assert;
 import org.testng.annotations.AfterTest;
 
 public class TheInternet {
+	
 	private WebDriver driver;
 	
   @Test
@@ -56,6 +57,22 @@ public class TheInternet {
   
   @Test
   public void tc7CanTypeTextIntoInput() {
+	  //Arrange
+	  String url = "http://the-internet.herokuapp.com/";
+	  String expectedText = "7";
+	  
+	  //Act
+	  String currentText = new InputsPage(driver, url)
+			  .navigate()
+			  .typeText(expectedText)
+			  .getValue();
+	  
+	  //Assert
+	  Assert.assertEquals(currentText, expectedText);
+  }
+  
+  @Test
+  public void tc8CanTypeTextIntoInput() {
 	  //Arrange
 	  String url = "http://the-internet.herokuapp.com/";
 	  String expectedText = "7";
