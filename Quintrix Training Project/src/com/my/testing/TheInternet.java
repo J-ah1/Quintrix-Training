@@ -71,22 +71,6 @@ public class TheInternet {
 	  Assert.assertEquals(currentText, expectedText);
   }
   
-  @Test
-  public void tc8CanTypeTextIntoInput() {
-	  //Arrange
-	  String url = "http://the-internet.herokuapp.com/";
-	  String expectedText = "7";
-	  
-	  //Act
-	  String currentText = new InputsPage(driver, url)
-			  .navigate()
-			  .typeText(expectedText)
-			  .getValue();
-	  
-	  //Assert
-	  Assert.assertEquals(currentText, expectedText);
-  }
-  
   @BeforeTest
   public void beforeTest() {
 	  System.setProperty("webdriver.chrome.driver", "C:\\Users\\Josh\\Downloads\\chromedriver_win32\\chromedriver.exe");

@@ -6,26 +6,27 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 
 public class InputsPage extends PageObjectBase{
+	private final String urlPath = "/inputs";
 	
 	public InputsPage(WebDriver driver, String  url) {
 		super(driver, url);
 	}
 	
 	@FindBy(how = How.TAG_NAME, using = "input")
-	WebElement inputNumber;
+	WebElement inputElement;
 	
 	public InputsPage navigate() {
-		super.navigate("/inputs");
+		super.navigate(urlPath);
 		return this;
 	}
 	
 	public InputsPage typeText(String text) {
-		inputNumber.sendKeys(text);
+		new Input(inputElement).setText(text);
 		return this;
 	}
 	
 	public String getValue() {
-		return inputNumber.getAttribute("value");
+		return new Input(inputElement).getValue();
 	}
 	
 }

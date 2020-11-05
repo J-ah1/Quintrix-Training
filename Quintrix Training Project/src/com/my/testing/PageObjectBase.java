@@ -13,8 +13,8 @@ public abstract class PageObjectBase {
 		PageFactory.initElements(driver, this);
 	}
 	
-	protected void navigate(String url) {
-		driver.navigate().to(baseUrl + url);
+	protected void navigate(String urlPath) {
+		driver.navigate().to(baseUrl + urlPath);
 	}
 	
 	

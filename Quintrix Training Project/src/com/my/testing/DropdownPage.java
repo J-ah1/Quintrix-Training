@@ -7,7 +7,8 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.Select;
 
 public class DropdownPage extends PageObjectBase{
-
+	private final String urlPath = "/dropdown";
+	
 	public DropdownPage(WebDriver driver, String url) {
 		super(driver, url);
 	}
@@ -16,7 +17,7 @@ public class DropdownPage extends PageObjectBase{
 	WebElement dropDownList;
 	
 	public DropdownPage navigate() {
-		super.navigate("/dropdown");
+		super.navigate(urlPath);
 		return this;
 	}
 
