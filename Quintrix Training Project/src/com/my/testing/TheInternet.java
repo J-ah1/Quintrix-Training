@@ -10,31 +10,27 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
 import org.testng.annotations.AfterTest;
 
-public class TheInternet {
-	
-	private WebDriver driver;
+public class TheInternet extends TheInternetTestBase {
 	
   @Test
   public void canLaunchChromeDriver() {
 	  //Arrange
-	  String url = "http://the-internet.herokuapp.com/";
 	  
 	  //Act
-	  driver.navigate().to(url);
-	  String currentURL = driver.getCurrentUrl();
+	  webDriver.navigate().to(baseUrl);
+	  String currentURL = webDriver.getCurrentUrl();
 	  
 	  //Assert
-	  Assert.assertEquals(currentURL, url);
+	  Assert.assertEquals(currentURL, baseUrl);
   }
   
   @Test
   public void canNavigateToIndexPage() {
 	  //Arrange
-	  String url = "http://the-internet.herokuapp.com/";
 	  String expectedPageTitle = "The Internet";
 	  
 	  //Act
-	  String actualPageTitle = new IndexPage(driver, url)
+	  String actualPageTitle = new IndexPage(webDriver, baseUrl)
 			  .navigate()
 			  .getTitle();
 	  
@@ -45,11 +41,10 @@ public class TheInternet {
   @Test
   public void tc4CanSelectDropdownListItem() {
 	  //Arrange
-	  String url = "http://the-internet.herokuapp.com/";
 	  String expectedSelection = "Option 2";
 	  
 	  //Act
-	  String selectedOption = new DropdownPage(driver, url)
+	  String selectedOption = new DropdownPage(webDriver, baseUrl)
 			  .navigate()
 			  .select(expectedSelection)
 			  .getOption();
@@ -61,11 +56,10 @@ public class TheInternet {
   @Test
   public void tc7CanTypeTextIntoInput() {
 	  //Arrange
-	  String url = "http://the-internet.herokuapp.com/";
 	  String expectedText = "7";
 	  
 	  //Act
-	  String currentText = new InputsPage(driver, url)
+	  String currentText = new InputsPage(webDriver, baseUrl)
 			  .navigate()
 			  .typeText(expectedText)
 			  .getValue();
@@ -77,10 +71,9 @@ public class TheInternet {
   @Test
   public void tc37CanCheckCheckboxes() {
 	  //Arrange
-	  String url = "http://the-internet.herokuapp.com/";
 	  
 	  //Act
-	  List<Boolean> boxStates = new CheckboxPage(driver, url)
+	  List<Boolean> boxStates = new CheckboxPage(webDriver, baseUrl)
 			  .navigate()
 			  .checkAllBoxes()
 			  .getAllBoxStates();
@@ -89,17 +82,6 @@ public class TheInternet {
 	  for(Boolean boxState: boxStates) {
 		  Assert.assertEquals(boxState.booleanValue(), true);
 	  }
-  }
-  
-  @BeforeTest
-  public void beforeTest() {
-	  System.setProperty("webdriver.chrome.driver", "C:\\Users\\Josh\\Downloads\\chromedriver_win32\\chromedriver.exe");
-	  driver = new ChromeDriver();
-  }
-
-  @AfterTest
-  public void afterTest() {
-	  driver.quit();
   }
 
 }
