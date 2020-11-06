@@ -21,12 +21,12 @@ public class InputsPage extends PageObjectBase{
 	}
 	
 	public InputsPage typeText(String text) {
-		new Input(inputElement).setText(text);
+		new NumericInput(inputElement).setText(text);
 		return this;
 	}
 	
 	public String getValue() {
-		return new Input(inputElement).getValue();
+		return new NumericInput(inputElement).getValue();
 	}
 	
 }

@@ -3,13 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.my.testing.MyFirstTestingClass">
+      <class name="com.my.testing.TheInternet">
         <methods>
+          <include name="tc37CanCheckCheckboxes"/>
           <include name="afterTest"/>
-          <include name="bTest"/>
           <include name="beforeTest"/>
         </methods>
-      </class> <!-- com.my.testing.MyFirstTestingClass -->
+      </class> <!-- com.my.testing.TheInternet -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

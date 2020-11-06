@@ -2,14 +2,14 @@ package com.my.testing;
 
 import org.openqa.selenium.WebElement;
 
-public class Input {
+public class NumericInput {
 	WebElement inputElement;
 	
-	public Input(WebElement inputElement) {
+	public NumericInput(WebElement inputElement) {
 		this.inputElement = inputElement;
 	}
 	
-	public Input setText(String text) {
+	public NumericInput setText(String text) {
 		inputElement.sendKeys(text);
 		return this;
 	}
