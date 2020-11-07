@@ -25,6 +25,12 @@ public class InputsPage extends PageObjectBase{
 		return this;
 	}
 	
+	public InputsPage changeNumericValue(int value) {
+		new NumericInput(inputElement).changeNumericValue(value);
+		return this;
+	}
+	
+	
 	public String getValue() {
 		return new NumericInput(inputElement).getValue();
 	}

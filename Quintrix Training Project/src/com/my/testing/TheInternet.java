@@ -69,6 +69,24 @@ public class TheInternet extends TheInternetTestBase {
   }
   
   @Test
+  public void tc9CanIncrementNumericValue() {
+	  //Arrange
+	  String startingText = "3";
+	  int amountToChangeValue = 4;
+	  String expectedText = "7";
+	  
+	  //Act
+	  String currentText = new InputsPage(webDriver, baseUrl)
+			  .navigate()
+			  .typeText(startingText)
+			  .changeNumericValue(amountToChangeValue)
+			  .getValue();
+	  
+	  //Assert
+	  Assert.assertEquals(currentText, expectedText);
+  }
+  
+  @Test
   public void tc37CanCheckCheckboxes() {
 	  //Arrange
 	  
