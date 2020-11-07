@@ -8,6 +8,10 @@
           <include name="tc37CanCheckCheckboxes"/>
           <include name="afterTest"/>
           <include name="beforeTest"/>
+          <include name="canLaunchChromeDriver"/>
+          <include name="canNavigateToIndexPage"/>
+          <include name="tc4CanSelectDropdownListItem"/>
+          <include name="tc7CanTypeTextIntoInput"/>
         </methods>
       </class> <!-- com.my.testing.TheInternet -->
     </classes>
