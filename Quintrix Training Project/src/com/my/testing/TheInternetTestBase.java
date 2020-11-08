@@ -23,9 +23,9 @@ public class TheInternetTestBase {
 	
 	
 	private void LoadConfigurations() {
-		//System.setProperty("webdriver.chrome.driver", "C:\\Users\\Josh\\Downloads\\chromedriver_win32\\chromedriver.exe");
-		URL url = ClassLoader.getSystemResource("chromedriver.exe");
-		System.setProperty("webdriver.chrome.driver", url.getFile());
+		System.setProperty("webdriver.chrome.driver", "C:\\Users\\Josh\\Downloads\\chromedriver_win32\\chromedriver.exe");
+		//URL url = ClassLoader.getSystemResource("chromedriver.exe");
+		//System.setProperty("webdriver.chrome.driver", url.getFile());
 		this.webDriver = new ChromeDriver();
 		this.baseUrl = "http://the-internet.herokuapp.com/";
 /*

@@ -1,6 +1,8 @@
 package framework;
 
+import java.net.URISyntaxException;
 import java.net.URL;
+import java.nio.file.Paths;
 
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterTest;
@@ -24,7 +26,11 @@ public class TestBase {
 	private void LoadConfigurations() {
 		//System.setProperty("webdriver.chrome.driver", "C:\\Users\\Josh\\Downloads\\chromedriver_win32\\chromedriver.exe");
 		URL url = ClassLoader.getSystemResource("chromedriver.exe");
-		System.setProperty("webdriver.chrome.driver", url.getFile());
+		try {
+			System.setProperty("webdriver.chrome.driver", Paths.get(url.toURI()).toString());
+		} catch (URISyntaxException e) {
+			e.printStackTrace();
+		}
 		this.webDriver = new ChromeDriver();
 		this.baseUrl = "http://the-internet.herokuapp.com/";
 /*

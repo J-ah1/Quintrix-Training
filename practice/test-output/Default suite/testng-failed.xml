@@ -3,11 +3,18 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="quintrix_training.practice.AnotherQuickResourceTest">
+      <class name="theInternet.tests.TheInternet">
         <methods>
-          <include name="f"/>
+          <include name="tc9CanIncrementNumericValue"/>
+          <include name="tc4CanSelectDropdownListItem"/>
+          <include name="tc7CanTypeTextIntoInput"/>
+          <include name="beforeTest"/>
+          <include name="canLaunchChromeDriver"/>
+          <include name="afterTest"/>
+          <include name="tc37CanCheckCheckboxes"/>
+          <include name="canNavigateToIndexPage"/>
         </methods>
-      </class> <!-- quintrix_training.practice.AnotherQuickResourceTest -->
+      </class> <!-- theInternet.tests.TheInternet -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
