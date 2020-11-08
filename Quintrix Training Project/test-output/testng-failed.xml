@@ -11,6 +11,7 @@
           <include name="canLaunchChromeDriver"/>
           <include name="canNavigateToIndexPage"/>
           <include name="tc4CanSelectDropdownListItem"/>
+          <include name="tc9CanIncrementNumericValue"/>
           <include name="tc7CanTypeTextIntoInput"/>
         </methods>
       </class> <!-- com.my.testing.TheInternet -->
