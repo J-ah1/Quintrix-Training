@@ -1,8 +1,10 @@
 package framework;
 
+import java.io.IOException;
 import java.net.URISyntaxException;
 import java.net.URL;
 import java.nio.file.Paths;
+import java.util.HashMap;
 
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterTest;
@@ -32,9 +34,6 @@ public class TestBase {
 			e.printStackTrace();
 		}
 		this.webDriver = new ChromeDriver();
-		this.baseUrl = "http://the-internet.herokuapp.com/";
-/*
-		this.webDriver = new ChromeDriver();
 
 		HashMap<String, String> configs = null;
 
@@ -45,6 +44,5 @@ public class TestBase {
 		}
 
 		this.baseUrl = configs.get(ConfigurationParameters.Url);
-*/	
 	}
 }
