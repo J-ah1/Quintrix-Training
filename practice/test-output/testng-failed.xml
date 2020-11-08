@@ -5,14 +5,9 @@
     <classes>
       <class name="theInternet.tests.TheInternet">
         <methods>
-          <include name="tc9CanIncrementNumericValue"/>
-          <include name="tc4CanSelectDropdownListItem"/>
-          <include name="tc7CanTypeTextIntoInput"/>
           <include name="beforeTest"/>
           <include name="canLaunchChromeDriver"/>
           <include name="afterTest"/>
-          <include name="tc37CanCheckCheckboxes"/>
-          <include name="canNavigateToIndexPage"/>
         </methods>
       </class> <!-- theInternet.tests.TheInternet -->
     </classes>

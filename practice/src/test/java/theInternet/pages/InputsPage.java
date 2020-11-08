@@ -6,7 +6,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 
 import theInternet.foundation.NumericInput;
-import theInternet.foundation.PageObjectBase;
+import framework.PageObjectBase;
 
 public class InputsPage extends PageObjectBase{
 	private final String urlPath = "/inputs";

@@ -2,7 +2,7 @@ package theInternet.pages;
 
 import org.openqa.selenium.WebDriver;
 
-import theInternet.foundation.PageObjectBase;
+import framework.PageObjectBase;
 
 public class IndexPage extends PageObjectBase{
 	

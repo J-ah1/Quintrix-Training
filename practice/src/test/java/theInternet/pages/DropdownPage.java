@@ -6,7 +6,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.Select;
 
-import theInternet.foundation.PageObjectBase;
+import framework.PageObjectBase;
 
 public class DropdownPage extends PageObjectBase{
 	private final String urlPath = "/dropdown";

@@ -8,14 +8,9 @@ import theInternet.pages.DropdownPage;
 import theInternet.pages.IndexPage;
 import theInternet.pages.InputsPage;
 
-import org.testng.annotations.BeforeTest;
-
 import java.util.List;
 
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
-import org.testng.annotations.AfterTest;
 
 public class TheInternet extends TheInternetTestBase {
 	

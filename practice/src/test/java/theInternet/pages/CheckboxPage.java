@@ -8,7 +8,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 import theInternet.foundation.CheckBox;
-import theInternet.foundation.PageObjectBase;
+import framework.PageObjectBase;
 
 public class CheckboxPage extends PageObjectBase {
 	private final String urlPath = "/checkboxes";

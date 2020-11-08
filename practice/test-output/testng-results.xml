@@ -2,40 +2,40 @@
 <testng-results ignored="0" total="6" passed="6" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2020-11-08T15:13:39 EST" name="Default suite" finished-at="2020-11-08T15:13:45 EST" duration-ms="6176">
+  <suite started-at="2020-11-08T15:59:51 EST" name="Default suite" finished-at="2020-11-08T15:59:57 EST" duration-ms="5535">
     <groups>
     </groups>
-    <test started-at="2020-11-08T15:13:39 EST" name="Default test" finished-at="2020-11-08T15:13:45 EST" duration-ms="6176">
+    <test started-at="2020-11-08T15:59:51 EST" name="Default test" finished-at="2020-11-08T15:59:57 EST" duration-ms="5535">
       <class name="theInternet.tests.TheInternet">
-        <test-method is-config="true" signature="beforeTest()[pri:0, instance:theInternet.tests.TheInternet@3d121db3]" started-at="2020-11-08T15:13:39 EST" name="beforeTest" finished-at="2020-11-08T15:13:43 EST" duration-ms="3736" status="PASS">
+        <test-method is-config="true" signature="beforeTest()[pri:0, instance:theInternet.tests.TheInternet@3d121db3]" started-at="2020-11-08T15:59:51 EST" name="beforeTest" finished-at="2020-11-08T15:59:55 EST" duration-ms="3444" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeTest -->
-        <test-method signature="canLaunchChromeDriver()[pri:0, instance:theInternet.tests.TheInternet@3d121db3]" started-at="2020-11-08T15:13:43 EST" name="canLaunchChromeDriver" finished-at="2020-11-08T15:13:43 EST" duration-ms="420" status="PASS">
+        <test-method signature="canLaunchChromeDriver()[pri:0, instance:theInternet.tests.TheInternet@3d121db3]" started-at="2020-11-08T15:59:55 EST" name="canLaunchChromeDriver" finished-at="2020-11-08T15:59:55 EST" duration-ms="421" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- canLaunchChromeDriver -->
-        <test-method signature="canNavigateToIndexPage()[pri:0, instance:theInternet.tests.TheInternet@3d121db3]" started-at="2020-11-08T15:13:43 EST" name="canNavigateToIndexPage" finished-at="2020-11-08T15:13:43 EST" duration-ms="134" status="PASS">
+        <test-method signature="canNavigateToIndexPage()[pri:0, instance:theInternet.tests.TheInternet@3d121db3]" started-at="2020-11-08T15:59:55 EST" name="canNavigateToIndexPage" finished-at="2020-11-08T15:59:55 EST" duration-ms="115" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- canNavigateToIndexPage -->
-        <test-method signature="tc37CanCheckCheckboxes()[pri:0, instance:theInternet.tests.TheInternet@3d121db3]" started-at="2020-11-08T15:13:43 EST" name="tc37CanCheckCheckboxes" finished-at="2020-11-08T15:13:44 EST" duration-ms="280" status="PASS">
+        <test-method signature="tc37CanCheckCheckboxes()[pri:0, instance:theInternet.tests.TheInternet@3d121db3]" started-at="2020-11-08T15:59:55 EST" name="tc37CanCheckCheckboxes" finished-at="2020-11-08T15:59:55 EST" duration-ms="218" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tc37CanCheckCheckboxes -->
-        <test-method signature="tc4CanSelectDropdownListItem()[pri:0, instance:theInternet.tests.TheInternet@3d121db3]" started-at="2020-11-08T15:13:44 EST" name="tc4CanSelectDropdownListItem" finished-at="2020-11-08T15:13:44 EST" duration-ms="348" status="PASS">
+        <test-method signature="tc4CanSelectDropdownListItem()[pri:0, instance:theInternet.tests.TheInternet@3d121db3]" started-at="2020-11-08T15:59:55 EST" name="tc4CanSelectDropdownListItem" finished-at="2020-11-08T15:59:56 EST" duration-ms="292" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tc4CanSelectDropdownListItem -->
-        <test-method signature="tc7CanTypeTextIntoInput()[pri:0, instance:theInternet.tests.TheInternet@3d121db3]" started-at="2020-11-08T15:13:44 EST" name="tc7CanTypeTextIntoInput" finished-at="2020-11-08T15:13:44 EST" duration-ms="219" status="PASS">
+        <test-method signature="tc7CanTypeTextIntoInput()[pri:0, instance:theInternet.tests.TheInternet@3d121db3]" started-at="2020-11-08T15:59:56 EST" name="tc7CanTypeTextIntoInput" finished-at="2020-11-08T15:59:56 EST" duration-ms="154" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tc7CanTypeTextIntoInput -->
-        <test-method signature="tc9CanIncrementNumericValue()[pri:0, instance:theInternet.tests.TheInternet@3d121db3]" started-at="2020-11-08T15:13:44 EST" name="tc9CanIncrementNumericValue" finished-at="2020-11-08T15:13:44 EST" duration-ms="382" status="PASS">
+        <test-method signature="tc9CanIncrementNumericValue()[pri:0, instance:theInternet.tests.TheInternet@3d121db3]" started-at="2020-11-08T15:59:56 EST" name="tc9CanIncrementNumericValue" finished-at="2020-11-08T15:59:56 EST" duration-ms="272" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tc9CanIncrementNumericValue -->
-        <test-method is-config="true" signature="afterTest()[pri:0, instance:theInternet.tests.TheInternet@3d121db3]" started-at="2020-11-08T15:13:44 EST" name="afterTest" finished-at="2020-11-08T15:13:45 EST" duration-ms="610" status="PASS">
+        <test-method is-config="true" signature="afterTest()[pri:0, instance:theInternet.tests.TheInternet@3d121db3]" started-at="2020-11-08T15:59:56 EST" name="afterTest" finished-at="2020-11-08T15:59:57 EST" duration-ms="588" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterTest -->
