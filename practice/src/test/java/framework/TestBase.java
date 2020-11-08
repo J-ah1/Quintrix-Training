@@ -6,13 +6,15 @@ import java.net.URL;
 import java.nio.file.Paths;
 import java.util.HashMap;
 
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 
 public class TestBase {
-	protected ChromeDriver webDriver;
+	protected WebDriver webDriver;
 	protected String baseUrl;
+	protected WebDriverFactory webDriverFactory;
 	
 	@BeforeTest
 	protected void beforeTest() {
@@ -26,14 +28,10 @@ public class TestBase {
 	
 	
 	private void LoadConfigurations() {
-		//System.setProperty("webdriver.chrome.driver", "C:\\Users\\Josh\\Downloads\\chromedriver_win32\\chromedriver.exe");
-		URL url = ClassLoader.getSystemResource("chromedriver.exe");
-		try {
-			System.setProperty("webdriver.chrome.driver", Paths.get(url.toURI()).toString());
-		} catch (URISyntaxException e) {
-			e.printStackTrace();
-		}
-		this.webDriver = new ChromeDriver();
+		// Set factory system params
+		webDriverFactory = new WebDriverFactory();
+		// Get a webdriver
+		this.webDriver = webDriverFactory.getWebDriver("CHROME");
 
 		HashMap<String, String> configs = null;
 
@@ -45,4 +43,6 @@ public class TestBase {
 
 		this.baseUrl = configs.get(ConfigurationParameters.Url);
 	}
+	
+	
 }
