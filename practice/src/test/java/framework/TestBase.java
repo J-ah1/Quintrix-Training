@@ -13,15 +13,14 @@ import org.testng.annotations.BeforeTest;
 
 public class TestBase {
 	protected WebDriver webDriver;
+	protected String urlProtocol;
+	protected String urlDomain;
 	protected String baseUrl;
 	
 	@BeforeTest
 	protected void beforeTest() {
 		loadConfigurations();
-		//Is there a better place for this?
-		loadWebDrivers();
-		// Will change to enum?
-		setWebDriver("CHROME");
+		
 	}
 	
 	@AfterTest
@@ -46,7 +45,12 @@ public class TestBase {
 			throw new RuntimeException("Config file does not exist.");
 		}
 
-		this.baseUrl = configs.get(ConfigurationParameters.Url);
+		this.urlProtocol = configs.get(ConfigurationParameters.UrlProtocol);
+		this.urlDomain = configs.get(ConfigurationParameters.UrlDomain);
+		this.baseUrl = urlProtocol + "://" + urlDomain + "/";
+		//Is there a better place for this?
+		loadWebDrivers();
+		setWebDriver(configs.get(ConfigurationParameters.BrowserType));
 	}
 	
 	

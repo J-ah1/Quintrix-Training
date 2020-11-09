@@ -22,9 +22,9 @@ public class WebDriverManager {
 	}
 	
 	public static WebDriver getWebDriver(String webDriverType) {
-		if(webDriverType == "CHROME")
+		if(webDriverType == "chrome")
 			return new ChromeDriver();
-		if(webDriverType == "FIREFOX")
+		if(webDriverType == "firefox")
 			return new FirefoxDriver();
 		return new ChromeDriver();
 	}
