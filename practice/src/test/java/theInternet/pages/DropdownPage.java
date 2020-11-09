@@ -9,7 +9,7 @@ import org.openqa.selenium.support.ui.Select;
 import framework.PageObjectBase;
 
 public class DropdownPage extends PageObjectBase{
-	private final String urlPath = "/dropdown";
+	private final String urlPath = "dropdown";
 	
 	public DropdownPage(WebDriver driver, String url) {
 		super(driver, url);

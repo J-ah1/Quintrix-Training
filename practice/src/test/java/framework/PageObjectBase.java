@@ -13,16 +13,31 @@ public abstract class PageObjectBase {
 	// This is only applicable to basic_auth?
 	// Because of this, just override navigate
 
+	// Different constructors for creating base url
+	protected PageObjectBase(WebDriver driver, String urlProtocol, String urlDomain, String urlPath) {
+		this(driver, urlProtocol + "://" + urlDomain + "/", urlPath);
+	}
+	
+	protected PageObjectBase(WebDriver driver, String baseUrl, String urlPath) {
+		this(driver, baseUrl + urlPath);
+	}
+	
 	protected PageObjectBase(WebDriver driver, String baseUrl) {
 		this.driver = driver;
 		this.baseUrl = baseUrl;
+		//urlProtocol + "://" + urlDomain + "/";
 		PageFactory.initElements(driver, this);
 	}
 	
-	protected void navigate(String urlPath) {
+	protected PageObjectBase navigate(String urlPath) {
 		driver.navigate().to(baseUrl + urlPath);
+		return this;
 	}
 	
+	protected PageObjectBase navigate() {
+		driver.navigate().to(baseUrl);
+		return this;
+	}
 	
 	
 }

@@ -11,7 +11,7 @@ import theInternet.foundation.CheckBox;
 import framework.PageObjectBase;
 
 public class CheckboxPage extends PageObjectBase {
-	private final String urlPath = "/checkboxes";
+	private final String urlPath = "checkboxes";
 	
 	public CheckboxPage(WebDriver driver, String baseUrl) {
 		super(driver, baseUrl);

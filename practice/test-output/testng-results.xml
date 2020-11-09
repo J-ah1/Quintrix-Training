@@ -1,21 +1,88 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="7" total="8" passed="1" failed="0" skipped="0">
+<testng-results ignored="0" total="8" passed="7" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2020-11-09T16:18:48 EST" name="Default suite" finished-at="2020-11-09T16:18:53 EST" duration-ms="5021">
+  <suite started-at="2020-11-09T16:52:20 EST" name="Default suite" finished-at="2020-11-09T16:52:37 EST" duration-ms="17749">
     <groups>
     </groups>
-    <test started-at="2020-11-09T16:18:48 EST" name="Default test" finished-at="2020-11-09T16:18:53 EST" duration-ms="5021">
+    <test started-at="2020-11-09T16:52:20 EST" name="Default test" finished-at="2020-11-09T16:52:37 EST" duration-ms="17749">
       <class name="theInternet.tests.TheInternet">
-        <test-method is-config="true" signature="beforeTest()[pri:0, instance:theInternet.tests.TheInternet@3901d134]" started-at="2020-11-09T16:18:48 EST" name="beforeTest" finished-at="2020-11-09T16:18:52 EST" duration-ms="3752" status="PASS">
+        <test-method is-config="true" signature="beforeTest()[pri:0, instance:theInternet.tests.TheInternet@16e7dcfd]" started-at="2020-11-09T16:52:20 EST" name="beforeTest" finished-at="2020-11-09T16:52:23 EST" duration-ms="3751" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeTest -->
-        <test-method signature="tc17CanSendInputToJSPrompt()[pri:0, instance:theInternet.tests.TheInternet@3901d134]" started-at="2020-11-09T16:18:52 EST" name="tc17CanSendInputToJSPrompt" finished-at="2020-11-09T16:18:52 EST" duration-ms="630" status="PASS">
+        <test-method signature="canLaunchChromeDriver()[pri:0, instance:theInternet.tests.TheInternet@16e7dcfd]" started-at="2020-11-09T16:52:23 EST" name="canLaunchChromeDriver" finished-at="2020-11-09T16:52:24 EST" duration-ms="478" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- canLaunchChromeDriver -->
+        <test-method signature="canNavigateToIndexPage()[pri:0, instance:theInternet.tests.TheInternet@16e7dcfd]" started-at="2020-11-09T16:52:24 EST" name="canNavigateToIndexPage" finished-at="2020-11-09T16:52:24 EST" duration-ms="143" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- canNavigateToIndexPage -->
+        <test-method signature="tc17CanSendInputToJSPrompt()[pri:0, instance:theInternet.tests.TheInternet@16e7dcfd]" started-at="2020-11-09T16:52:24 EST" name="tc17CanSendInputToJSPrompt" finished-at="2020-11-09T16:52:24 EST" duration-ms="329" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tc17CanSendInputToJSPrompt -->
-        <test-method is-config="true" signature="afterTest()[pri:0, instance:theInternet.tests.TheInternet@3901d134]" started-at="2020-11-09T16:18:52 EST" name="afterTest" finished-at="2020-11-09T16:18:53 EST" duration-ms="606" status="PASS">
+        <test-method signature="tc37CanCheckCheckboxes()[pri:0, instance:theInternet.tests.TheInternet@16e7dcfd]" started-at="2020-11-09T16:52:24 EST" name="tc37CanCheckCheckboxes" finished-at="2020-11-09T16:52:25 EST" duration-ms="1041" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tc37CanCheckCheckboxes -->
+        <test-method signature="tc4CanSelectDropdownListItem()[pri:0, instance:theInternet.tests.TheInternet@16e7dcfd]" started-at="2020-11-09T16:52:25 EST" name="tc4CanSelectDropdownListItem" finished-at="2020-11-09T16:52:26 EST" duration-ms="347" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tc4CanSelectDropdownListItem -->
+        <test-method signature="tc54CanSendValidBasicAuth()[pri:0, instance:theInternet.tests.TheInternet@16e7dcfd]" started-at="2020-11-09T16:52:26 EST" name="tc54CanSendValidBasicAuth" finished-at="2020-11-09T16:52:36 EST" duration-ms="10266" status="FAIL">
+          <exception class="java.lang.NullPointerException">
+            <message>
+              <![CDATA[Cannot invoke "org.openqa.selenium.Alert.sendKeys(String)" because "this.alert" is null]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.NullPointerException: Cannot invoke "org.openqa.selenium.Alert.sendKeys(String)" because "this.alert" is null
+at theInternet.pages.BasicAuthPage.typeUsername(BasicAuthPage.java:36)
+at theInternet.tests.TheInternet.tc54CanSendValidBasicAuth(TheInternet.java:120)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:132)
+at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:599)
+at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:174)
+at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:822)
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:147)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1510)
+at org.testng.TestRunner.privateRun(TestRunner.java:764)
+at org.testng.TestRunner.run(TestRunner.java:585)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:384)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:378)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:337)
+at org.testng.SuiteRunner.run(SuiteRunner.java:286)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1218)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1140)
+at org.testng.TestNG.runSuites(TestNG.java:1069)
+at org.testng.TestNG.run(TestNG.java:1037)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.NullPointerException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tc54CanSendValidBasicAuth -->
+        <test-method signature="tc7CanTypeTextIntoInput()[pri:0, instance:theInternet.tests.TheInternet@16e7dcfd]" started-at="2020-11-09T16:52:36 EST" name="tc7CanTypeTextIntoInput" finished-at="2020-11-09T16:52:36 EST" duration-ms="341" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tc7CanTypeTextIntoInput -->
+        <test-method signature="tc9CanIncrementNumericValue()[pri:0, instance:theInternet.tests.TheInternet@16e7dcfd]" started-at="2020-11-09T16:52:36 EST" name="tc9CanIncrementNumericValue" finished-at="2020-11-09T16:52:37 EST" duration-ms="375" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tc9CanIncrementNumericValue -->
+        <test-method is-config="true" signature="afterTest()[pri:0, instance:theInternet.tests.TheInternet@16e7dcfd]" started-at="2020-11-09T16:52:37 EST" name="afterTest" finished-at="2020-11-09T16:52:37 EST" duration-ms="623" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterTest -->

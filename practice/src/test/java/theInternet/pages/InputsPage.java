@@ -9,7 +9,7 @@ import theInternet.foundation.NumericInput;
 import framework.PageObjectBase;
 
 public class InputsPage extends PageObjectBase{
-	private final String urlPath = "/inputs";
+	private final String urlPath = "inputs";
 	
 	public InputsPage(WebDriver driver, String  url) {
 		super(driver, url);

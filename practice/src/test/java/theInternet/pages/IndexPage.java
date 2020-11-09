@@ -11,7 +11,7 @@ public class IndexPage extends PageObjectBase{
 	}
 	
 	public IndexPage navigate() {
-		super.navigate("");
+		super.navigate();
 		return this;
 	}
 	

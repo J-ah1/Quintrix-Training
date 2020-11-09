@@ -11,10 +11,10 @@ import theInternet.foundation.AlertExtension;
 import theInternet.foundation.Button;
 
 public class JavaScriptAlertPage extends PageObjectBase{
-	private final String urlPath = "/javascript_alerts";
+	private final static String URL_PATH = "javascript_alerts";
 	
 	public JavaScriptAlertPage(WebDriver driver, String baseUrl) {
-		super(driver, baseUrl);
+		super(driver, baseUrl, URL_PATH);
 	}
 	
 	@FindBy(id="result")
@@ -24,7 +24,7 @@ public class JavaScriptAlertPage extends PageObjectBase{
 	List<WebElement> buttons;
 	
 	public JavaScriptAlertPage navigate() {
-		super.navigate(urlPath);
+		super.navigate();
 		return this;
 	}
 

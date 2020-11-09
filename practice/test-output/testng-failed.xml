@@ -6,7 +6,7 @@
       <class name="theInternet.tests.TheInternet">
         <methods>
           <include name="beforeTest"/>
-          <include name="tc17CanSendInputToJSPrompt"/>
+          <include name="tc54CanSendValidBasicAuth"/>
           <include name="afterTest"/>
         </methods>
       </class> <!-- theInternet.tests.TheInternet -->
