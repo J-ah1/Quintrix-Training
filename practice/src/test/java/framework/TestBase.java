@@ -14,11 +14,14 @@ import org.testng.annotations.BeforeTest;
 public class TestBase {
 	protected WebDriver webDriver;
 	protected String baseUrl;
-	protected WebDriverFactory webDriverFactory;
 	
 	@BeforeTest
 	protected void beforeTest() {
-		LoadConfigurations();
+		loadConfigurations();
+		//Is there a better place for this?
+		loadWebDrivers();
+		// Will change to enum?
+		setWebDriver("CHROME");
 	}
 	
 	@AfterTest
@@ -26,13 +29,15 @@ public class TestBase {
 		this.webDriver.quit();
 	}
 	
+	protected void setWebDriver(String webBrowserType) {
+		this.webDriver = WebDriverFactory.getWebDriver(webBrowserType);
+	}
 	
-	private void LoadConfigurations() {
-		// Set factory system params
-		webDriverFactory = new WebDriverFactory();
-		// Get a webdriver
-		this.webDriver = webDriverFactory.getWebDriver("CHROME");
-
+	private void loadWebDrivers() {
+		WebDriverFactory.loadWebDrivers();
+	}
+	
+	private void loadConfigurations() {
 		HashMap<String, String> configs = null;
 
 		try {
