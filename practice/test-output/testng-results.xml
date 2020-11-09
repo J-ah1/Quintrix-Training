@@ -1,41 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="6" passed="6" failed="0" skipped="0">
+<testng-results ignored="7" total="8" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2020-11-08T19:21:24 EST" name="Default suite" finished-at="2020-11-08T19:21:32 EST" duration-ms="7967">
+  <suite started-at="2020-11-09T14:17:56 EST" name="Default suite" finished-at="2020-11-09T14:18:02 EST" duration-ms="5566">
     <groups>
     </groups>
-    <test started-at="2020-11-08T19:21:24 EST" name="Default test" finished-at="2020-11-08T19:21:32 EST" duration-ms="7967">
+    <test started-at="2020-11-09T14:17:56 EST" name="Default test" finished-at="2020-11-09T14:18:02 EST" duration-ms="5566">
       <class name="theInternet.tests.TheInternet">
-        <test-method is-config="true" signature="beforeTest()[pri:0, instance:theInternet.tests.TheInternet@233fe9b6]" started-at="2020-11-08T19:21:24 EST" name="beforeTest" finished-at="2020-11-08T19:21:28 EST" duration-ms="4861" status="PASS">
+        <test-method is-config="true" signature="beforeTest()[pri:0, instance:theInternet.tests.TheInternet@3901d134]" started-at="2020-11-09T14:17:56 EST" name="beforeTest" finished-at="2020-11-09T14:18:00 EST" duration-ms="3737" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeTest -->
-        <test-method signature="canLaunchChromeDriver()[pri:0, instance:theInternet.tests.TheInternet@233fe9b6]" started-at="2020-11-08T19:21:28 EST" name="canLaunchChromeDriver" finished-at="2020-11-08T19:21:29 EST" duration-ms="475" status="PASS">
+        <test-method signature="tc17CanSendInputToJSPrompt()[pri:0, instance:theInternet.tests.TheInternet@3901d134]" started-at="2020-11-09T14:18:00 EST" name="tc17CanSendInputToJSPrompt" finished-at="2020-11-09T14:18:01 EST" duration-ms="1190" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- canLaunchChromeDriver -->
-        <test-method signature="canNavigateToIndexPage()[pri:0, instance:theInternet.tests.TheInternet@233fe9b6]" started-at="2020-11-08T19:21:29 EST" name="canNavigateToIndexPage" finished-at="2020-11-08T19:21:29 EST" duration-ms="189" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- canNavigateToIndexPage -->
-        <test-method signature="tc37CanCheckCheckboxes()[pri:0, instance:theInternet.tests.TheInternet@233fe9b6]" started-at="2020-11-08T19:21:29 EST" name="tc37CanCheckCheckboxes" finished-at="2020-11-08T19:21:30 EST" duration-ms="537" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tc37CanCheckCheckboxes -->
-        <test-method signature="tc4CanSelectDropdownListItem()[pri:0, instance:theInternet.tests.TheInternet@233fe9b6]" started-at="2020-11-08T19:21:30 EST" name="tc4CanSelectDropdownListItem" finished-at="2020-11-08T19:21:30 EST" duration-ms="560" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tc4CanSelectDropdownListItem -->
-        <test-method signature="tc7CanTypeTextIntoInput()[pri:0, instance:theInternet.tests.TheInternet@233fe9b6]" started-at="2020-11-08T19:21:30 EST" name="tc7CanTypeTextIntoInput" finished-at="2020-11-08T19:21:30 EST" duration-ms="191" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tc7CanTypeTextIntoInput -->
-        <test-method signature="tc9CanIncrementNumericValue()[pri:0, instance:theInternet.tests.TheInternet@233fe9b6]" started-at="2020-11-08T19:21:30 EST" name="tc9CanIncrementNumericValue" finished-at="2020-11-08T19:21:31 EST" duration-ms="246" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tc9CanIncrementNumericValue -->
-        <test-method is-config="true" signature="afterTest()[pri:0, instance:theInternet.tests.TheInternet@233fe9b6]" started-at="2020-11-08T19:21:31 EST" name="afterTest" finished-at="2020-11-08T19:21:32 EST" duration-ms="855" status="PASS">
+        </test-method> <!-- tc17CanSendInputToJSPrompt -->
+        <test-method is-config="true" signature="afterTest()[pri:0, instance:theInternet.tests.TheInternet@3901d134]" started-at="2020-11-09T14:18:01 EST" name="afterTest" finished-at="2020-11-09T14:18:02 EST" duration-ms="606" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterTest -->

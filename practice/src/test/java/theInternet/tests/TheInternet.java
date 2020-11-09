@@ -3,10 +3,12 @@ package theInternet.tests;
 import org.testng.annotations.Test;
 
 import theInternet.foundation.TheInternetTestBase;
+import theInternet.pages.BasicAuthPage;
 import theInternet.pages.CheckboxPage;
 import theInternet.pages.DropdownPage;
 import theInternet.pages.IndexPage;
 import theInternet.pages.InputsPage;
+import theInternet.pages.JavaScriptAlertPage;
 
 import java.util.List;
 
@@ -104,4 +106,40 @@ public class TheInternet extends TheInternetTestBase {
 	  }
   }
 
+  
+  @Test
+  public void tc54CanSendValidBasicAuth() {
+	  //Arrange
+	  String validUser = "admin";
+	  String validPass = "admin";
+	  
+	  //Act
+	  new BasicAuthPage(webDriver, baseUrl)
+	  	.navigate()
+	  	.findPromopt()
+	  	.typeUsername(validUser)
+	  	.typePassword(validPass)
+	  	.confirmPrompt();
+	  	
+	  //Assert
+  }
+
+  
+  @Test
+  public void tc17CanSendInputToJSPrompt() {
+	  //Arrange
+	  String testInput = "test";
+	  String expectedResultText = "You entered: " + testInput;
+	  
+	  //Act
+	  String currentResultText = new JavaScriptAlertPage(webDriver, baseUrl)
+	  	.navigate()
+	  	.clickButton("Click for JS Prompt")
+	  	.typeTextToPrompt(testInput)
+	  	.getResultText();
+	  	
+	  //Assert
+	  Assert.assertEquals(expectedResultText, currentResultText);
+  }
+  
 }

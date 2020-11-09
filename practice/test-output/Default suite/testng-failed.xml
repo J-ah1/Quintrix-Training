@@ -6,7 +6,7 @@
       <class name="theInternet.tests.TheInternet">
         <methods>
           <include name="beforeTest"/>
-          <include name="canLaunchChromeDriver"/>
+          <include name="tc17CanSendInputToJSPrompt"/>
           <include name="afterTest"/>
         </methods>
       </class> <!-- theInternet.tests.TheInternet -->
