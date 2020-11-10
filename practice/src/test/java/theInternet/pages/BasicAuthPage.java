@@ -1,15 +1,12 @@
 package theInternet.pages;
 
-import org.openqa.selenium.Alert;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
 import framework.PageObjectBase;
 
 public class BasicAuthPage extends PageObjectBase{
 	private final String urlPath = "basic_auth";
-	private Alert alert;
 	
 	// Change constructor to take "protocol" and "domain"
 	// Ugh, can't use urlPath in constructor
@@ -19,32 +16,25 @@ public class BasicAuthPage extends PageObjectBase{
 		super(driver, baseUrl);
 	}
 	
-	
 	public BasicAuthPage navigate() {
 		super.navigate(urlPath);
 		return this;
 	}
 	
-	public BasicAuthPage findPromopt() {
-		try {
-			WebDriverWait wait = new WebDriverWait(driver, 10);
-			wait.until(ExpectedConditions.alertIsPresent());
-			alert = driver.switchTo().alert();
-		}catch(Throwable e){
-			System.err.println("Error came while waiting for the alert popup. "+e.getMessage());
-		}
+	public BasicAuthPage navigateWithCredentials(String username, String password) {
+		int indexForCredentials = baseUrl.indexOf("://") + 3;
+		String baseUrlWithCredentials = 
+				baseUrl.substring(0,indexForCredentials) +
+				username + ":" + password + "@" +
+				baseUrl.substring(indexForCredentials, baseUrl.length()) +
+				urlPath;
+		driver.navigate().to(baseUrlWithCredentials);
 		return this;
 	}
 	
-	public BasicAuthPage typeUsername(String username) {
-		alert.sendKeys(username);
-		return this;
+	public String getPageContent() {
+		return driver.findElement(By.tagName("p")).getText();
 	}
-	public BasicAuthPage typePassword(String password) {
-		return this;
-	}
-	public BasicAuthPage confirmPrompt() {
-		return this;
-	}
+	
 
 }

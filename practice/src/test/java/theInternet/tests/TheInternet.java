@@ -112,16 +112,15 @@ public class TheInternet extends TheInternetTestBase {
 	  //Arrange
 	  String validUser = "admin";
 	  String validPass = "admin";
+	  String expectedPageContent = "Congratulations! You must have the proper credentials.";
 	  
 	  //Act
-	  new BasicAuthPage(webDriver, baseUrl)
-	  	.navigate()
-	  	.findPromopt()
-	  	.typeUsername(validUser)
-	  	.typePassword(validPass)
-	  	.confirmPrompt();
+	  String pageContent = new BasicAuthPage(webDriver, baseUrl)
+	  	.navigateWithCredentials(validUser, validPass)
+	  	.getPageContent();
 	  	
 	  //Assert
+	  Assert.assertEquals(pageContent, expectedPageContent);
   }
 
   
