@@ -2,21 +2,22 @@ package theInternet.foundation;
 
 import org.openqa.selenium.WebElement;
 
-public class Checkbox {
-	WebElement checkboxElement;
+import framework.WebElementControlExtension;
+
+public class Checkbox extends WebElementControlExtension{
 	
-	public Checkbox(WebElement checkboxElement) {
-		this.checkboxElement = checkboxElement;
+	public Checkbox(WebElement extendedElement) {
+		super(extendedElement);
 	}
 
 	public Checkbox setState(boolean state) {
 		if(getState() != state)
-			checkboxElement.click();
+			extendedElement.click();
 		return this;
 	}
 
 	public Boolean getState() {
-		if(checkboxElement.getAttribute("checked") != null)
+		if(extendedElement.getAttribute("checked") != null)
 			return true;
 		return false;
 	}

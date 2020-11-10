@@ -8,15 +8,16 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
+import framework.WebElementControlExtension;
 
-public class CheckboxGroup {
-	WebElement checkboxGroupElement;
+
+public class CheckboxGroup extends WebElementControlExtension{
 	List<WebElement> checkboxes;
 	WebDriver driver;
 	
-	public CheckboxGroup(WebElement checkboxGroupElement, WebDriver driver) {
-		this.checkboxGroupElement = checkboxGroupElement;
-		this.checkboxes = checkboxGroupElement.findElements(By.tagName("input"));
+	public CheckboxGroup(WebElement extendedElement, WebDriver driver) {
+		super(extendedElement);
+		this.checkboxes = this.extendedElement.findElements(By.tagName("input"));
 		this.driver = driver;
 	}
 	
@@ -43,7 +44,7 @@ public class CheckboxGroup {
 	
 	private void setBoxesByLabels(String[] labelsForBoxesToCheck, boolean isDesiredChecked) {
 		for(String labelForBoxToCheck : labelsForBoxesToCheck) {
-			List<WebElement> childElements = checkboxGroupElement.findElements(By.cssSelector("*"));
+			List<WebElement> childElements = extendedElement.findElements(By.cssSelector("*"));
 			
 			for(WebElement childElement : childElements) {
 				String lookAheadElementText = getFollowingSiblingTextContent(childElement);
@@ -69,7 +70,7 @@ public class CheckboxGroup {
 
 	public String[] getLabelsForChecked() {
 		List<String> checkedElementsTexts = new ArrayList<String>();
-		List<WebElement> childElements = checkboxGroupElement.findElements(By.cssSelector("*"));
+		List<WebElement> childElements = extendedElement.findElements(By.cssSelector("*"));
 
 		for(WebElement childElement : childElements) {
 			boolean isCheckboxCurrentlyChecked = new Checkbox(childElement).getState();

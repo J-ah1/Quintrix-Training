@@ -124,6 +124,22 @@ public class TheInternet extends TheInternetTestBase {
   }
   
   @Test
+  public void tc38CanUncheckAllCheckboxes() {
+	  //Arrange
+	  
+	  //Act
+	  List<Boolean> boxStates = new CheckboxPage(webDriver, baseUrl)
+			  .navigate()
+			  .uncheckAllBoxes()
+			  .getAllBoxStates();
+	  
+	  //Assert
+	  for(Boolean boxState: boxStates) {
+		  Assert.assertEquals(boxState.booleanValue(), false);
+	  }
+  }
+  
+  @Test
   public void tc54CanSendValidBasicAuth() {
 	  //Arrange
 	  String validUser = "admin";

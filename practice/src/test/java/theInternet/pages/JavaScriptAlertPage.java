@@ -8,7 +8,7 @@ import org.openqa.selenium.support.FindBy;
 
 import framework.PageObjectBase;
 import theInternet.foundation.AlertExtension;
-import theInternet.foundation.Button;
+import theInternet.foundation.ButtonGroup;
 
 public class JavaScriptAlertPage extends PageObjectBase{
 	private final static String URL_PATH = "javascript_alerts";
@@ -29,7 +29,7 @@ public class JavaScriptAlertPage extends PageObjectBase{
 	}
 
 	public JavaScriptAlertPage clickButton(String buttonText) {
-		new Button(buttons, buttonText).click();
+		new ButtonGroup(buttons).clickButtonWithText(buttonText);
 		return this;
 	}
 	
