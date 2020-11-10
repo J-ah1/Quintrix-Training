@@ -18,9 +18,6 @@ public class CheckboxPage extends PageObjectBase {
 		super(driver, baseUrl);
 	}
 	
-	@FindBy(tagName="input")
-	List<WebElement> checkboxes;
-	
 	@FindBy(id="checkboxes")
 	WebElement checkboxGroup;
 	
@@ -29,26 +26,23 @@ public class CheckboxPage extends PageObjectBase {
 		return this;
 	}
 	
-	
 	public CheckboxPage checkBoxesByLabels(String[] labelsForBoxesToCheck) {
 		new CheckboxGroup(checkboxGroup, driver).checkBoxesByLabels(labelsForBoxesToCheck);
 		return this;
 	}
 	
-	// Change these to remove the List<WebElement> checkboxes
 	public CheckboxPage checkAllBoxes() {
-		for(WebElement checkbox: checkboxes) {
-			new Checkbox(checkbox).setState(true);
-		}
+		new CheckboxGroup(checkboxGroup, driver).checkAllBoxes();
+		return this;
+	}
+	
+	public CheckboxPage uncheckAllBoxes() {
+		new CheckboxGroup(checkboxGroup, driver).uncheckAllBoxes();
 		return this;
 	}
 
 	public List<Boolean> getAllBoxStates() {
-		List<Boolean> boxStates = new ArrayList<Boolean>();
-		for(WebElement checkBox: checkboxes) {
-			boxStates.add(new Checkbox(checkBox).getState());
-		}
-		return boxStates;
+		return new CheckboxGroup(checkboxGroup, driver).getAllBoxStates();
 	}
 	
 }

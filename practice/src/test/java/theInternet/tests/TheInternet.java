@@ -89,8 +89,7 @@ public class TheInternet extends TheInternetTestBase {
 	  //Assert
 	  Assert.assertEquals(currentText, expectedText);
   }
-  
-  
+   
   @Test
   public void tc28CanCheckBoxByLabel() {
 	  //Arrange

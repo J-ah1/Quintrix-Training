@@ -6,8 +6,8 @@
       <class name="theInternet.tests.TheInternet">
         <methods>
           <include name="beforeTest"/>
-          <include name="tc54CanSendValidBasicAuth"/>
           <include name="afterTest"/>
+          <include name="tc28CanCheckBoxByLabel"/>
         </methods>
       </class> <!-- theInternet.tests.TheInternet -->
     </classes>

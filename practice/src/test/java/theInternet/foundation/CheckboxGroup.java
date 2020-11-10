@@ -8,13 +8,32 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
+
 public class CheckboxGroup {
 	WebElement checkboxGroupElement;
+	List<WebElement> checkboxes;
 	WebDriver driver;
 	
 	public CheckboxGroup(WebElement checkboxGroupElement, WebDriver driver) {
 		this.checkboxGroupElement = checkboxGroupElement;
+		this.checkboxes = checkboxGroupElement.findElements(By.tagName("input"));
 		this.driver = driver;
+	}
+	
+	public CheckboxGroup checkAllBoxes() {
+		setAllBoxStates(true);
+		return this;
+	}
+	
+	public CheckboxGroup uncheckAllBoxes() {
+		setAllBoxStates(false);
+		return this;
+	}
+	
+	private void setAllBoxStates(boolean desiredState) {
+		for(WebElement checkbox: checkboxes) {
+			new Checkbox(checkbox).setState(desiredState);
+		}
 	}
 	
 	public CheckboxGroup checkBoxesByLabels(String[] labelsForBoxesToCheck) {
@@ -33,11 +52,19 @@ public class CheckboxGroup {
 					continue;
 				if(!lookAheadElementText.equals(labelForBoxToCheck))
 					continue;
-				//
+				
 				new Checkbox(childElement).setState(isDesiredChecked);
 			}
 			
 		}
+	}
+	
+	public List<Boolean> getAllBoxStates() {
+		List<Boolean> boxStates = new ArrayList<Boolean>();
+		for(WebElement checkBox: checkboxes) {
+			boxStates.add(new Checkbox(checkBox).getState());
+		}
+		return boxStates;
 	}
 
 	public String[] getLabelsForChecked() {
