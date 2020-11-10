@@ -7,7 +7,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-import theInternet.foundation.CheckBox;
+import theInternet.foundation.Checkbox;
+import theInternet.foundation.CheckboxGroup;
 import framework.PageObjectBase;
 
 public class CheckboxPage extends PageObjectBase {
@@ -18,24 +19,34 @@ public class CheckboxPage extends PageObjectBase {
 	}
 	
 	@FindBy(tagName="input")
-	List<WebElement> checkBoxes;
+	List<WebElement> checkboxes;
+	
+	@FindBy(id="checkboxes")
+	WebElement checkboxGroup;
 	
 	public CheckboxPage navigate() {
 		super.navigate(urlPath);
 		return this;
 	}
 	
+	
+	public CheckboxPage checkBoxesByLabels(String[] labelsForBoxesToCheck) {
+		new CheckboxGroup(checkboxGroup, driver).checkBoxesByLabels(labelsForBoxesToCheck);
+		return this;
+	}
+	
+	// Change these to remove the List<WebElement> checkboxes
 	public CheckboxPage checkAllBoxes() {
-		for(WebElement checkBox: checkBoxes) {
-			new CheckBox(checkBox).setState(true);
+		for(WebElement checkbox: checkboxes) {
+			new Checkbox(checkbox).setState(true);
 		}
 		return this;
 	}
 
 	public List<Boolean> getAllBoxStates() {
 		List<Boolean> boxStates = new ArrayList<Boolean>();
-		for(WebElement checkBox: checkBoxes) {
-			boxStates.add(new CheckBox(checkBox).getState());
+		for(WebElement checkBox: checkboxes) {
+			boxStates.add(new Checkbox(checkBox).getState());
 		}
 		return boxStates;
 	}

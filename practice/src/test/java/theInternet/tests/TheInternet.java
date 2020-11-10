@@ -90,8 +90,26 @@ public class TheInternet extends TheInternetTestBase {
 	  Assert.assertEquals(currentText, expectedText);
   }
   
+  
   @Test
-  public void tc37CanCheckCheckboxes() {
+  public void tc28CanCheckBoxByLabel() {
+	  //Arrange
+	  String[] labelsForBoxesToCheck = {"checkbox 1"};
+	  
+	  //Act
+	  List<Boolean> boxStates = new CheckboxPage(webDriver, baseUrl)
+			  .navigate()
+			  .checkBoxesByLabels(labelsForBoxesToCheck)
+			  .getAllBoxStates();
+	  
+	  //Assert
+	  for(Boolean boxState: boxStates) {
+		  Assert.assertEquals(boxState.booleanValue(), true);
+	  }
+  }
+  
+  @Test
+  public void tc37CanCheckAllCheckboxes() {
 	  //Arrange
 	  
 	  //Act
@@ -105,7 +123,6 @@ public class TheInternet extends TheInternetTestBase {
 		  Assert.assertEquals(boxState.booleanValue(), true);
 	  }
   }
-
   
   @Test
   public void tc54CanSendValidBasicAuth() {
@@ -123,7 +140,6 @@ public class TheInternet extends TheInternetTestBase {
 	  Assert.assertEquals(pageContent, expectedPageContent);
   }
 
-  
   @Test
   public void tc17CanSendInputToJSPrompt() {
 	  //Arrange

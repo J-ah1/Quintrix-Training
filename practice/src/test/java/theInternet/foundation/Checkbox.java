@@ -2,16 +2,15 @@ package theInternet.foundation;
 
 import org.openqa.selenium.WebElement;
 
-public class CheckBox {
+public class Checkbox {
 	WebElement checkboxElement;
 	
-	public CheckBox(WebElement checkboxElement) {
+	public Checkbox(WebElement checkboxElement) {
 		this.checkboxElement = checkboxElement;
 	}
 
-	public CheckBox setState(boolean state) {
-		String attrState = (state ? "true" : "");
-		if(!attrState.equals(checkboxElement.getAttribute("checked")))
+	public Checkbox setState(boolean state) {
+		if(getState() != state)
 			checkboxElement.click();
 		return this;
 	}
