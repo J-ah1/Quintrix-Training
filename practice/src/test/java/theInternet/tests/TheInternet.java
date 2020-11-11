@@ -211,18 +211,23 @@ public class TheInternet extends TheInternetTestBase {
   }
   
   @Test
-  public void tc22AllHoverablesDisplayCaptions() {
+  public void tc22AllHoverablesDisplayValidCaptions() {
 	  // Arrange
 	  String expectedHover1Caption = "name: user1";
-	  //String expectedHover2Caption = "name: user2";
-	  //String expectedHover3Caption = "name: user3";
+	  String expectedHover2Caption = "name: user2";
+	  String expectedHover3Caption = "name: user3";
 	  
 	  // Act
-	  String hover1Caption = new HoversPage(webDriver, baseUrl)
-			  .navigate()
-			  .getUserName(1);
+	  HoversPage hoversPage = new HoversPage(webDriver, baseUrl)
+			  .navigate();
+	  String hover1Caption = hoversPage.getFigureCaptionByIndex(0);
+	  String hover2Caption = hoversPage.getFigureCaptionByIndex(1);
+	  String hover3Caption = hoversPage.getFigureCaptionByIndex(2);
+	  
 	  // Assert
 	  Assert.assertEquals(hover1Caption, expectedHover1Caption);
+	  Assert.assertEquals(hover2Caption, expectedHover2Caption);
+	  Assert.assertEquals(hover3Caption, expectedHover3Caption);
   }
   
 }

@@ -4,14 +4,15 @@ import java.util.List;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 
 import framework.PageObjectBase;
+import framework.WebElementGroup;
 import theInternet.foundation.Div;
-import theInternet.foundation.DivGroup;
 
 public class HoversPage extends PageObjectBase{
-	private final String urlPath = "dropdown";
+	private final String urlPath = "hovers";
 	
 	public HoversPage(WebDriver driver, String baseUrl) {
 		super(driver, baseUrl);
@@ -25,15 +26,14 @@ public class HoversPage extends PageObjectBase{
 		return this;
 	}
 	
-	public String getUserName(int profileIndex) {
-		Div figure = new DivGroup(figures).getByIndex(profileIndex);
-		// Create a DivGroup (a list of divs)
-		// Will have a findByIndex()
-		// Find corresponding Div (make webElementExtension) (store in var)
-		// Will have a getByTag()
-		// Find the img
-		// Do a hover Action
-		// Use Div to find the h5 and return
+	public String getFigureCaptionByIndex(int profileIndex) {		
+		Div figure = new Div(new WebElementGroup(figures).getElementByIndex(profileIndex));
+		
+		WebElement imgToHover = figure.getElementByTag("img");
+		Actions actions = new Actions(driver);
+		actions.moveToElement(imgToHover).perform();
+		
+		return figure.getElementByTag("h5").getText();
 	}
 
 }

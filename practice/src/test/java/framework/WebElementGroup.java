@@ -5,10 +5,14 @@ import java.util.List;
 import org.openqa.selenium.WebElement;
 
 public class WebElementGroup {
-	private List<WebElement> webElements;
+	protected List<WebElement> webElements;
 	
 	public WebElementGroup(List<WebElement> webElements) {
 		this.webElements = webElements;
+	}
+	
+	public WebElement getElementByIndex(int elementIndex) {
+		return webElements.get(elementIndex);
 	}
 	
 	public WebElement getElementWithText(String elementText) {
