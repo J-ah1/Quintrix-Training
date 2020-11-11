@@ -5,6 +5,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 import framework.PageObjectBase;
+import theInternet.foundation.Link;
 
 public class RedirectLinkPage extends PageObjectBase{
 	private final String urlPath = "redirector";
@@ -23,7 +24,7 @@ public class RedirectLinkPage extends PageObjectBase{
 	
 	public RedirectLinkPage clickRedirectLink() {
 		// Another control extension here?
-		redirectLink.click();
+		new Link(redirectLink).click();
 		return this;
 	}
 	
