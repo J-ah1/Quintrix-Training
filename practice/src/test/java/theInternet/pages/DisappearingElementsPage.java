@@ -30,7 +30,6 @@ public class DisappearingElementsPage extends PageObjectBase{
 
 	public boolean gallerySometimesAppears() {
 		int attempts = 30;
-		// DEFINITELY CHANGE THIS
 		while(attempts > 0) {
 			if(isLinkPresentByText("Gallery"))
 				return true;
@@ -42,7 +41,6 @@ public class DisappearingElementsPage extends PageObjectBase{
 
 	public boolean gallerySometimesDoesNotAppear() {
 		int attempts = 30;
-		// DEFINITELY CHANGE THIS
 		while(attempts > 0) {
 			if(!isLinkPresentByText("Gallery"))
 				return true;

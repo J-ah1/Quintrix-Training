@@ -1,21 +1,65 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="11" total="12" passed="1" failed="0" skipped="0">
+<testng-results ignored="0" total="12" passed="12" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2020-11-10T22:14:58 EST" name="Default suite" finished-at="2020-11-10T22:15:04 EST" duration-ms="5857">
+  <suite started-at="2020-11-10T22:52:22 EST" name="Default suite" finished-at="2020-11-10T22:52:31 EST" duration-ms="8720">
     <groups>
     </groups>
-    <test started-at="2020-11-10T22:14:58 EST" name="Default test" finished-at="2020-11-10T22:15:04 EST" duration-ms="5857">
+    <test started-at="2020-11-10T22:52:22 EST" name="Default test" finished-at="2020-11-10T22:52:31 EST" duration-ms="8720">
       <class name="theInternet.tests.TheInternet">
-        <test-method is-config="true" signature="beforeTest()[pri:0, instance:theInternet.tests.TheInternet@7b227d8d]" started-at="2020-11-10T22:14:58 EST" name="beforeTest" finished-at="2020-11-10T22:15:02 EST" duration-ms="3745" status="PASS">
+        <test-method is-config="true" signature="beforeTest()[pri:0, instance:theInternet.tests.TheInternet@3901d134]" started-at="2020-11-10T22:52:22 EST" name="beforeTest" finished-at="2020-11-10T22:52:26 EST" duration-ms="3775" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeTest -->
-        <test-method signature="tc52DoesGalleryInconsistentlyAppear()[pri:0, instance:theInternet.tests.TheInternet@7b227d8d]" started-at="2020-11-10T22:15:02 EST" name="tc52DoesGalleryInconsistentlyAppear" finished-at="2020-11-10T22:15:03 EST" duration-ms="1450" status="PASS">
+        <test-method signature="canLaunchChromeDriver()[pri:0, instance:theInternet.tests.TheInternet@3901d134]" started-at="2020-11-10T22:52:26 EST" name="canLaunchChromeDriver" finished-at="2020-11-10T22:52:27 EST" duration-ms="502" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- canLaunchChromeDriver -->
+        <test-method signature="canNavigateToIndexPage()[pri:0, instance:theInternet.tests.TheInternet@3901d134]" started-at="2020-11-10T22:52:27 EST" name="canNavigateToIndexPage" finished-at="2020-11-10T22:52:27 EST" duration-ms="144" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- canNavigateToIndexPage -->
+        <test-method signature="tc17CanSendInputToJSPrompt()[pri:0, instance:theInternet.tests.TheInternet@3901d134]" started-at="2020-11-10T22:52:27 EST" name="tc17CanSendInputToJSPrompt" finished-at="2020-11-10T22:52:27 EST" duration-ms="492" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tc17CanSendInputToJSPrompt -->
+        <test-method signature="tc28CanCheckBoxByLabel()[pri:0, instance:theInternet.tests.TheInternet@3901d134]" started-at="2020-11-10T22:52:27 EST" name="tc28CanCheckBoxByLabel" finished-at="2020-11-10T22:52:28 EST" duration-ms="349" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tc28CanCheckBoxByLabel -->
+        <test-method signature="tc37CanCheckAllCheckboxes()[pri:0, instance:theInternet.tests.TheInternet@3901d134]" started-at="2020-11-10T22:52:28 EST" name="tc37CanCheckAllCheckboxes" finished-at="2020-11-10T22:52:28 EST" duration-ms="268" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tc37CanCheckAllCheckboxes -->
+        <test-method signature="tc38CanUncheckAllCheckboxes()[pri:0, instance:theInternet.tests.TheInternet@3901d134]" started-at="2020-11-10T22:52:28 EST" name="tc38CanUncheckAllCheckboxes" finished-at="2020-11-10T22:52:28 EST" duration-ms="272" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tc38CanUncheckAllCheckboxes -->
+        <test-method signature="tc4CanSelectDropdownListItem()[pri:0, instance:theInternet.tests.TheInternet@3901d134]" started-at="2020-11-10T22:52:28 EST" name="tc4CanSelectDropdownListItem" finished-at="2020-11-10T22:52:29 EST" duration-ms="363" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tc4CanSelectDropdownListItem -->
+        <test-method signature="tc52DoesGalleryInconsistentlyAppear()[pri:0, instance:theInternet.tests.TheInternet@3901d134]" started-at="2020-11-10T22:52:29 EST" name="tc52DoesGalleryInconsistentlyAppear" finished-at="2020-11-10T22:52:29 EST" duration-ms="664" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tc52DoesGalleryInconsistentlyAppear -->
-        <test-method is-config="true" signature="afterTest()[pri:0, instance:theInternet.tests.TheInternet@7b227d8d]" started-at="2020-11-10T22:15:03 EST" name="afterTest" finished-at="2020-11-10T22:15:04 EST" duration-ms="629" status="PASS">
+        <test-method signature="tc54CanSendValidBasicAuth()[pri:0, instance:theInternet.tests.TheInternet@3901d134]" started-at="2020-11-10T22:52:29 EST" name="tc54CanSendValidBasicAuth" finished-at="2020-11-10T22:52:30 EST" duration-ms="253" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tc54CanSendValidBasicAuth -->
+        <test-method signature="tc7CanTypeTextIntoInput()[pri:0, instance:theInternet.tests.TheInternet@3901d134]" started-at="2020-11-10T22:52:30 EST" name="tc7CanTypeTextIntoInput" finished-at="2020-11-10T22:52:30 EST" duration-ms="230" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tc7CanTypeTextIntoInput -->
+        <test-method signature="tc8CanRedirectWithLink()[pri:0, instance:theInternet.tests.TheInternet@3901d134]" started-at="2020-11-10T22:52:30 EST" name="tc8CanRedirectWithLink" finished-at="2020-11-10T22:52:30 EST" duration-ms="328" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tc8CanRedirectWithLink -->
+        <test-method signature="tc9CanIncrementNumericValue()[pri:0, instance:theInternet.tests.TheInternet@3901d134]" started-at="2020-11-10T22:52:30 EST" name="tc9CanIncrementNumericValue" finished-at="2020-11-10T22:52:31 EST" duration-ms="401" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tc9CanIncrementNumericValue -->
+        <test-method is-config="true" signature="afterTest()[pri:0, instance:theInternet.tests.TheInternet@3901d134]" started-at="2020-11-10T22:52:31 EST" name="afterTest" finished-at="2020-11-10T22:52:31 EST" duration-ms="626" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterTest -->
