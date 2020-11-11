@@ -5,6 +5,7 @@ import org.testng.annotations.Test;
 import theInternet.foundation.TheInternetTestBase;
 import theInternet.pages.BasicAuthPage;
 import theInternet.pages.CheckboxPage;
+import theInternet.pages.DisappearingElementsPage;
 import theInternet.pages.DropdownPage;
 import theInternet.pages.IndexPage;
 import theInternet.pages.InputsPage;
@@ -187,5 +188,26 @@ public class TheInternet extends TheInternetTestBase {
 	  //Assert
 	  Assert.assertEquals(currentPageUrl, expectedPageUrl);
   }
+ 
+  @Test
+  public void tc52DoesGalleryInconsistentlyAppear() {
+	  //Arrange
+	  boolean expectedDoesGalleryAppear = true;
+	  boolean expectedDoesGalleryNotAppear = true;
+	  
+	  //Act
+	  boolean doesGalleryAppear = new DisappearingElementsPage(webDriver, baseUrl)
+			  .navigate()
+			  .gallerySometimesAppears();
+	  boolean doesGalleryNotAppear = new DisappearingElementsPage(webDriver, baseUrl)
+			  .navigate()
+			  .gallerySometimesDoesNotAppear();
+	  
+	  
+	  //Assert
+	  Assert.assertEquals(doesGalleryAppear, expectedDoesGalleryAppear);
+	  Assert.assertEquals(doesGalleryNotAppear, expectedDoesGalleryNotAppear);
+  }
+  
   
 }
