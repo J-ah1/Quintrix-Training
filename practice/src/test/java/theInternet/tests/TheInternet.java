@@ -11,6 +11,7 @@ import theInternet.pages.DropdownPage;
 import theInternet.pages.HoversPage;
 import theInternet.pages.IndexPage;
 import theInternet.pages.InputsPage;
+import theInternet.pages.JQueryUIMenusPage;
 import theInternet.pages.JavaScriptAlertPage;
 import theInternet.pages.MultipleWindowsPage;
 import theInternet.pages.RedirectLinkPage;
@@ -263,5 +264,19 @@ public class TheInternet extends TheInternetTestBase {
 
   }
   
+  @Test
+  public void tc51ValidateCSVMenuItemPath() {
+	  // Arrange
+	  boolean expectedCSVMenuItemPath = true;
+	  
+	  // Act
+	  boolean actualCSVmenuItemPath = new JQueryUIMenusPage(webDriver, baseUrl)
+			  .navigate()
+			  .isMenuItemPresent("CSV", new String[]{"Enabled", "Downloads"});
+	  
+	  // Assert
+	  Assert.assertEquals(actualCSVmenuItemPath, expectedCSVMenuItemPath);
+
+  }
   
 }

@@ -5,8 +5,8 @@
     <classes>
       <class name="theInternet.tests.TheInternet">
         <methods>
+          <include name="tc22DoesContextMenuBoxWork"/>
           <include name="beforeTest"/>
-          <include name="tc64CanOpenNewWindowWithLink"/>
           <include name="afterTest"/>
         </methods>
       </class> <!-- theInternet.tests.TheInternet -->
