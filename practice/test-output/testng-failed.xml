@@ -7,7 +7,7 @@
         <methods>
           <include name="beforeTest"/>
           <include name="afterTest"/>
-          <include name="tc28CanCheckBoxByLabel"/>
+          <include name="tc52DoesGalleryInconsistentlyAppear"/>
         </methods>
       </class> <!-- theInternet.tests.TheInternet -->
     </classes>

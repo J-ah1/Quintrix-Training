@@ -7,7 +7,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 import framework.PageObjectBase;
-import theInternet.foundation.LinkGroup;
+import framework.WebElementGroup;
 
 public class DisappearingElementsPage extends PageObjectBase{
 	private final String urlPath = "disappearing_elements";
@@ -25,7 +25,7 @@ public class DisappearingElementsPage extends PageObjectBase{
 	}
 	
 	private boolean isLinkPresentByText(String linkText) {
-		return new LinkGroup(links).isLinkPresentByText(linkText);
+		return new WebElementGroup(links).isThereElementWithText(linkText);
 	}
 
 	public boolean gallerySometimesAppears() {
