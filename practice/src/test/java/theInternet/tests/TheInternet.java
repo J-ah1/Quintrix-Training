@@ -5,6 +5,7 @@ import org.testng.annotations.Test;
 import theInternet.foundation.TheInternetTestBase;
 import theInternet.pages.BasicAuthPage;
 import theInternet.pages.CheckboxPage;
+import theInternet.pages.ContextMenuPage;
 import theInternet.pages.DisappearingElementsPage;
 import theInternet.pages.DropdownPage;
 import theInternet.pages.HoversPage;
@@ -245,5 +246,22 @@ public class TheInternet extends TheInternetTestBase {
 	  //Assert
 	  Assert.assertEquals(newWindowTitle, expectedNewWindowTitle);
   }
+  
+  @Test
+  public void tc22DoesContextMenuBoxWork() {
+	  // Arrange
+	  boolean expectedDoesContextMenuBoxWork = true;
+	  
+	  // Act
+	  boolean doesContextMenuBoxWork = new ContextMenuPage(webDriver, baseUrl)
+			  .navigate()
+			  .rightClickContextMenuBox()
+			  .isAlertPresent();
+	  
+	  // Assert
+	  Assert.assertEquals(doesContextMenuBoxWork, expectedDoesContextMenuBoxWork);
+
+  }
+  
   
 }

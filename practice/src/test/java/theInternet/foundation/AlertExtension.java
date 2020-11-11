@@ -16,6 +16,12 @@ public class AlertExtension{
 		findAlert();
 	}
 	
+	public boolean isAlertPresent() {
+		if(alert != null)
+			return true;
+		return false;
+	}
+	
 	private void findAlert() {
 		try {
 			WebDriverWait wait = new WebDriverWait(driver, 10);
