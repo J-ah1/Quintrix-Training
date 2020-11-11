@@ -34,7 +34,7 @@ public class WebElementGroup {
 	public void clickElementWithText(String elementText) {
 		WebElement elementToClick = getElementWithText(elementText);
 		if(elementToClick == null)
-			System.err.println("Error: Element with text: '"+ elementText +"' to click not found");
+			throw new RuntimeException("Could not find element with text: '" + elementText + "' to click.");
 		elementToClick.click();
 	}
 	

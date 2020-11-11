@@ -10,7 +10,12 @@ import org.openqa.selenium.WebElement;
 
 import framework.WebElementControlExtension;
 
-
+// Could definitely refactor this...
+// Make CheckboxGroup an extension of WebElementGroup
+// Override all text based functions
+// text() functions will get corresponding labels
+// if there isn't a label, use the below functionality
+// ...so just add "getLabel()" functionality to the below functions
 public class CheckboxGroup extends WebElementControlExtension{
 	List<WebElement> checkboxes;
 	WebDriver driver;

@@ -7,6 +7,7 @@ import theInternet.pages.BasicAuthPage;
 import theInternet.pages.CheckboxPage;
 import theInternet.pages.DisappearingElementsPage;
 import theInternet.pages.DropdownPage;
+import theInternet.pages.HoversPage;
 import theInternet.pages.IndexPage;
 import theInternet.pages.InputsPage;
 import theInternet.pages.JavaScriptAlertPage;
@@ -209,5 +210,19 @@ public class TheInternet extends TheInternetTestBase {
 	  Assert.assertEquals(doesGalleryNotAppear, expectedDoesGalleryNotAppear);
   }
   
+  @Test
+  public void tc22AllHoverablesDisplayCaptions() {
+	  // Arrange
+	  String expectedHover1Caption = "name: user1";
+	  //String expectedHover2Caption = "name: user2";
+	  //String expectedHover3Caption = "name: user3";
+	  
+	  // Act
+	  String hover1Caption = new HoversPage(webDriver, baseUrl)
+			  .navigate()
+			  .getUserName(1);
+	  // Assert
+	  Assert.assertEquals(hover1Caption, expectedHover1Caption);
+  }
   
 }
