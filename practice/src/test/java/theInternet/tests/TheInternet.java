@@ -11,6 +11,7 @@ import theInternet.pages.HoversPage;
 import theInternet.pages.IndexPage;
 import theInternet.pages.InputsPage;
 import theInternet.pages.JavaScriptAlertPage;
+import theInternet.pages.MultipleWindowsPage;
 import theInternet.pages.RedirectLinkPage;
 
 import java.util.List;
@@ -228,6 +229,21 @@ public class TheInternet extends TheInternetTestBase {
 	  Assert.assertEquals(hover1Caption, expectedHover1Caption);
 	  Assert.assertEquals(hover2Caption, expectedHover2Caption);
 	  Assert.assertEquals(hover3Caption, expectedHover3Caption);
+  }
+  
+  @Test
+  public void tc64CanOpenNewValidWindowWithLink() {
+	  //Arrange
+	  String expectedNewWindowTitle = "New Window";
+	  
+	  //Act
+	  String newWindowTitle = new MultipleWindowsPage(webDriver, baseUrl)
+			  .navigate()
+			  .clickNewWindowLink()
+			  .getNewWindowTitle();
+	  
+	  //Assert
+	  Assert.assertEquals(newWindowTitle, expectedNewWindowTitle);
   }
   
 }

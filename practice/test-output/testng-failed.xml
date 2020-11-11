@@ -6,8 +6,8 @@
       <class name="theInternet.tests.TheInternet">
         <methods>
           <include name="beforeTest"/>
+          <include name="tc64CanOpenNewWindowWithLink"/>
           <include name="afterTest"/>
-          <include name="tc52DoesGalleryInconsistentlyAppear"/>
         </methods>
       </class> <!-- theInternet.tests.TheInternet -->
     </classes>
