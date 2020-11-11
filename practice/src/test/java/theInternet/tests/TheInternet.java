@@ -9,6 +9,7 @@ import theInternet.pages.DropdownPage;
 import theInternet.pages.IndexPage;
 import theInternet.pages.InputsPage;
 import theInternet.pages.JavaScriptAlertPage;
+import theInternet.pages.RedirectLinkPage;
 
 import java.util.List;
 
@@ -170,6 +171,21 @@ public class TheInternet extends TheInternetTestBase {
 	  	
 	  //Assert
 	  Assert.assertEquals(expectedResultText, currentResultText);
+  }
+  
+  @Test
+  public void tc8CanRedirectWithLink() {
+	  //Arrange
+	  String expectedPageUrl = "http://the-internet.herokuapp.com/status_codes";
+	  
+	  //Act
+	  String currentPageUrl = new RedirectLinkPage(webDriver, baseUrl)
+			  .navigate()
+			  .clickRedirectLink()
+			  .getCurrentUrl();
+	  
+	  //Assert
+	  Assert.assertEquals(currentPageUrl, expectedPageUrl);
   }
   
 }
