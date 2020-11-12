@@ -30,7 +30,7 @@ public class MenuGroup extends WebElementGroup{
 		Actions actions = new Actions(driver);
 		
 		for(WebElement menuItem: this.webElements) {
-			String menuItemLabel = new LabellessElement(menuItem).getLabelFromChildren();
+			String menuItemLabel = new LabellessElement(driver, menuItem).getLabelFromChildren();
 			if(menuItemLabel.equals(menuItemText)) {
 				actions.moveToElement(menuItem).click().perform();
 				return findSubMenu(menuItem);
@@ -42,7 +42,7 @@ public class MenuGroup extends WebElementGroup{
 
 	public boolean isMenuItemPresentByText(String desiredMenuItem) {
 		for(WebElement menuItem: this.webElements) {
-			String menuItemLabel = new LabellessElement(menuItem).getLabelFromChildren();
+			String menuItemLabel = new LabellessElement(driver, menuItem).getLabelFromChildren();
 			if(menuItemLabel.equals(desiredMenuItem))
 				return true;
 		}
