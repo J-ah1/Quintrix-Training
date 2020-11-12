@@ -9,7 +9,7 @@ import framework.PageObjectBase;
 import theInternet.foundation.AlertExtension;
 
 public class JQueryUIMenusPage extends PageObjectBase{
-	private final String urlPath = "context_menu";
+	private final String urlPath = "jqueryui/menu";
 	
 	public JQueryUIMenusPage(WebDriver driver, String baseUrl) {
 		super(driver, baseUrl);
@@ -24,18 +24,12 @@ public class JQueryUIMenusPage extends PageObjectBase{
 	}
 	
 	public boolean isMenuItemPresent(String desiredMenuItemText, String[] menuTextTraversalPath) {
-		for(String menuItemText: menuTextTraversalPath) {
-			traverseMenu(menuItemText);
-		}
-		return isMenuItemPresent(desiredMenuItemText);
+		return new MenuGroup(driver, menu)
+				.traverseMenuByText(menuTextTraversalPath)
+				.isMenuItemPresentByText(desiredMenuItemText);
 	}
 	
-	// Will probably make a Menu Control Extension
-	private void traverseMenu(String menuItemText) {
-		Actions actions = new Actions(driver);
-		// So how do we get the menu item?
-		actions.moveToElement();
-	}
+	
 	
 	public boolean isMenuItemPresent(String desiredMenuItemText) {
 		// How do we validate that the menu item is there?

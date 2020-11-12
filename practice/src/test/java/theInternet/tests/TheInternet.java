@@ -254,10 +254,12 @@ public class TheInternet extends TheInternetTestBase {
 	  boolean expectedDoesContextMenuBoxWork = true;
 	  
 	  // Act
-	  boolean doesContextMenuBoxWork = new ContextMenuPage(webDriver, baseUrl)
+	  ContextMenuPage contextMenuPage = new ContextMenuPage(webDriver, baseUrl);
+	  boolean doesContextMenuBoxWork = contextMenuPage
 			  .navigate()
 			  .rightClickContextMenuBox()
 			  .isAlertPresent();
+	  contextMenuPage.acceptAlert();
 	  
 	  // Assert
 	  Assert.assertEquals(doesContextMenuBoxWork, expectedDoesContextMenuBoxWork);

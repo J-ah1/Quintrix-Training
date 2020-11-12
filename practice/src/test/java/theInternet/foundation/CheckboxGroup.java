@@ -11,11 +11,7 @@ import org.openqa.selenium.WebElement;
 import framework.WebElementControlExtension;
 
 // Could definitely refactor this...
-// Make CheckboxGroup an extension of WebElementGroup
-// Override all text based functions
-// text() functions will get corresponding labels
-// if there isn't a label, use the below functionality
-// ...so just add "getLabel()" functionality to the below functions
+// Make CheckboxGroup an extension of WebElementGroup?
 public class CheckboxGroup extends WebElementControlExtension{
 	List<WebElement> checkboxes;
 	WebDriver driver;
@@ -43,26 +39,16 @@ public class CheckboxGroup extends WebElementControlExtension{
 	}
 	
 	public CheckboxGroup checkBoxesByLabels(String[] labelsForBoxesToCheck) {
-		setBoxesByLabels(labelsForBoxesToCheck, true);
-		return this;
-	}
-	
-	private void setBoxesByLabels(String[] labelsForBoxesToCheck, boolean isDesiredChecked) {
-		for(String labelForBoxToCheck : labelsForBoxesToCheck) {
-			List<WebElement> childElements = extendedElement.findElements(By.cssSelector("*"));
-			
-			for(WebElement childElement : childElements) {
-				String lookAheadElementText = getFollowingSiblingTextContent(childElement);
-				
-				if(lookAheadElementText == null)
+		for(String labelForBoxToCheck: labelsForBoxesToCheck) {
+			for(WebElement checkbox: checkboxes) {
+				String checkboxLabel = new LabellessElement(driver, checkbox).getLabelFromNextSibling();
+				if(checkboxLabel == null)
 					continue;
-				if(!lookAheadElementText.equals(labelForBoxToCheck))
-					continue;
-				
-				new Checkbox(childElement).setState(isDesiredChecked);
+				if(checkboxLabel.equals(labelForBoxToCheck))
+					new Checkbox(checkbox).setState(true);
 			}
-			
 		}
+		return this;
 	}
 	
 	public List<Boolean> getAllBoxStates() {
@@ -83,7 +69,7 @@ public class CheckboxGroup extends WebElementControlExtension{
 			if(!isCheckboxCurrentlyChecked) {
 				continue;
 			}
-			String lookAheadElementText = getFollowingSiblingTextContent(childElement);			
+			String lookAheadElementText = new LabellessElement(driver, childElement).getLabelFromNextSibling();			
 			if(lookAheadElementText == null) {
 				throw new RuntimeException("Could not get label for checked box");
 			}
@@ -91,19 +77,6 @@ public class CheckboxGroup extends WebElementControlExtension{
 		}
 		
 		return ToArray(checkedElementsTexts);
-	}
-
-	private String getFollowingSiblingTextContent(WebElement element) {
-		String script = "var childNode = arguments[0].nextSibling;"
-				+ "return childNode === undefined? null : childNode.textContent;";
-		JavascriptExecutor js = (JavascriptExecutor) driver;  
-		String elementText = (String)js.executeScript(script, element);	
-
-		if(elementText != null) {
-			elementText = elementText.trim();
-		}
-
-		return elementText;
 	}
 
 	private String[] ToArray(List<String> list) {

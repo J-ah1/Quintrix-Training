@@ -25,11 +25,16 @@ public class ContextMenuPage extends PageObjectBase{
 	
 	public ContextMenuPage rightClickContextMenuBox() {
 		Actions actions = new Actions(driver);
-		actions.contextClick(contextMenuBox).perform();
+		actions.contextClick(contextMenuBox).click().perform();
 		return this;
 	}
 	
 	public boolean isAlertPresent() {
 		return new AlertExtension(driver).isAlertPresent();
+	}
+	
+	public ContextMenuPage acceptAlert() {
+		new AlertExtension(driver).accept();
+		return this;
 	}
 }
