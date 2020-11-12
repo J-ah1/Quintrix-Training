@@ -9,7 +9,7 @@ import framework.PageObjectBase;
 import theInternet.foundation.AlertExtension;
 
 public class JQueryUIMenusPage extends PageObjectBase{
-	private final String urlPath = "context_menu";
+	private final String urlPath = "jqueryui/menu";
 	
 	public JQueryUIMenusPage(WebDriver driver, String baseUrl) {
 		super(driver, baseUrl);
@@ -28,6 +28,9 @@ public class JQueryUIMenusPage extends PageObjectBase{
 				.traverseMenuByText(menuTextTraversalPath)
 				.isMenuItemPresentByText(desiredMenuItemText);
 	}
+	
+	
+	
 	public boolean isMenuItemPresent(String desiredMenuItemText) {
 		// How do we validate that the menu item is there?
 		return false;
