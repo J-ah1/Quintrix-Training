@@ -8,6 +8,10 @@ import org.openqa.selenium.interactions.Actions;
 import framework.WebElementGroup;
 import theInternet.foundation.LabellessElement;
 
+// Current problem, there isn't really a need to use clicks
+// As our current solution doesn't account for visibility of objects
+// Instead, it simply validates if there is a path of menu items that
+// lead to the desired one.
 public class MenuGroup extends WebElementGroup{
 	private WebElement menu;
 	private WebDriver driver;
@@ -30,7 +34,7 @@ public class MenuGroup extends WebElementGroup{
 		Actions actions = new Actions(driver);
 		
 		for(WebElement menuItem: this.webElements) {
-			String menuItemLabel = new LabellessElement(driver, menuItem).getLabelFromChildren();
+			String menuItemLabel = new LabellessElement(driver, menuItem).getLabelFromVisibleChildren();
 			if(menuItemLabel.equals(menuItemText)) {
 				actions.moveToElement(menuItem).click().perform();
 				return findSubMenu(menuItem);
@@ -42,7 +46,7 @@ public class MenuGroup extends WebElementGroup{
 
 	public boolean isMenuItemPresentByText(String desiredMenuItem) {
 		for(WebElement menuItem: this.webElements) {
-			String menuItemLabel = new LabellessElement(driver, menuItem).getLabelFromChildren();
+			String menuItemLabel = new LabellessElement(driver, menuItem).getLabelFromVisibleChildren();
 			if(menuItemLabel.equals(desiredMenuItem))
 				return true;
 		}

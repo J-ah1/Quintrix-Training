@@ -41,20 +41,7 @@ public class LabellessElement extends WebElementControlExtension{
 		return elementText;
 	}
 	
-	public String getLabelFromChildren() {
-		String label = null;
-		//Hmm
-		//This actually only works because one of the elements <A> is surrounding the
-		//#text, so we'll need to replace this with js executor
-		//On top of that, look deeper
-		//Just need to find "some" label
-		for(WebElement childElement : extendedElement.findElements(By.xpath("*"))) {
-			if(childElement.getText() == null)
-				continue;
-			label = childElement.getText();
-			break;
-		}
-		
-		return label;
+	public String getLabelFromVisibleChildren() {
+		return extendedElement.getText();
 	}
 }
