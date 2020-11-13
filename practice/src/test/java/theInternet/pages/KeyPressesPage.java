@@ -5,6 +5,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 import framework.PageObjectBase;
+import theInternet.foundation.TextInput;
 
 public class KeyPressesPage extends PageObjectBase{
 	private final String urlPath = "key_presses";
@@ -24,10 +25,8 @@ public class KeyPressesPage extends PageObjectBase{
 		return this;
 	}
 	
-	//NTS
-	//Surround and create textInput class
 	public String getCorrespondingKeyPress(char key) {
-		textField.sendKeys(Character.toString(key));
+		new TextInput(textField).sendKeys(Character.toString(key));
 		String fullResultText = resultText.getText();
 		int colonIndex = fullResultText.indexOf(":");
 		String keyPressText = fullResultText

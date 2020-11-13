@@ -3,10 +3,10 @@ package theInternet.pages;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.How;
 
 import framework.PageObjectBase;
 import theInternet.foundation.Button;
+import theInternet.foundation.TextInput;
 
 public class FormAuthenticationPage extends PageObjectBase{
 	private final String urlPath = "login";
@@ -29,15 +29,13 @@ public class FormAuthenticationPage extends PageObjectBase{
 		return this;
 	}
 
-	//NTS
-	//Surround and create textInput class
 	public FormAuthenticationPage typeUser(String user) {
-		inputUsernameElement.sendKeys(user);
+		 new TextInput(inputUsernameElement).sendKeys(user);
 		return this;
 	}
 
 	public FormAuthenticationPage typePassword(String password) {
-		inputPasswordElement.sendKeys(password);
+		new TextInput(inputPasswordElement).sendKeys(password);
 		return this;
 	}
 	

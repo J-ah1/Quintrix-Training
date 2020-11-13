@@ -6,8 +6,8 @@
       <class name="theInternet.tests.TheInternet">
         <methods>
           <include name="beforeTest"/>
+          <include name="tc103CanDetectAlphabet"/>
           <include name="afterTest"/>
-          <include name="tc50CanValidUserValidPassword"/>
         </methods>
       </class> <!-- theInternet.tests.TheInternet -->
     </classes>
