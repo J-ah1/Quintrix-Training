@@ -2,8 +2,11 @@ package regres.tests;
 
 import org.testng.annotations.Test;
 
+import com.google.gson.Gson;
+
 import framework.TestBase;
 import io.restassured.http.ContentType;
+import regres.objects.User;
 
 import org.testng.Assert;
 import org.testng.annotations.AfterTest;
@@ -11,6 +14,8 @@ import org.testng.annotations.BeforeTest;
 
 import static io.restassured.RestAssured.*;
 import static org.hamcrest.Matchers.*;
+
+import java.util.List;
 
 //As of now, we're a different Url than defined in the configs
 //Also, want to make a RegresTestBase
@@ -92,6 +97,21 @@ public class Regres extends TestBase{
       .body("name", equalTo("Morpheus 2"))
       .body("updatedAt", not(equalTo(oldTimeStamp)));
   }
+  
+  @Test
+  public void sixthTest() {
+	  User user2 = new Gson().fromJson(given().get("/api/users/2").then()
+		      .statusCode(200)
+		      .extract().asString(), User.class);
+	  Assert.assertEquals(user2.data.id, 2);
+  }
+  
+	/*
+	 * @Test public void seventhTest() { List<User> users = new ArrayList<User>();
+	 * String responseBodyData = given().get("/api/users").then() .statusCode(200);
+	 * 
+	 * new Gson.fromJson(responseBodyData, User.class); }
+	 */
   
   @BeforeTest
   public void beforeTest() {

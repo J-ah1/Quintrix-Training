@@ -7,7 +7,7 @@
         <methods>
           <include name="afterTest"/>
           <include name="beforeTest"/>
-          <include name="secondTest"/>
+          <include name="fifthTest"/>
         </methods>
       </class> <!-- regres.tests.Regres -->
     </classes>

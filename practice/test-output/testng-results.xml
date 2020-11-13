@@ -1,21 +1,41 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="1" total="2" passed="1" failed="0" skipped="0">
+<testng-results ignored="0" total="6" passed="6" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2020-11-13T14:54:58 EST" name="Default suite" finished-at="2020-11-13T14:55:05 EST" duration-ms="7039">
+  <suite started-at="2020-11-13T16:28:46 EST" name="Default suite" finished-at="2020-11-13T16:28:56 EST" duration-ms="9399">
     <groups>
     </groups>
-    <test started-at="2020-11-13T14:54:58 EST" name="Default test" finished-at="2020-11-13T14:55:05 EST" duration-ms="7039">
+    <test started-at="2020-11-13T16:28:46 EST" name="Default test" finished-at="2020-11-13T16:28:56 EST" duration-ms="9399">
       <class name="regres.tests.Regres">
-        <test-method is-config="true" signature="beforeTest()[pri:0, instance:regres.tests.Regres@4e91d63f]" started-at="2020-11-13T14:54:58 EST" name="beforeTest" finished-at="2020-11-13T14:55:02 EST" duration-ms="4418" status="PASS">
+        <test-method is-config="true" signature="beforeTest()[pri:0, instance:regres.tests.Regres@4e91d63f]" started-at="2020-11-13T16:28:46 EST" name="beforeTest" finished-at="2020-11-13T16:28:51 EST" duration-ms="4497" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeTest -->
-        <test-method signature="secondTest()[pri:0, instance:regres.tests.Regres@4e91d63f]" started-at="2020-11-13T14:55:02 EST" name="secondTest" finished-at="2020-11-13T14:55:04 EST" duration-ms="1981" status="PASS">
+        <test-method signature="fifthTest()[pri:0, instance:regres.tests.Regres@4e91d63f]" started-at="2020-11-13T16:28:51 EST" name="fifthTest" finished-at="2020-11-13T16:28:53 EST" duration-ms="2624" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- fifthTest -->
+        <test-method signature="firstTest()[pri:0, instance:regres.tests.Regres@4e91d63f]" started-at="2020-11-13T16:28:53 EST" name="firstTest" finished-at="2020-11-13T16:28:54 EST" duration-ms="167" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- firstTest -->
+        <test-method signature="fourthTest()[pri:0, instance:regres.tests.Regres@4e91d63f]" started-at="2020-11-13T16:28:54 EST" name="fourthTest" finished-at="2020-11-13T16:28:54 EST" duration-ms="658" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- fourthTest -->
+        <test-method signature="secondTest()[pri:0, instance:regres.tests.Regres@4e91d63f]" started-at="2020-11-13T16:28:54 EST" name="secondTest" finished-at="2020-11-13T16:28:54 EST" duration-ms="285" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- secondTest -->
-        <test-method is-config="true" signature="afterTest()[pri:0, instance:regres.tests.Regres@4e91d63f]" started-at="2020-11-13T14:55:04 EST" name="afterTest" finished-at="2020-11-13T14:55:05 EST" duration-ms="609" status="PASS">
+        <test-method signature="sixthTest()[pri:0, instance:regres.tests.Regres@4e91d63f]" started-at="2020-11-13T16:28:54 EST" name="sixthTest" finished-at="2020-11-13T16:28:55 EST" duration-ms="172" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- sixthTest -->
+        <test-method signature="thirdTest()[pri:0, instance:regres.tests.Regres@4e91d63f]" started-at="2020-11-13T16:28:55 EST" name="thirdTest" finished-at="2020-11-13T16:28:55 EST" duration-ms="249" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- thirdTest -->
+        <test-method is-config="true" signature="afterTest()[pri:0, instance:regres.tests.Regres@4e91d63f]" started-at="2020-11-13T16:28:55 EST" name="afterTest" finished-at="2020-11-13T16:28:56 EST" duration-ms="704" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterTest -->
