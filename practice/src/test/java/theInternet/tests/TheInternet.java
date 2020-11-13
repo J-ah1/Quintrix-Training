@@ -16,6 +16,7 @@ import theInternet.pages.JQueryUIMenusPage;
 import theInternet.pages.JavaScriptAlertPage;
 import theInternet.pages.KeyPressesPage;
 import theInternet.pages.MultipleWindowsPage;
+import theInternet.pages.OnloadErrorPage;
 import theInternet.pages.RedirectLinkPage;
 
 import java.util.HashMap;
@@ -322,6 +323,20 @@ public class TheInternet extends TheInternetTestBase {
 	  
 	  //Assert
 	  Assert.assertEquals(correspondingKeyPress, expectedCorrespondingKeyPress);
+  }
+  
+  @Test
+  public void tc6IsSevereErrorPresent() {
+	  //Arrange
+	  boolean isSevereErrorPresent = false;
+	  boolean expectedIsSevereErrorPresent = true;
+	  //Act
+	  isSevereErrorPresent = new OnloadErrorPage(webDriver, baseUrl)
+			  .navigate()
+			  .isSevereErrorPresent();
+	  
+	  //Assert
+	  Assert.assertEquals(isSevereErrorPresent, expectedIsSevereErrorPresent);
   }
   
 }
