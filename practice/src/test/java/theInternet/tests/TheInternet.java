@@ -14,6 +14,7 @@ import theInternet.pages.IndexPage;
 import theInternet.pages.InputsPage;
 import theInternet.pages.JQueryUIMenusPage;
 import theInternet.pages.JavaScriptAlertPage;
+import theInternet.pages.KeyPressesPage;
 import theInternet.pages.MultipleWindowsPage;
 import theInternet.pages.RedirectLinkPage;
 
@@ -308,21 +309,19 @@ public class TheInternet extends TheInternetTestBase {
   public void tc103CanDetectAlphabet() {
 	  //Arrange
 	  String lowerCaseAlphabet = "abcdefghijklmnopqrstuvwxyz";
-	  String[] correspondingKeyPress = {"A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"};
-	  Map<Character, String> hMap = new HashMap<Character, String>();
-	  for(int i = 0; i < lowerCaseAlphabet.length(); i++) {
-		  hMap.put(lowerCaseAlphabet.charAt(i), correspondingKeyPress[i]);
-	  }
-	  boolean canDetectAlphabet = true;
-	  boolean expectedCanDetectAlphabet = true;
+	  String[] expectedCorrespondingKeyPress = {"A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"};
+	  String[] correspondingKeyPress = new String[26];
 	  
 	  //Act
+	  KeyPressesPage keyPressesPage = new KeyPressesPage(webDriver, baseUrl)
+			  .navigate();
 	  for(int i = 0; i < lowerCaseAlphabet.length(); i++) {
-		  
+		  correspondingKeyPress[i] = keyPressesPage
+				  .getCorrespondingKeyPress(lowerCaseAlphabet.charAt(i));
 	  }
 	  
 	  //Assert
-	  Assert.assertEquals(canDetectAlphabet, expectedCanDetectAlphabet);
+	  Assert.assertEquals(correspondingKeyPress, expectedCorrespondingKeyPress);
   }
   
 }
