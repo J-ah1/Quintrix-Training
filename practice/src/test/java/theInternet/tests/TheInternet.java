@@ -12,6 +12,7 @@ import theInternet.pages.DropdownPage;
 import theInternet.pages.FormAuthenticationPage;
 import theInternet.pages.HoversPage;
 import theInternet.pages.IndexPage;
+import theInternet.pages.InfiniteScrollPage;
 import theInternet.pages.InputsPage;
 import theInternet.pages.JQueryUIMenusPage;
 import theInternet.pages.JavaScriptAlertPage;
@@ -354,6 +355,20 @@ public class TheInternet extends TheInternetTestBase {
 			  .getNumOfDeleteButtons();
 	  //Assert
 	  Assert.assertEquals(numDeleteButtons, expectedNumDeleteButtons);
+  }
+  
+  @Test
+  public void tc5CanScrollFor30Seconds() {
+	  //Arrange
+	  int secondsOfScrolling = 30;
+	  boolean expectedCanReachBottom = false;
+	  //Act
+	  boolean canReachBottom = new InfiniteScrollPage(webDriver, baseUrl)
+			  .navigate()
+			  .canReachBottomOverSeconds(secondsOfScrolling);
+	  
+	  //Assert
+	  Assert.assertEquals(canReachBottom, expectedCanReachBottom);
   }
   
 }
