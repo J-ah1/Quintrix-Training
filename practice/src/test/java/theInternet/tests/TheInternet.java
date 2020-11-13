@@ -8,6 +8,7 @@ import theInternet.pages.CheckboxPage;
 import theInternet.pages.ContextMenuPage;
 import theInternet.pages.DisappearingElementsPage;
 import theInternet.pages.DropdownPage;
+import theInternet.pages.FormAuthenticationPage;
 import theInternet.pages.HoversPage;
 import theInternet.pages.IndexPage;
 import theInternet.pages.InputsPage;
@@ -16,7 +17,9 @@ import theInternet.pages.JavaScriptAlertPage;
 import theInternet.pages.MultipleWindowsPage;
 import theInternet.pages.RedirectLinkPage;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.testng.Assert;
 
@@ -279,6 +282,47 @@ public class TheInternet extends TheInternetTestBase {
 	  // Assert
 	  Assert.assertEquals(actualCSVmenuItemPath, expectedCSVMenuItemPath);
 
+  }
+  
+  @Test
+  public void tc50CanValidUserValidPassword() {
+	  //Arrange
+	  String validUser = "tomsmith";
+	  String validPassword = "SuperSecretPassword!";
+	  boolean canValidUserValidPassword = false;
+	  boolean expectedCanValidUserValidPassword = true;
+	  
+	  //Act
+	  canValidUserValidPassword = new FormAuthenticationPage(webDriver, baseUrl)
+			  .navigate()
+			  .typeUser(validUser)
+			  .typePassword(validPassword)
+			  .enterCredentials()
+			  .isAuthorized();
+	  
+	  //Assert
+	  Assert.assertEquals(canValidUserValidPassword, expectedCanValidUserValidPassword);
+  }
+  
+  @Test
+  public void tc103CanDetectAlphabet() {
+	  //Arrange
+	  String lowerCaseAlphabet = "abcdefghijklmnopqrstuvwxyz";
+	  String[] correspondingKeyPress = {"A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"};
+	  Map<Character, String> hMap = new HashMap<Character, String>();
+	  for(int i = 0; i < lowerCaseAlphabet.length(); i++) {
+		  hMap.put(lowerCaseAlphabet.charAt(i), correspondingKeyPress[i]);
+	  }
+	  boolean canDetectAlphabet = true;
+	  boolean expectedCanDetectAlphabet = true;
+	  
+	  //Act
+	  for(int i = 0; i < lowerCaseAlphabet.length(); i++) {
+		  
+	  }
+	  
+	  //Assert
+	  Assert.assertEquals(canDetectAlphabet, expectedCanDetectAlphabet);
   }
   
 }
