@@ -29,7 +29,9 @@ public class InfiniteScrollPage extends PageObjectBase{
         String script2 = "setTimeout(function(){"
         		+ "return window.innerHeight + window.scrollY >= document.body.offsetHeight"
         		+ "}, 1000);";
-        
+        // Currently...
+        // Trying to figure out how to wait before saying
+        // We've been at the bottom of the page
         while(System.currentTimeMillis()<end) {
             jse.executeScript(script, "");
             try {

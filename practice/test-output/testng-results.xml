@@ -1,101 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="20" passed="20" failed="0" skipped="0">
+<testng-results ignored="1" total="2" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2020-11-12T20:36:51 EST" name="Default suite" finished-at="2020-11-12T20:37:03 EST" duration-ms="12263">
+  <suite started-at="2020-11-13T14:54:58 EST" name="Default suite" finished-at="2020-11-13T14:55:05 EST" duration-ms="7039">
     <groups>
     </groups>
-    <test started-at="2020-11-12T20:36:51 EST" name="Default test" finished-at="2020-11-12T20:37:03 EST" duration-ms="12263">
-      <class name="theInternet.tests.TheInternet">
-        <test-method is-config="true" signature="beforeTest()[pri:0, instance:theInternet.tests.TheInternet@d706f19]" started-at="2020-11-12T20:36:51 EST" name="beforeTest" finished-at="2020-11-12T20:36:54 EST" duration-ms="3445" status="PASS">
+    <test started-at="2020-11-13T14:54:58 EST" name="Default test" finished-at="2020-11-13T14:55:05 EST" duration-ms="7039">
+      <class name="regres.tests.Regres">
+        <test-method is-config="true" signature="beforeTest()[pri:0, instance:regres.tests.Regres@4e91d63f]" started-at="2020-11-13T14:54:58 EST" name="beforeTest" finished-at="2020-11-13T14:55:02 EST" duration-ms="4418" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeTest -->
-        <test-method signature="canLaunchChromeDriver()[pri:0, instance:theInternet.tests.TheInternet@d706f19]" started-at="2020-11-12T20:36:54 EST" name="canLaunchChromeDriver" finished-at="2020-11-12T20:36:55 EST" duration-ms="388" status="PASS">
+        <test-method signature="secondTest()[pri:0, instance:regres.tests.Regres@4e91d63f]" started-at="2020-11-13T14:55:02 EST" name="secondTest" finished-at="2020-11-13T14:55:04 EST" duration-ms="1981" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- canLaunchChromeDriver -->
-        <test-method signature="canNavigateToIndexPage()[pri:0, instance:theInternet.tests.TheInternet@d706f19]" started-at="2020-11-12T20:36:55 EST" name="canNavigateToIndexPage" finished-at="2020-11-12T20:36:55 EST" duration-ms="104" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- canNavigateToIndexPage -->
-        <test-method signature="tc103CanDetectAlphabet()[pri:0, instance:theInternet.tests.TheInternet@d706f19]" started-at="2020-11-12T20:36:55 EST" name="tc103CanDetectAlphabet" finished-at="2020-11-12T20:36:56 EST" duration-ms="1102" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tc103CanDetectAlphabet -->
-        <test-method signature="tc12CanDeleteButtonDelete()[pri:0, instance:theInternet.tests.TheInternet@d706f19]" started-at="2020-11-12T20:36:56 EST" name="tc12CanDeleteButtonDelete" finished-at="2020-11-12T20:36:56 EST" duration-ms="292" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tc12CanDeleteButtonDelete -->
-        <test-method signature="tc17CanSendInputToJSPrompt()[pri:0, instance:theInternet.tests.TheInternet@d706f19]" started-at="2020-11-12T20:36:56 EST" name="tc17CanSendInputToJSPrompt" finished-at="2020-11-12T20:36:56 EST" duration-ms="215" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tc17CanSendInputToJSPrompt -->
-        <test-method signature="tc22AllHoverablesDisplayValidCaptions()[pri:0, instance:theInternet.tests.TheInternet@d706f19]" started-at="2020-11-12T20:36:56 EST" name="tc22AllHoverablesDisplayValidCaptions" finished-at="2020-11-12T20:36:57 EST" duration-ms="536" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tc22AllHoverablesDisplayValidCaptions -->
-        <test-method signature="tc22DoesContextMenuBoxWork()[pri:0, instance:theInternet.tests.TheInternet@d706f19]" started-at="2020-11-12T20:36:57 EST" name="tc22DoesContextMenuBoxWork" finished-at="2020-11-12T20:36:57 EST" duration-ms="213" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tc22DoesContextMenuBoxWork -->
-        <test-method signature="tc28CanCheckBoxByLabel()[pri:0, instance:theInternet.tests.TheInternet@d706f19]" started-at="2020-11-12T20:36:57 EST" name="tc28CanCheckBoxByLabel" finished-at="2020-11-12T20:36:57 EST" duration-ms="203" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tc28CanCheckBoxByLabel -->
-        <test-method signature="tc37CanCheckAllCheckboxes()[pri:0, instance:theInternet.tests.TheInternet@d706f19]" started-at="2020-11-12T20:36:57 EST" name="tc37CanCheckAllCheckboxes" finished-at="2020-11-12T20:36:57 EST" duration-ms="170" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tc37CanCheckAllCheckboxes -->
-        <test-method signature="tc38CanUncheckAllCheckboxes()[pri:0, instance:theInternet.tests.TheInternet@d706f19]" started-at="2020-11-12T20:36:57 EST" name="tc38CanUncheckAllCheckboxes" finished-at="2020-11-12T20:36:58 EST" duration-ms="162" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tc38CanUncheckAllCheckboxes -->
-        <test-method signature="tc4CanSelectDropdownListItem()[pri:0, instance:theInternet.tests.TheInternet@d706f19]" started-at="2020-11-12T20:36:58 EST" name="tc4CanSelectDropdownListItem" finished-at="2020-11-12T20:36:58 EST" duration-ms="217" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tc4CanSelectDropdownListItem -->
-        <test-method signature="tc50CanValidUserValidPassword()[pri:0, instance:theInternet.tests.TheInternet@d706f19]" started-at="2020-11-12T20:36:58 EST" name="tc50CanValidUserValidPassword" finished-at="2020-11-12T20:36:58 EST" duration-ms="464" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tc50CanValidUserValidPassword -->
-        <test-method signature="tc51ValidateCSVMenuItemPath()[pri:0, instance:theInternet.tests.TheInternet@d706f19]" started-at="2020-11-12T20:36:58 EST" name="tc51ValidateCSVMenuItemPath" finished-at="2020-11-12T20:36:59 EST" duration-ms="662" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tc51ValidateCSVMenuItemPath -->
-        <test-method signature="tc52DoesGalleryInconsistentlyAppear()[pri:0, instance:theInternet.tests.TheInternet@d706f19]" started-at="2020-11-12T20:36:59 EST" name="tc52DoesGalleryInconsistentlyAppear" finished-at="2020-11-12T20:36:59 EST" duration-ms="371" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tc52DoesGalleryInconsistentlyAppear -->
-        <test-method signature="tc54CanSendValidBasicAuth()[pri:0, instance:theInternet.tests.TheInternet@d706f19]" started-at="2020-11-12T20:36:59 EST" name="tc54CanSendValidBasicAuth" finished-at="2020-11-12T20:37:00 EST" duration-ms="145" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tc54CanSendValidBasicAuth -->
-        <test-method signature="tc64CanOpenNewValidWindowWithLink()[pri:0, instance:theInternet.tests.TheInternet@d706f19]" started-at="2020-11-12T20:37:00 EST" name="tc64CanOpenNewValidWindowWithLink" finished-at="2020-11-12T20:37:02 EST" duration-ms="2212" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tc64CanOpenNewValidWindowWithLink -->
-        <test-method signature="tc6IsSevereErrorPresent()[pri:0, instance:theInternet.tests.TheInternet@d706f19]" started-at="2020-11-12T20:37:02 EST" name="tc6IsSevereErrorPresent" finished-at="2020-11-12T20:37:02 EST" duration-ms="67" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tc6IsSevereErrorPresent -->
-        <test-method signature="tc7CanTypeTextIntoInput()[pri:0, instance:theInternet.tests.TheInternet@d706f19]" started-at="2020-11-12T20:37:02 EST" name="tc7CanTypeTextIntoInput" finished-at="2020-11-12T20:37:02 EST" duration-ms="144" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tc7CanTypeTextIntoInput -->
-        <test-method signature="tc8CanRedirectWithLink()[pri:0, instance:theInternet.tests.TheInternet@d706f19]" started-at="2020-11-12T20:37:02 EST" name="tc8CanRedirectWithLink" finished-at="2020-11-12T20:37:02 EST" duration-ms="248" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tc8CanRedirectWithLink -->
-        <test-method signature="tc9CanIncrementNumericValue()[pri:0, instance:theInternet.tests.TheInternet@d706f19]" started-at="2020-11-12T20:37:02 EST" name="tc9CanIncrementNumericValue" finished-at="2020-11-12T20:37:02 EST" duration-ms="268" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tc9CanIncrementNumericValue -->
-        <test-method is-config="true" signature="afterTest()[pri:0, instance:theInternet.tests.TheInternet@d706f19]" started-at="2020-11-12T20:37:02 EST" name="afterTest" finished-at="2020-11-12T20:37:03 EST" duration-ms="599" status="PASS">
+        </test-method> <!-- secondTest -->
+        <test-method is-config="true" signature="afterTest()[pri:0, instance:regres.tests.Regres@4e91d63f]" started-at="2020-11-13T14:55:04 EST" name="afterTest" finished-at="2020-11-13T14:55:05 EST" duration-ms="609" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterTest -->
-      </class> <!-- theInternet.tests.TheInternet -->
+      </class> <!-- regres.tests.Regres -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
