@@ -3,6 +3,7 @@ package theInternet.tests;
 import org.testng.annotations.Test;
 
 import theInternet.foundation.TheInternetTestBase;
+import theInternet.pages.AddRemoveElementsPage;
 import theInternet.pages.BasicAuthPage;
 import theInternet.pages.CheckboxPage;
 import theInternet.pages.ContextMenuPage;
@@ -337,6 +338,22 @@ public class TheInternet extends TheInternetTestBase {
 	  
 	  //Assert
 	  Assert.assertEquals(isSevereErrorPresent, expectedIsSevereErrorPresent);
+  }
+
+  @Test
+  public void tc12CanDeleteButtonDelete() {
+	  //Arrange
+	  int numDeleteButtonsToAdd = 3;
+	  int numDeleteButtonsToDelete = 2;
+	  int expectedNumDeleteButtons = 1;
+	  //Act
+	  int numDeleteButtons = new AddRemoveElementsPage(webDriver, baseUrl)
+			  .navigate()
+			  .addButton(numDeleteButtonsToAdd)
+			  .pressDeleteButton(numDeleteButtonsToDelete)
+			  .getNumOfDeleteButtons();
+	  //Assert
+	  Assert.assertEquals(numDeleteButtons, expectedNumDeleteButtons);
   }
   
 }

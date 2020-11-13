@@ -6,8 +6,8 @@
       <class name="theInternet.tests.TheInternet">
         <methods>
           <include name="beforeTest"/>
-          <include name="tc103CanDetectAlphabet"/>
           <include name="afterTest"/>
+          <include name="tc12CanDeleteButtonDelete"/>
         </methods>
       </class> <!-- theInternet.tests.TheInternet -->
     </classes>
