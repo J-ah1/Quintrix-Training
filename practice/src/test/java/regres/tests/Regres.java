@@ -10,10 +10,12 @@ import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 
 import static io.restassured.RestAssured.*;
-import static org.hamcrest.Matchers.equalTo;
+import static org.hamcrest.Matchers.*;
 
 //As of now, we're a different Url than defined in the configs
 //Also, want to make a RegresTestBase
+//In general, this will get refactored; just want to create necessary tests
+
 public class Regres extends TestBase{
   @Test
   public void firstTest() {
@@ -35,6 +37,60 @@ public class Regres extends TestBase{
 	  .then()
 	  .statusCode(200)
 	  .body("token", equalTo("QpwL5tke4Pnpja7X4"));  
+  }
+  
+  @Test
+  public void thirdTest() {
+	  given()
+	  .delete("/api/users/2")
+	  .then()
+	  .statusCode(204);
+	  // Response Code 204: No Content
+	  // A successful request, with server responding no content
+  }
+  
+  @Test
+  public void fourthTest() {
+	  String messageString = "{"
+		  		+ "\"name\":\"Morpheus 2\""
+		  		+ "}";
+
+	  String oldTimeStamp = given()
+              .patch("/api/users/2")
+              .then()
+              .extract()
+              .path("updatedAt");
+
+      given()
+      .header("Content-Type","application/json")
+      .body(messageString)
+      .patch("/api/users/2")
+      .then()
+      .statusCode(200)
+      .body("name", equalTo("Morpheus 2"))
+      .body("updatedAt", not(equalTo(oldTimeStamp)));
+  }
+  
+  @Test
+  public void fifthTest() {
+	  String messageString = "{"
+		  		+ "\"name\":\"Morpheus 2\""
+		  		+ "}";
+
+	  String oldTimeStamp = given()
+              .put("/api/users/2")
+              .then()
+              .extract()
+              .path("updatedAt");
+
+      given()
+      .header("Content-Type","application/json")
+      .body(messageString)
+      .put("/api/users/2")
+      .then()
+      .statusCode(200)
+      .body("name", equalTo("Morpheus 2"))
+      .body("updatedAt", not(equalTo(oldTimeStamp)));
   }
   
   @BeforeTest
