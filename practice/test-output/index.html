@@ -51,7 +51,7 @@
               <ul>
                 <li>
                   <a href="#" panel-name="test-xml-Default_suite" class="navigator-link ">
-                    <span>C:\Users\Josh\AppData\Local\Temp\testng-eclipse-169504516\testng-customsuite.xml</span>
+                    <span>C:\Users\Josh\AppData\Local\Temp\testng-eclipse--497192053\testng-customsuite.xml</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -93,7 +93,7 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">6 methods,   6 passed</span>
+                    <span class="method-stats">1 method,   1 passed</span>
                   </li>
                   <li>
                     <span class="method-list-title passed">Passed methods</span>
@@ -104,32 +104,7 @@
                     <div class="method-list-content passed suite-Default_suite">
                       <span>
                         <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Default_suite" title="regres.tests.Regres" class="method navigator-link" hash-for-method="fifthTest">fifthTest</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                      <span>
-                        <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Default_suite" title="regres.tests.Regres" class="method navigator-link" hash-for-method="firstTest">firstTest</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                      <span>
-                        <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Default_suite" title="regres.tests.Regres" class="method navigator-link" hash-for-method="fourthTest">fourthTest</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                      <span>
-                        <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Default_suite" title="regres.tests.Regres" class="method navigator-link" hash-for-method="secondTest">secondTest</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                      <span>
-                        <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Default_suite" title="regres.tests.Regres" class="method navigator-link" hash-for-method="sixthTest">sixthTest</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                      <span>
-                        <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Default_suite" title="regres.tests.Regres" class="method navigator-link" hash-for-method="thirdTest">thirdTest</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-Default_suite" title="regres.tests.Regres" class="method navigator-link" hash-for-method="seventhTest">seventhTest</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content passed suite-Default_suite -->
@@ -152,44 +127,9 @@
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="fifthTest">
-                  </a> <!-- fifthTest -->
-                  <span class="method-name">fifthTest</span>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-              <div class="method">
-                <div class="method-content">
-                  <a name="firstTest">
-                  </a> <!-- firstTest -->
-                  <span class="method-name">firstTest</span>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-              <div class="method">
-                <div class="method-content">
-                  <a name="fourthTest">
-                  </a> <!-- fourthTest -->
-                  <span class="method-name">fourthTest</span>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-              <div class="method">
-                <div class="method-content">
-                  <a name="secondTest">
-                  </a> <!-- secondTest -->
-                  <span class="method-name">secondTest</span>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-              <div class="method">
-                <div class="method-content">
-                  <a name="sixthTest">
-                  </a> <!-- sixthTest -->
-                  <span class="method-name">sixthTest</span>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-              <div class="method">
-                <div class="method-content">
-                  <a name="thirdTest">
-                  </a> <!-- thirdTest -->
-                  <span class="method-name">thirdTest</span>
+                  <a name="seventhTest">
+                  </a> <!-- seventhTest -->
+                  <span class="method-name">seventhTest</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
@@ -197,7 +137,7 @@
         </div> <!-- panel Default_suite -->
         <div panel-name="test-xml-Default_suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">C:\Users\Josh\AppData\Local\Temp\testng-eclipse-169504516\testng-customsuite.xml</span>
+            <span class="header-content">C:\Users\Josh\AppData\Local\Temp\testng-eclipse--497192053\testng-customsuite.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
@@ -206,7 +146,11 @@
 &lt;suite name=&quot;Default suite&quot; guice-stage=&quot;DEVELOPMENT&quot;&gt;
   &lt;test thread-count=&quot;5&quot; name=&quot;Default test&quot; verbose=&quot;2&quot;&gt;
     &lt;classes&gt;
-      &lt;class name=&quot;regres.tests.Regres&quot;/&gt;
+      &lt;class name=&quot;regres.tests.Regres&quot;&gt;
+        &lt;methods&gt;
+          &lt;include name=&quot;seventhTest&quot;/&gt;
+        &lt;/methods&gt;
+      &lt;/class&gt; &lt;!-- regres.tests.Regres --&gt;
     &lt;/classes&gt;
   &lt;/test&gt; &lt;!-- Default test --&gt;
 &lt;/suite&gt; &lt;!-- Default suite --&gt;
@@ -246,36 +190,16 @@ data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(6);
+data.addRows(1);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'fifthTest')
+data.setCell(0, 1, 'seventhTest')
 data.setCell(0, 2, 'regres.tests.Regres')
-data.setCell(0, 3, 2624);
-data.setCell(1, 0, 1)
-data.setCell(1, 1, 'fourthTest')
-data.setCell(1, 2, 'regres.tests.Regres')
-data.setCell(1, 3, 658);
-data.setCell(2, 0, 2)
-data.setCell(2, 1, 'secondTest')
-data.setCell(2, 2, 'regres.tests.Regres')
-data.setCell(2, 3, 285);
-data.setCell(3, 0, 3)
-data.setCell(3, 1, 'thirdTest')
-data.setCell(3, 2, 'regres.tests.Regres')
-data.setCell(3, 3, 249);
-data.setCell(4, 0, 4)
-data.setCell(4, 1, 'sixthTest')
-data.setCell(4, 2, 'regres.tests.Regres')
-data.setCell(4, 3, 172);
-data.setCell(5, 0, 5)
-data.setCell(5, 1, 'firstTest')
-data.setCell(5, 2, 'regres.tests.Regres')
-data.setCell(5, 3, 167);
+data.setCell(0, 3, 1733);
 window.suiteTableData['Default_suite']= { tableData: data, tableDiv: 'times-div-Default_suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 4 seconds</span>
+              <span class="suite-total-time">Total running time: 1 seconds</span>
               <div id="times-div-Default_suite">
               </div> <!-- times-div-Default_suite -->
             </div> <!-- times-div -->
@@ -290,9 +214,26 @@ return data;
         </div> <!-- panel -->
         <div panel-name="ignored-methods-Default_suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">0 ignored methods</span>
+            <span class="header-content">6 ignored methods</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
+            <div class="ignored-class-div">
+              <span class="ignored-class-name">regres.tests.Regres</span>
+              <div class="ignored-methods-div">
+                <span class="ignored-method-name">firstTest</span>
+                <br/>
+                <span class="ignored-method-name">secondTest</span>
+                <br/>
+                <span class="ignored-method-name">fifthTest</span>
+                <br/>
+                <span class="ignored-method-name">sixthTest</span>
+                <br/>
+                <span class="ignored-method-name">thirdTest</span>
+                <br/>
+                <span class="ignored-method-name">fourthTest</span>
+                <br/>
+              </div> <!-- ignored-methods-div -->
+            </div> <!-- ignored-class-div -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
         <div panel-name="chronological-Default_suite" class="panel">
@@ -307,32 +248,12 @@ return data;
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-test before -->
               <div class="test-method">
-                <span class="method-name">fifthTest</span>
-                <span class="method-start">4518 ms</span>
-              </div> <!-- test-method -->
-              <div class="test-method">
-                <span class="method-name">firstTest</span>
-                <span class="method-start">7147 ms</span>
-              </div> <!-- test-method -->
-              <div class="test-method">
-                <span class="method-name">fourthTest</span>
-                <span class="method-start">7316 ms</span>
-              </div> <!-- test-method -->
-              <div class="test-method">
-                <span class="method-name">secondTest</span>
-                <span class="method-start">7976 ms</span>
-              </div> <!-- test-method -->
-              <div class="test-method">
-                <span class="method-name">sixthTest</span>
-                <span class="method-start">8262 ms</span>
-              </div> <!-- test-method -->
-              <div class="test-method">
-                <span class="method-name">thirdTest</span>
-                <span class="method-start">8436 ms</span>
+                <span class="method-name">seventhTest</span>
+                <span class="method-start">4414 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-test after">
                 <span class="method-name">afterTest</span>
-                <span class="method-start">8688 ms</span>
+                <span class="method-start">6151 ms</span>
               </div> <!-- configuration-test after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

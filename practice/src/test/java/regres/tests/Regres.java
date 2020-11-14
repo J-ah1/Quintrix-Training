@@ -3,6 +3,7 @@ package regres.tests;
 import org.testng.annotations.Test;
 
 import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
 
 import framework.TestBase;
 import io.restassured.http.ContentType;
@@ -15,6 +16,9 @@ import org.testng.annotations.BeforeTest;
 import static io.restassured.RestAssured.*;
 import static org.hamcrest.Matchers.*;
 
+import java.lang.reflect.Type;
+import java.util.Collection;
+import java.util.LinkedHashMap;
 import java.util.List;
 
 //As of now, we're a different Url than defined in the configs
@@ -106,12 +110,18 @@ public class Regres extends TestBase{
 	  Assert.assertEquals(user2.data.id, 2);
   }
   
-	/*
-	 * @Test public void seventhTest() { List<User> users = new ArrayList<User>();
-	 * String responseBodyData = given().get("/api/users").then() .statusCode(200);
-	 * 
-	 * new Gson.fromJson(responseBodyData, User.class); }
-	 */
+  @Test
+  public void seventhTest() {
+	  
+	  // After messing around, not sure if there's a better solution?
+	  User.Data[] users = new Gson().fromJson(new Gson().toJson(given().get("/api/users").then()
+		      .statusCode(200)
+		      .contentType(ContentType.JSON)
+		      .extract()
+		      .response().path("data")), User.Data[].class);
+	  Assert.assertEquals(users[1].id, 2);
+  }
+ 
   
   @BeforeTest
   public void beforeTest() {
