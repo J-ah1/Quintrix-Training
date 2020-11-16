@@ -3,13 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="regres.tests.Regres">
+      <class name="theInternet.tests.TheInternet">
         <methods>
-          <include name="afterTest"/>
-          <include name="seventhTest"/>
+          <include name="tc5CanScrollFor30Seconds"/>
           <include name="beforeTest"/>
+          <include name="afterTest"/>
         </methods>
-      </class> <!-- regres.tests.Regres -->
+      </class> <!-- theInternet.tests.TheInternet -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

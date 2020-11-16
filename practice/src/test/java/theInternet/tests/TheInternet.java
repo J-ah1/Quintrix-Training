@@ -361,11 +361,12 @@ public class TheInternet extends TheInternetTestBase {
   public void tc5CanScrollFor30Seconds() {
 	  //Arrange
 	  int secondsOfScrolling = 30;
+	  int checkIntervalInSeconds = 1;
 	  boolean expectedCanReachBottom = false;
 	  //Act
 	  boolean canReachBottom = new InfiniteScrollPage(webDriver, baseUrl)
 			  .navigate()
-			  .canReachBottomOverSeconds(secondsOfScrolling);
+			  .canReachBottomOverSeconds(secondsOfScrolling, checkIntervalInSeconds);
 	  
 	  //Assert
 	  Assert.assertEquals(canReachBottom, expectedCanReachBottom);

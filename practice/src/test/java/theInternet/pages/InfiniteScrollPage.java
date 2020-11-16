@@ -2,10 +2,10 @@ package theInternet.pages;
 
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import framework.PageObjectBase;
+import theInternet.foundation.NotAtBottomOfPage;
 
 public class InfiniteScrollPage extends PageObjectBase{
 	private final String urlPath = "infinite_scroll";
@@ -19,25 +19,18 @@ public class InfiniteScrollPage extends PageObjectBase{
 		return this;
 	}
 
-	public boolean canReachBottomOverSeconds(int secondsOfScrolling) {
+	public boolean canReachBottomOverSeconds(int secondsOfScrolling, int checkIntervalInSeconds) {
 		long start = System.currentTimeMillis();
-	    long end = start + (secondsOfScrolling * 100);
+	    long end = start + (secondsOfScrolling * 1000);
 	    
-	    // Make better names...
-        JavascriptExecutor jse = (JavascriptExecutor) driver;
-        String script = "window.scrollTo(0, document.body.scrollHeight);";
-        String script2 = "setTimeout(function(){"
-        		+ "return window.innerHeight + window.scrollY >= document.body.offsetHeight"
-        		+ "}, 1000);";
-        // Currently...
-        // Trying to figure out how to wait before saying
-        // We've been at the bottom of the page
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        String scrollScript = "window.scrollTo(0, document.body.scrollHeight);";
+
         while(System.currentTimeMillis()<end) {
-            jse.executeScript(script, "");
+            js.executeScript(scrollScript, "");
             try {
-	            WebDriverWait wait = new WebDriverWait(driver, 2);
-				if((boolean) wait.until(ExpectedConditions.jsReturnsValue(script2)))
-					return true;
+            	WebDriverWait wait = new WebDriverWait(driver, checkIntervalInSeconds);
+            	wait.until(NotAtBottomOfPage.customCondition());
             }catch(Throwable e) {
             	System.err.println("Error came while waiting for javascript return: "+e.getMessage());
             	return true;

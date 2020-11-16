@@ -3,7 +3,6 @@ package regres.tests;
 import org.testng.annotations.Test;
 
 import com.google.gson.Gson;
-import com.google.gson.reflect.TypeToken;
 
 import framework.TestBase;
 import io.restassured.http.ContentType;
@@ -15,11 +14,6 @@ import org.testng.annotations.BeforeTest;
 
 import static io.restassured.RestAssured.*;
 import static org.hamcrest.Matchers.*;
-
-import java.lang.reflect.Type;
-import java.util.Collection;
-import java.util.LinkedHashMap;
-import java.util.List;
 
 //As of now, we're a different Url than defined in the configs
 //Also, want to make a RegresTestBase
