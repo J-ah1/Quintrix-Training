@@ -5,7 +5,7 @@
     <classes>
       <class name="theInternet.tests.TheInternet">
         <methods>
-          <include name="tc5CanScrollFor30Seconds"/>
+          <include name="tc61CanDragDropSwitchHeaders"/>
           <include name="beforeTest"/>
           <include name="afterTest"/>
         </methods>
