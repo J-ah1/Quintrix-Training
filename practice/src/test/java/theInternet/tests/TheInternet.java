@@ -8,7 +8,9 @@ import theInternet.pages.BasicAuthPage;
 import theInternet.pages.CheckboxPage;
 import theInternet.pages.ContextMenuPage;
 import theInternet.pages.DisappearingElementsPage;
+import theInternet.pages.DragAndDropPage;
 import theInternet.pages.DropdownPage;
+import theInternet.pages.FileUploadPage;
 import theInternet.pages.FormAuthenticationPage;
 import theInternet.pages.HoversPage;
 import theInternet.pages.IndexPage;
@@ -21,6 +23,7 @@ import theInternet.pages.MultipleWindowsPage;
 import theInternet.pages.OnloadErrorPage;
 import theInternet.pages.RedirectLinkPage;
 
+import java.nio.file.Paths;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -266,7 +269,8 @@ public class TheInternet extends TheInternetTestBase {
 			  .navigate()
 			  .rightClickContextMenuBox()
 			  .isAlertPresent();
-	  contextMenuPage.acceptAlert();
+	  if(doesContextMenuBoxWork)
+		  contextMenuPage.acceptAlert();
 	  
 	  // Assert
 	  Assert.assertEquals(doesContextMenuBoxWork, expectedDoesContextMenuBoxWork);
@@ -371,5 +375,34 @@ public class TheInternet extends TheInternetTestBase {
 	  //Assert
 	  Assert.assertEquals(canReachBottom, expectedCanReachBottom);
   }
+  
+  @Test
+  public void tc61CanDragDropSwitchHeaders() {
+	  //Arrange
+	  String initialLeftBoxHeader = "A";
+	  String initialRightBoxHeader = "B";
+	  String expectedLeftBoxHeader = initialRightBoxHeader;
+	  //Act
+	  String leftBoxHeader = new DragAndDropPage(webDriver, baseUrl)
+			  .navigate()
+			  .dragLeftBoxOntoRightBox()
+			  .getLeftBoxHeader();
+	  //Assert
+	  Assert.assertEquals(leftBoxHeader, expectedLeftBoxHeader);
+  }
+  
+  @Test
+  public void tc75CanUploadFile() {
+	  //Arrange
+	  String fileName = "tree.jpg";
+	  //Act
+	  String uploadedFileName = new FileUploadPage(webDriver, baseUrl)
+			  .navigate()
+			  .uploadFile(fileName)
+			  .getUploadedFile();
+	  //Assert
+	  Assert.assertEquals(uploadedFileName, fileName);
+  }
+  
   
 }
