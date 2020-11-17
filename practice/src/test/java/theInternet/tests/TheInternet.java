@@ -9,6 +9,7 @@ import theInternet.pages.CheckboxPage;
 import theInternet.pages.ContextMenuPage;
 import theInternet.pages.DisappearingElementsPage;
 import theInternet.pages.DropdownPage;
+import theInternet.pages.FileUploadPage;
 import theInternet.pages.FormAuthenticationPage;
 import theInternet.pages.HoversPage;
 import theInternet.pages.IndexPage;
@@ -21,6 +22,7 @@ import theInternet.pages.MultipleWindowsPage;
 import theInternet.pages.OnloadErrorPage;
 import theInternet.pages.RedirectLinkPage;
 
+import java.nio.file.Paths;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -388,11 +390,14 @@ public class TheInternet extends TheInternetTestBase {
   @Test
   public void tc75CanUploadFile() {
 	  //Arrange
-	  String filePath = "";
+	  String fileName = "tree.jpg";
 	  //Act
-	  String uploadedFileName = "";
+	  String uploadedFileName = new FileUploadPage(webDriver, baseUrl)
+			  .navigate()
+			  .uploadFile(fileName)
+			  .getUploadedFile();
 	  //Assert
-	  Assert.assertEquals(uploadedFileName, filePath);
+	  Assert.assertEquals(uploadedFileName, fileName);
   }
   
   
