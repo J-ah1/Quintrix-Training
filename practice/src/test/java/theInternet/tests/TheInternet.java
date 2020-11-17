@@ -266,7 +266,8 @@ public class TheInternet extends TheInternetTestBase {
 			  .navigate()
 			  .rightClickContextMenuBox()
 			  .isAlertPresent();
-	  contextMenuPage.acceptAlert();
+	  if(doesContextMenuBoxWork)
+		  contextMenuPage.acceptAlert();
 	  
 	  // Assert
 	  Assert.assertEquals(doesContextMenuBoxWork, expectedDoesContextMenuBoxWork);
@@ -371,5 +372,28 @@ public class TheInternet extends TheInternetTestBase {
 	  //Assert
 	  Assert.assertEquals(canReachBottom, expectedCanReachBottom);
   }
+  
+  @Test
+  public void tc61CanDragDropSwitchHeaders() {
+	  //Arrange
+	  String fromBoxHeader = "A";
+	  String toBoxHeader = "B";
+	  String expectedBox1Header = "B";
+	  //Act
+	  String box1Header = "";
+	  //Assert
+	  Assert.assertEquals(box1Header, expectedBox1Header);
+  }
+  
+  @Test
+  public void tc75CanUploadFile() {
+	  //Arrange
+	  String filePath = "";
+	  //Act
+	  String uploadedFileName = "";
+	  //Assert
+	  Assert.assertEquals(uploadedFileName, filePath);
+  }
+  
   
 }
