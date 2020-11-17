@@ -8,6 +8,7 @@ import theInternet.pages.BasicAuthPage;
 import theInternet.pages.CheckboxPage;
 import theInternet.pages.ContextMenuPage;
 import theInternet.pages.DisappearingElementsPage;
+import theInternet.pages.DragAndDropPage;
 import theInternet.pages.DropdownPage;
 import theInternet.pages.FileUploadPage;
 import theInternet.pages.FormAuthenticationPage;
@@ -378,13 +379,16 @@ public class TheInternet extends TheInternetTestBase {
   @Test
   public void tc61CanDragDropSwitchHeaders() {
 	  //Arrange
-	  String fromBoxHeader = "A";
-	  String toBoxHeader = "B";
-	  String expectedBox1Header = "B";
+	  String initialLeftBoxHeader = "A";
+	  String initialRightBoxHeader = "B";
+	  String expectedLeftBoxHeader = initialRightBoxHeader;
 	  //Act
-	  String box1Header = "";
+	  String leftBoxHeader = new DragAndDropPage(webDriver, baseUrl)
+			  .navigate()
+			  .dragLeftBoxOntoRightBox()
+			  .getLeftBoxHeader();
 	  //Assert
-	  Assert.assertEquals(box1Header, expectedBox1Header);
+	  Assert.assertEquals(leftBoxHeader, expectedLeftBoxHeader);
   }
   
   @Test

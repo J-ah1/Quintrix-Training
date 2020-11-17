@@ -14,7 +14,6 @@ import theInternet.foundation.Button;
 public class FileUploadPage extends PageObjectBase{
 	private final String urlPath = "upload";
 	
-	
 	public FileUploadPage(WebDriver driver, String baseUrl) {
 		super(driver, baseUrl);
 	}
