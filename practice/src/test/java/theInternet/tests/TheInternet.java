@@ -23,6 +23,7 @@ import theInternet.pages.KeyPressesPage;
 import theInternet.pages.MultipleWindowsPage;
 import theInternet.pages.OnloadErrorPage;
 import theInternet.pages.RedirectLinkPage;
+import theInternet.pages.SortableDataTable;
 
 import java.nio.file.Paths;
 import java.util.HashMap;
@@ -414,6 +415,7 @@ public class TheInternet extends TheInternetTestBase {
 	  //Assert
 	  Assert.assertEquals(actualText, expectedText);
   }
+  
   @Test
   public void tc39CanChangeSliderValueWithKeys() {
 	  //Arrange
@@ -432,11 +434,14 @@ public class TheInternet extends TheInternetTestBase {
   @Test
   public void tc28SortableTable() {
 	  //Arrange
-	  String expectedText = "";
+	  String expectedTopEmail = "fbach@yahoo.com";
 	  //Act
-	  String actualText = "";
+	  String topEmail = new SortableDataTable(webDriver, baseUrl)
+			  .navigate()
+			  .clickHeader("Email")
+			  .getCellTextFromHeaderAndRowIndex("Email", 0);
 	  //Assert
-	  Assert.assertEquals(actualText, expectedText);
+	  Assert.assertEquals(topEmail, expectedTopEmail);
   }
   
   @Test

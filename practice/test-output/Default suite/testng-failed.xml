@@ -5,8 +5,8 @@
     <classes>
       <class name="theInternet.tests.TheInternet">
         <methods>
-          <include name="tc61CanDragDropSwitchHeaders"/>
           <include name="beforeTest"/>
+          <include name="tc28SortableTable"/>
           <include name="afterTest"/>
         </methods>
       </class> <!-- theInternet.tests.TheInternet -->

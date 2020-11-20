@@ -15,6 +15,16 @@ public class WebElementGroup {
 		return webElements.get(elementIndex);
 	}
 	
+	public int getElementIndexByText(String elementText) {
+		for(int i = 0; i < webElements.size(); i++) {
+			if(webElements.get(i).getText() == null)
+				continue;
+			if(webElements.get(i).getText().equals(elementText))
+				return i;
+		}
+		return -1;
+	}
+	
 	public WebElement getElementWithText(String elementText) {
 		for(WebElement webElement: webElements) {
 			if(webElement.getText() == null)
@@ -41,5 +51,6 @@ public class WebElementGroup {
 			throw new RuntimeException("Could not find element with text: '" + elementText + "' to click.");
 		elementToClick.click();
 	}
+
 	
 }
