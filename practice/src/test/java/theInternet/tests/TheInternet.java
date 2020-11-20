@@ -15,6 +15,7 @@ import theInternet.pages.EntryAdPage;
 import theInternet.pages.ExitIntentPage;
 import theInternet.pages.FileUploadPage;
 import theInternet.pages.FormAuthenticationPage;
+import theInternet.pages.FramesPage;
 import theInternet.pages.HorizontalSliderPage;
 import theInternet.pages.HoversPage;
 import theInternet.pages.IndexPage;
@@ -532,11 +533,23 @@ public class TheInternet extends TheInternetTestBase {
   @Test
   public void tc43ShadowDOM() {
 	//Arrange
-	  String expectedText = "";
+	  String expectedTopMiddleFrameText = "MIDDLE";
 	  //Act
-	  String actualText = "";
+	  String topMiddleFrameText = "";
 	  //Assert
-	  Assert.assertEquals(actualText, expectedText);
+	  Assert.assertEquals(topMiddleFrameText, expectedTopMiddleFrameText);
+  }
+  
+  @Test
+  public void tc3CanGetFrameText() {
+	//Arrange
+	  String expectedTopMiddleFrameText = "MIDDLE";
+	  //Act
+	  String topMiddleFrameText = new FramesPage(webDriver, baseUrl)
+			  .navigate()
+			  .getTopMiddleFrameText();
+	  //Assert
+	  Assert.assertEquals(topMiddleFrameText, expectedTopMiddleFrameText);
   }
   
   @Test
