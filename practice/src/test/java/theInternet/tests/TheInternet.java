@@ -27,9 +27,12 @@ import theInternet.pages.MultipleWindowsPage;
 import theInternet.pages.OnloadErrorPage;
 import theInternet.pages.RedirectLinkPage;
 import theInternet.pages.SortableDataTable;
+import theInternet.pages.WYSIWYGEditorPage;
 
 import java.io.File;
 import java.io.IOException;
+import java.net.URISyntaxException;
+import java.net.URL;
 import java.nio.file.Paths;
 import java.util.HashMap;
 import java.util.List;
@@ -481,7 +484,11 @@ public class TheInternet extends TheInternetTestBase {
 	  // Also requires wget to be set as an environmental variable
 	  // Currently very specific, will change later
 	  // Should download to a local folder of the project, then check the project for file
-	  String wgetCommand = "cmd /c wget -P C:/Users/Josh/Desktop/\"Test Downloads\" http://the-internet.herokuapp.com/download/text.txt"; 
+	  String URIForfileToDownload = "http://the-internet.herokuapp.com/download/text.txt";
+	  String wgetCommand = "cmd /c wget -P C:/Users/Josh/Desktop/\"Test Downloads\" "
+			  + URIForfileToDownload; 
+	  
+	  // So how do we get the absolute path to this project's resources folder?
 	  
 	  try {
 		  
@@ -489,7 +496,7 @@ public class TheInternet extends TheInternetTestBase {
           int exitVal = exec.waitFor();
           System.out.println("Exit value: " + exitVal);
           System.out.println("Download completed");
-          
+          // Change below accordingly
           File testFile = new File("C:/Users/Josh/Desktop/Test Downloads/text.txt"); 
           if (testFile.delete()) {
         	  System.out.println("Deleted the file: " + testFile.getName());
@@ -507,16 +514,31 @@ public class TheInternet extends TheInternetTestBase {
 	  
   }
   
+  
+  
   @Test
-  public void tc75WYSIWYGEditor() {
+  public void tc75CanSetWYSIWYGEditorText() {
 	  //Arrange
+	  String expectedText = "test text";
+	  //Act
+	  String actualText = new WYSIWYGEditorPage(webDriver, baseUrl)
+			  .navigate()
+			  .setEditorText(expectedText)
+			  .getEditorText();
+	  //Assert
+	  Assert.assertEquals(actualText, expectedText);
+  }
+
+  @Test
+  public void tc43ShadowDOM() {
+	//Arrange
 	  String expectedText = "";
 	  //Act
 	  String actualText = "";
 	  //Assert
 	  Assert.assertEquals(actualText, expectedText);
   }
-
+  
   @Test
   public void tc76DoesPageLoadWithin35Seconds() {
 	  //Arrange
