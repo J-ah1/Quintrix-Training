@@ -10,6 +10,8 @@ import theInternet.pages.ContextMenuPage;
 import theInternet.pages.DisappearingElementsPage;
 import theInternet.pages.DragAndDropPage;
 import theInternet.pages.DropdownPage;
+import theInternet.pages.EntryAdPage;
+import theInternet.pages.ExitIntentPage;
 import theInternet.pages.FileUploadPage;
 import theInternet.pages.FormAuthenticationPage;
 import theInternet.pages.HorizontalSliderPage;
@@ -407,16 +409,6 @@ public class TheInternet extends TheInternetTestBase {
   }
   
   @Test
-  public void tc76DoesPageLoadWithin35Seconds() {
-	  //Arrange
-	  String expectedText = "";
-	  //Act
-	  String actualText = "";
-	  //Assert
-	  Assert.assertEquals(actualText, expectedText);
-  }
-  
-  @Test
   public void tc39CanChangeSliderValueWithKeys() {
 	  //Arrange
 	  int numberTimesPressRight = 5;
@@ -443,6 +435,26 @@ public class TheInternet extends TheInternetTestBase {
 	  //Assert
 	  Assert.assertEquals(topEmail, expectedTopEmail);
   }
+    
+  @Test
+  public void tc13CanCloseAd() {
+	  
+	  new EntryAdPage(webDriver, baseUrl)
+	  	.navigate()
+	  	.closeAd();
+	  
+  }
+  
+  @Test
+  public void tc67CatchesExitIntent() {
+	  
+	  new ExitIntentPage(webDriver, baseUrl)
+	  	.navigate()
+	  	.moveMouseOutsideViewPort()
+	  	.checkVisibilityOfModalWindow();
+	  
+  }
+  
   
   @Test
   public void tc75WYSIWYGEditor() {
@@ -453,4 +465,32 @@ public class TheInternet extends TheInternetTestBase {
 	  //Assert
 	  Assert.assertEquals(actualText, expectedText);
   }
+
+  @Test
+  public void tc76DoesPageLoadWithin35Seconds() {
+	  //Arrange
+	  String expectedText = "";
+	  //Act
+	  String actualText = "";
+	  //Assert
+	  Assert.assertEquals(actualText, expectedText);
+  }
+  
+  @Test
+  public void tc42DynamicLoading() {
+	  //Arrange
+	  String expectedText = "";
+	  //Act
+	  String actualText = "";
+	  //Assert
+	  Assert.assertEquals(actualText, expectedText);
+	  
+	  //
+	  // NTS: Remember to rename tests
+	  //
+  }
+
+  
+  
+  
 }
