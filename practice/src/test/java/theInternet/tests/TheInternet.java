@@ -12,6 +12,7 @@ import theInternet.pages.DragAndDropPage;
 import theInternet.pages.DropdownPage;
 import theInternet.pages.FileUploadPage;
 import theInternet.pages.FormAuthenticationPage;
+import theInternet.pages.HorizontalSliderPage;
 import theInternet.pages.HoversPage;
 import theInternet.pages.IndexPage;
 import theInternet.pages.InfiniteScrollPage;
@@ -404,5 +405,47 @@ public class TheInternet extends TheInternetTestBase {
 	  Assert.assertEquals(uploadedFileName, fileName);
   }
   
+  @Test
+  public void tc76DoesPageLoadWithin35Seconds() {
+	  //Arrange
+	  String expectedText = "";
+	  //Act
+	  String actualText = "";
+	  //Assert
+	  Assert.assertEquals(actualText, expectedText);
+  }
+  @Test
+  public void tc39CanChangeSliderValueWithKeys() {
+	  //Arrange
+	  int numberTimesPressRight = 5;
+	  int numberTimesPressLeft = 4;
+	  double expectedSliderValue = 0.5;
+	  //Act
+	  double sliderValue = new HorizontalSliderPage(webDriver, baseUrl)
+			  .navigate()
+			  .sendRightToSlider(numberTimesPressRight)
+			  .sendLeftToSlider(numberTimesPressLeft)
+			  .getSliderValue();
+	  //Assert
+	  Assert.assertEquals(sliderValue, expectedSliderValue);
+  }
+  @Test
+  public void tc28SortableTable() {
+	  //Arrange
+	  String expectedText = "";
+	  //Act
+	  String actualText = "";
+	  //Assert
+	  Assert.assertEquals(actualText, expectedText);
+  }
   
+  @Test
+  public void tc75WYSIWYGEditor() {
+	  //Arrange
+	  String expectedText = "";
+	  //Act
+	  String actualText = "";
+	  //Assert
+	  Assert.assertEquals(actualText, expectedText);
+  }
 }
