@@ -5,6 +5,7 @@ import org.testng.annotations.Test;
 import theInternet.foundation.TheInternetTestBase;
 import theInternet.pages.AddRemoveElementsPage;
 import theInternet.pages.BasicAuthPage;
+import theInternet.pages.ChallengingDOMPage;
 import theInternet.pages.CheckboxPage;
 import theInternet.pages.ContextMenuPage;
 import theInternet.pages.DisappearingElementsPage;
@@ -423,15 +424,18 @@ public class TheInternet extends TheInternetTestBase {
 	  //Assert
 	  Assert.assertEquals(sliderValue, expectedSliderValue);
   }
+  
   @Test
   public void tc28SortableTable() {
 	  //Arrange
+	  String headerText = "Email";
+	  int rowIndex = 0;
 	  String expectedTopEmail = "fbach@yahoo.com";
 	  //Act
 	  String topEmail = new SortableDataTable(webDriver, baseUrl)
 			  .navigate()
-			  .clickHeader("Email")
-			  .getCellTextFromHeaderAndRowIndex("Email", 0);
+			  .clickHeader(headerText)
+			  .getCellTextFromHeaderAndRowIndex(headerText, rowIndex);
 	  //Assert
 	  Assert.assertEquals(topEmail, expectedTopEmail);
   }
@@ -453,6 +457,20 @@ public class TheInternet extends TheInternetTestBase {
 	  	.moveMouseOutsideViewPort()
 	  	.checkVisibilityOfModalWindow();
 	  
+  }
+  
+  @Test
+  public void tc114ChallengingDOM() {
+	//Arrange
+	  String headerText = "Sit";
+	  int rowIndex = 1;
+	  String expectedCellText = "Definiebas1";
+	  //Act
+	  String cellText = new ChallengingDOMPage(webDriver, baseUrl)
+			  .navigate()
+			  .getCellTextFromHeaderAndRowIndex(headerText, rowIndex);
+	  //Assert
+	  Assert.assertEquals(cellText, expectedCellText);
   }
   
   
