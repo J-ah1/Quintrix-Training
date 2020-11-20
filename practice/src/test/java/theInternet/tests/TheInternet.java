@@ -28,6 +28,8 @@ import theInternet.pages.OnloadErrorPage;
 import theInternet.pages.RedirectLinkPage;
 import theInternet.pages.SortableDataTable;
 
+import java.io.File;
+import java.io.IOException;
 import java.nio.file.Paths;
 import java.util.HashMap;
 import java.util.List;
@@ -472,7 +474,38 @@ public class TheInternet extends TheInternetTestBase {
 	  //Assert
 	  Assert.assertEquals(cellText, expectedCellText);
   }
-  
+
+  @Test
+  public void tc18CanDownloadFile() {
+	  // Requires wget
+	  // Also requires wget to be set as an environmental variable
+	  // Currently very specific, will change later
+	  // Should download to a local folder of the project, then check the project for file
+	  String wgetCommand = "cmd /c wget -P C:/Users/Josh/Desktop/\"Test Downloads\" http://the-internet.herokuapp.com/download/text.txt"; 
+	  
+	  try {
+		  
+          Process exec = Runtime.getRuntime().exec(wgetCommand);
+          int exitVal = exec.waitFor();
+          System.out.println("Exit value: " + exitVal);
+          System.out.println("Download completed");
+          
+          File testFile = new File("C:/Users/Josh/Desktop/Test Downloads/text.txt"); 
+          if (testFile.delete()) {
+        	  System.out.println("Deleted the file: " + testFile.getName());
+          } else {
+        	  System.out.println("Failed to delete the file.");
+        	  Assert.fail();
+          } 
+          
+      } catch (IOException | InterruptedException ex) {
+          System.out.println(ex.toString());
+          System.out.println("Download failed");
+          Assert.fail();
+      }
+	  
+	  
+  }
   
   @Test
   public void tc75WYSIWYGEditor() {
