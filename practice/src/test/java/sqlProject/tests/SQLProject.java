@@ -119,7 +119,6 @@ public class SQLProject{
 		  
 	      String queryInsertStaff = "INSERT INTO staff VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);";
 	      String queryInsertStore = "INSERT INTO store VALUES (?, ?, ?, ?);";
-	      String queryUpdateStaff = "UPDATE staff SET store_id = ? WHERE staff_id = ?;";
 
 	      PreparedStatement prepStatement1 = connToDB.prepareStatement(queryInsertStaff);
 	      prepStatement1.setInt(1, 3);
@@ -145,18 +144,10 @@ public class SQLProject{
 	      
 	      prepStatement2.executeUpdate();
 	      
-	      PreparedStatement prepStatement3 = connToDB.prepareStatement(queryUpdateStaff);
-	      
-	      prepStatement3.setInt(1, 3);
-	      prepStatement3.setInt(2, 3);
-	    
-	      prepStatement3.executeUpdate();
-	      		  
 	      connToDB.commit();
 		  
 	      prepStatement1.close();
 	      prepStatement2.close();
-	      prepStatement3.close();
 	      
 	  }catch (Exception exc) {
 		  exc.printStackTrace();
@@ -209,6 +200,45 @@ public class SQLProject{
 		  }
 	  }
 	  
+  }
+  
+  @Test
+  public void query10() {
+	  PreparedStatement prepStatement = null;
+	  
+	  try {
+		  connToDB.setAutoCommit(false);
+		  
+	      String queryDeleteStore = "DELETE "
+	      		+ "FROM store "
+	      		+ "WHERE store_id = ?;";
+
+	      prepStatement = connToDB.prepareStatement(queryDeleteStore);
+	      prepStatement.setInt(1, 3);
+	      prepStatement.executeUpdate();
+	      
+	      connToDB.commit();
+	      
+	  }catch (Exception exc) {
+		  exc.printStackTrace();
+		  if (connToDB != null) {
+			  try {
+				  System.err.print("Transaction is being rolled back");
+				  connToDB.rollback();
+			  } catch (SQLException e) {
+				  e.printStackTrace();
+			  }
+	      }
+	  }finally {
+		if (prepStatement != null) {
+			  try {
+				  prepStatement.close();
+			  } catch (SQLException e) {
+				  e.printStackTrace();
+			  }
+			  prepStatement = null;
+		  }
+	  }
 	  
   }
   

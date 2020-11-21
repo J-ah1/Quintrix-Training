@@ -484,8 +484,9 @@ public class TheInternet extends TheInternetTestBase {
   public void tc18CanDownloadFile() {
 	  // Requires wget
 	  // Also requires wget to be set as an environmental variable
-	  // Currently very specific, will change later
+	  // Currently very specific (but works on my end!), will change later
 	  // Should download to a local folder of the project, then check the project for file
+	  
 	  String URIForfileToDownload = "http://the-internet.herokuapp.com/download/text.txt";
 	  String wgetCommand = "cmd /c wget -P C:/Users/Josh/Desktop/\"Test Downloads\" "
 			  + URIForfileToDownload; 
