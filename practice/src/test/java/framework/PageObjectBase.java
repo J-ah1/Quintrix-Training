@@ -3,6 +3,8 @@ package framework;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
 
+import theInternet.foundation.TheInternetPageLoader;
+
 public abstract class PageObjectBase {
 	protected WebDriver driver;
 	protected String baseUrl;
@@ -13,6 +15,9 @@ public abstract class PageObjectBase {
 	// This is only applicable to basic_auth?
 	// Because of this, just override navigate
 
+	protected ILoadPages pageLoader;
+	
+	
 	// Different constructors for creating base url
 	protected PageObjectBase(WebDriver driver, String urlProtocol, String urlDomain, String urlPath) {
 		this(driver, urlProtocol + "://" + urlDomain + "/", urlPath);
@@ -26,6 +31,11 @@ public abstract class PageObjectBase {
 		this.driver = driver;
 		this.baseUrl = baseUrl;
 		//urlProtocol + "://" + urlDomain + "/";
+		
+		//Again, something to be defined in a test context...
+		int pageLoadTimeoutMilliseconds = 35000;
+		this.pageLoader = new TheInternetPageLoader(driver, pageLoadTimeoutMilliseconds);
+		
 		PageFactory.initElements(driver, this);
 	}
 	

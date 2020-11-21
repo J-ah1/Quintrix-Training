@@ -245,8 +245,8 @@ public class SQLProject{
   @BeforeTest
   public void beforeTest() throws Exception {
 	  // Uncomment and set the db adress, username, and password...
-	  //dbAddress = "";
-	  //dbUsername = "";
+	  //dbAddress = "jdbc:mysql://localhost:3306/sakila";
+	  //dbUsername = "root";
 	  //dbPassword = "";
 	  if(dbAddress == null || dbUsername == null || dbPassword == null) {
 		  throw new Exception("Must set address, username, and password");

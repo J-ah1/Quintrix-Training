@@ -558,12 +558,9 @@ public class TheInternet extends TheInternetTestBase {
   
   @Test
   public void tc76DoesPageLoadWithin35Seconds() {
-	  //Arrange
-	  String expectedText = "";
-	  //Act
-	  String actualText = "";
-	  //Assert
-	  Assert.assertEquals(actualText, expectedText);
+	  new IndexPage(webDriver, baseUrl)
+	  	.navigate()
+	  	.goToSlowResourcesPage();
   }
   
   @Test
