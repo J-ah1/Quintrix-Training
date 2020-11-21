@@ -11,6 +11,7 @@ import theInternet.pages.ContextMenuPage;
 import theInternet.pages.DisappearingElementsPage;
 import theInternet.pages.DragAndDropPage;
 import theInternet.pages.DropdownPage;
+import theInternet.pages.DynamicLoadingPage;
 import theInternet.pages.EntryAdPage;
 import theInternet.pages.ExitIntentPage;
 import theInternet.pages.FileUploadPage;
@@ -566,9 +567,12 @@ public class TheInternet extends TheInternetTestBase {
   @Test
   public void tc42DynamicLoading() {
 	  //Arrange
-	  String expectedText = "";
+	  String expectedText = "Hello World!";
 	  //Act
-	  String actualText = "";
+	  String actualText = new DynamicLoadingPage(webDriver, baseUrl)
+			  .navigate()
+			  .clickButton()
+			  .getLoadedText();
 	  //Assert
 	  Assert.assertEquals(actualText, expectedText);
 	  

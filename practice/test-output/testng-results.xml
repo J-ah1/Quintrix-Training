@@ -2,20 +2,20 @@
 <testng-results ignored="33" total="34" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2020-11-21T17:31:41 EST" name="Default suite" finished-at="2020-11-21T17:32:17 EST" duration-ms="35253">
+  <suite started-at="2020-11-21T17:53:06 EST" name="Default suite" finished-at="2020-11-21T17:53:17 EST" duration-ms="10844">
     <groups>
     </groups>
-    <test started-at="2020-11-21T17:31:41 EST" name="Default test" finished-at="2020-11-21T17:32:17 EST" duration-ms="35253">
+    <test started-at="2020-11-21T17:53:06 EST" name="Default test" finished-at="2020-11-21T17:53:17 EST" duration-ms="10844">
       <class name="theInternet.tests.TheInternet">
-        <test-method is-config="true" signature="beforeTest()[pri:0, instance:theInternet.tests.TheInternet@794cb805]" started-at="2020-11-21T17:31:41 EST" name="beforeTest" finished-at="2020-11-21T17:31:45 EST" duration-ms="3897" status="PASS">
+        <test-method is-config="true" signature="beforeTest()[pri:0, instance:theInternet.tests.TheInternet@794cb805]" started-at="2020-11-21T17:53:06 EST" name="beforeTest" finished-at="2020-11-21T17:53:10 EST" duration-ms="3752" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeTest -->
-        <test-method signature="tc76DoesPageLoadWithin35Seconds()[pri:0, instance:theInternet.tests.TheInternet@794cb805]" started-at="2020-11-21T17:31:45 EST" name="tc76DoesPageLoadWithin35Seconds" finished-at="2020-11-21T17:32:16 EST" duration-ms="30701" status="PASS">
+        <test-method signature="tc42DynamicLoading()[pri:0, instance:theInternet.tests.TheInternet@794cb805]" started-at="2020-11-21T17:53:10 EST" name="tc42DynamicLoading" finished-at="2020-11-21T17:53:16 EST" duration-ms="5958" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- tc76DoesPageLoadWithin35Seconds -->
-        <test-method is-config="true" signature="afterTest()[pri:0, instance:theInternet.tests.TheInternet@794cb805]" started-at="2020-11-21T17:32:16 EST" name="afterTest" finished-at="2020-11-21T17:32:17 EST" duration-ms="623" status="PASS">
+        </test-method> <!-- tc42DynamicLoading -->
+        <test-method is-config="true" signature="afterTest()[pri:0, instance:theInternet.tests.TheInternet@794cb805]" started-at="2020-11-21T17:53:16 EST" name="afterTest" finished-at="2020-11-21T17:53:17 EST" duration-ms="1101" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterTest -->

@@ -5,7 +5,7 @@
     <classes>
       <class name="theInternet.tests.TheInternet">
         <methods>
-          <include name="tc76DoesPageLoadWithin35Seconds"/>
+          <include name="tc42DynamicLoading"/>
           <include name="beforeTest"/>
           <include name="afterTest"/>
         </methods>

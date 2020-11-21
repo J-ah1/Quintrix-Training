@@ -23,6 +23,7 @@ public class IndexPage extends PageObjectBase{
 
 	public void goToSlowResourcesPage() {
 		clickLinkWithText("Slow Resources");
+		// Should return slow resources page
 	}
 	
 	private void clickLinkWithText(String text) {
