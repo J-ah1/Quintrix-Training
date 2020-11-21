@@ -27,6 +27,7 @@ import theInternet.pages.KeyPressesPage;
 import theInternet.pages.MultipleWindowsPage;
 import theInternet.pages.OnloadErrorPage;
 import theInternet.pages.RedirectLinkPage;
+import theInternet.pages.ShadowDOMPage;
 import theInternet.pages.SortableDataTable;
 import theInternet.pages.WYSIWYGEditorPage;
 
@@ -533,11 +534,13 @@ public class TheInternet extends TheInternetTestBase {
   @Test
   public void tc43ShadowDOM() {
 	//Arrange
-	  String expectedTopMiddleFrameText = "MIDDLE";
+	  String expectedTopParagraphText = "Let's have some different text!";
 	  //Act
-	  String topMiddleFrameText = "";
+	  String topParagraphText = new ShadowDOMPage(webDriver, baseUrl)
+			  .navigate()
+			  .getTopParagraphText();
 	  //Assert
-	  Assert.assertEquals(topMiddleFrameText, expectedTopMiddleFrameText);
+	  Assert.assertEquals(topParagraphText, expectedTopParagraphText);
   }
   
   @Test
