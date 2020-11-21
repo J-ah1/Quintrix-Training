@@ -5,7 +5,7 @@
     <classes>
       <class name="theInternet.tests.TheInternet">
         <methods>
-          <include name="tc3CanGetFrameText"/>
+          <include name="tc43ShadowDOM"/>
           <include name="beforeTest"/>
           <include name="afterTest"/>
         </methods>

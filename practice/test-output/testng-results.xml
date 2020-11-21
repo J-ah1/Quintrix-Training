@@ -2,20 +2,20 @@
 <testng-results ignored="33" total="34" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2020-11-20T17:34:01 EST" name="Default suite" finished-at="2020-11-20T17:34:05 EST" duration-ms="4333">
+  <suite started-at="2020-11-21T09:18:14 EST" name="Default suite" finished-at="2020-11-21T09:18:18 EST" duration-ms="4480">
     <groups>
     </groups>
-    <test started-at="2020-11-20T17:34:01 EST" name="Default test" finished-at="2020-11-20T17:34:05 EST" duration-ms="4333">
+    <test started-at="2020-11-21T09:18:14 EST" name="Default test" finished-at="2020-11-21T09:18:18 EST" duration-ms="4480">
       <class name="theInternet.tests.TheInternet">
-        <test-method is-config="true" signature="beforeTest()[pri:0, instance:theInternet.tests.TheInternet@56528192]" started-at="2020-11-20T17:34:01 EST" name="beforeTest" finished-at="2020-11-20T17:34:04 EST" duration-ms="3422" status="PASS">
+        <test-method is-config="true" signature="beforeTest()[pri:0, instance:theInternet.tests.TheInternet@56528192]" started-at="2020-11-21T09:18:14 EST" name="beforeTest" finished-at="2020-11-21T09:18:17 EST" duration-ms="3486" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeTest -->
-        <test-method signature="tc3CanGetFrameText()[pri:0, instance:theInternet.tests.TheInternet@56528192]" started-at="2020-11-20T17:34:04 EST" name="tc3CanGetFrameText" finished-at="2020-11-20T17:34:04 EST" duration-ms="303" status="PASS">
+        <test-method signature="tc43ShadowDOM()[pri:0, instance:theInternet.tests.TheInternet@56528192]" started-at="2020-11-21T09:18:18 EST" name="tc43ShadowDOM" finished-at="2020-11-21T09:18:18 EST" duration-ms="387" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- tc3CanGetFrameText -->
-        <test-method is-config="true" signature="afterTest()[pri:0, instance:theInternet.tests.TheInternet@56528192]" started-at="2020-11-20T17:34:04 EST" name="afterTest" finished-at="2020-11-20T17:34:05 EST" duration-ms="585" status="PASS">
+        </test-method> <!-- tc43ShadowDOM -->
+        <test-method is-config="true" signature="afterTest()[pri:0, instance:theInternet.tests.TheInternet@56528192]" started-at="2020-11-21T09:18:18 EST" name="afterTest" finished-at="2020-11-21T09:18:18 EST" duration-ms="585" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterTest -->
