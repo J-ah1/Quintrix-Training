@@ -457,6 +457,10 @@ public class TheInternet extends TheInternetTestBase {
 	  
   }
   
+  
+  // Bug: Works individually.
+  // However, when running multiple tests, it seems like the ContextMenu
+  // from the previous tests may interrupt "mouse detection"
   @Test
   public void tc67CatchesExitIntent() {
 	  
@@ -517,9 +521,7 @@ public class TheInternet extends TheInternetTestBase {
 	  
 	  
   }
-  
-  
-  
+    
   @Test
   public void tc75CanSetWYSIWYGEditorText() {
 	  //Arrange

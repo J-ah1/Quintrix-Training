@@ -5,7 +5,7 @@
     <classes>
       <class name="theInternet.tests.TheInternet">
         <methods>
-          <include name="tc42DynamicLoading"/>
+          <include name="tc18CanDownloadFile"/>
           <include name="beforeTest"/>
           <include name="afterTest"/>
         </methods>

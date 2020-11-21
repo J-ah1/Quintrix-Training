@@ -18,6 +18,9 @@ public class ExitIntentPage extends PageObjectBase{
 	public ExitIntentPage(WebDriver driver, String baseUrl) {
 		super(driver, baseUrl);
 	}
+	
+	@FindBy(tagName="h3")
+	WebElement welcomeTitle;
 
 	@FindBy(id="ouibounce-modal")
 	WebElement modalWindow;
@@ -29,6 +32,8 @@ public class ExitIntentPage extends PageObjectBase{
 
 	public ExitIntentPage moveMouseOutsideViewPort() {
 		try {
+			Actions actions = new Actions(driver);
+			actions.click().moveToElement(welcomeTitle).perform();
 			Robot robot = new Robot();
 			robot.mouseMove(0,0);
 		} catch (AWTException e) {
