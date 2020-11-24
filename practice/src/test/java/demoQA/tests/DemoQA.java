@@ -7,11 +7,13 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.sql.Connection;
 import java.util.List;
+import java.util.Map;
 
 import org.testng.annotations.Test;
 
 import demoQA.foundation.CSVReader;
 import demoQA.foundation.DemoQATestBase;
+import framework.Helpers;
 
 public class DemoQA extends DemoQATestBase{
 
@@ -25,7 +27,8 @@ Test 4 (3 students) - Get the data from a database. Use the DB Query to insert t
 	@Test
 	public void getDataFromCSV() {
 		List<List<String>> returnList = new CSVReader("Students.csv").readFileAs2DList();
-		// Make a "convertToKeyValuePairs" that returns a List<Map>
+		List<Map<String, String>> studentData = Helpers.convert2DListToKeyValueMaps(returnList);
+		
 	}
 	
 	@Test
