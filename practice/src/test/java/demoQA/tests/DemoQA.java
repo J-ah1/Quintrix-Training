@@ -13,6 +13,7 @@ import org.testng.annotations.Test;
 
 import demoQA.foundation.CSVReader;
 import demoQA.foundation.DemoQATestBase;
+import demoQA.foundation.PracticeFormPage;
 import framework.Helpers;
 
 public class DemoQA extends DemoQATestBase{
@@ -28,7 +29,8 @@ Test 4 (3 students) - Get the data from a database. Use the DB Query to insert t
 	public void getDataFromCSV() {
 		List<List<String>> returnList = new CSVReader("Students.csv").readFileAs2DList();
 		List<Map<String, String>> studentData = Helpers.convert2DListToKeyValueMaps(returnList);
-		
+		new PracticeFormPage(webDriver, baseUrl)
+			.navigate();
 	}
 	
 	@Test
