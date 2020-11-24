@@ -1,7 +1,10 @@
 package demoQA.tests;
 
+import java.util.List;
+
 import org.testng.annotations.Test;
 
+import demoQA.foundation.CSVReader;
 import demoQA.foundation.DemoQATestBase;
 
 public class DemoQA extends DemoQATestBase{
@@ -15,6 +18,7 @@ Test 4 (3 students) - Get the data from a database. Use the DB Query to insert t
 	
 	@Test
 	public void getDataFromCSV() {
+		List<List<String>> returnList = new CSVReader("Students.csv").readFileAs2DList();
 		
 	}
 	
