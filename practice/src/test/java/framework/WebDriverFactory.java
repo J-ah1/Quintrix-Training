@@ -1,14 +1,14 @@
 package framework;
 
-import org.openqa.selenium.WebDriver;
 
 public class WebDriverFactory {
 	
-	public static void loadWebDrivers() {
-		WebDriverManager.loadWebDrivers();
+	public static WebDriverManager getManager(String webDriverType) {
+		if(webDriverType == "chrome")
+			return new ChromeDriverManager();
+		if(webDriverType == "firefox")
+			return new FirefoxDriverManager();
+		return new ChromeDriverManager();
 	}
-	
-	public static WebDriver getWebDriver(String webDriverType) {
-		return WebDriverManager.getWebDriver(webDriverType);
-	}
+
 }

@@ -1,13 +1,9 @@
 package framework;
 
 import java.io.IOException;
-import java.net.URISyntaxException;
-import java.net.URL;
-import java.nio.file.Paths;
 import java.util.HashMap;
 
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 
@@ -16,6 +12,7 @@ public class TestBase {
 	protected String urlProtocol;
 	protected String urlDomain;
 	protected String baseUrl;
+	protected WebDriverManager webDriverManager;
 	
 	@BeforeTest
 	protected void beforeTest() {
@@ -28,12 +25,12 @@ public class TestBase {
 		this.webDriver.quit();
 	}
 	
-	protected void setWebDriver(String webBrowserType) {
-		this.webDriver = WebDriverFactory.getWebDriver(webBrowserType);
+	protected void setupWebDriver() {
+		this.webDriver = webDriverManager.loadWebDriver().getWebDriver();
 	}
 	
-	private void loadWebDrivers() {
-		WebDriverFactory.loadWebDrivers();
+	private WebDriverManager getWebDriverManager(String webDriverType) {
+		return WebDriverFactory.getManager(webDriverType);
 	}
 	
 	private void loadConfigurations() {
@@ -49,8 +46,8 @@ public class TestBase {
 		this.urlDomain = configs.get(ConfigurationParameters.UrlDomain);
 		this.baseUrl = urlProtocol + "://" + urlDomain + "/";
 		//Is there a better place for this?
-		loadWebDrivers();
-		setWebDriver(configs.get(ConfigurationParameters.BrowserType));
+		this.webDriverManager = getWebDriverManager(configs.get(ConfigurationParameters.BrowserType));
+		setupWebDriver();
 	}
 	
 	

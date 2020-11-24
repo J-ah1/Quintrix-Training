@@ -1,0 +1,65 @@
+<semester>
+	<fall>
+		<person>
+			<f_name>Brian</f_name>
+			<l_name>Johnson</l_name>
+			<dob month="APR" day="04" year="1970" />
+			<gender>male</gender>
+			<contact type="mobile">713-731-7789</contact>
+			<contact type="home">281-253-7321</contact>
+			<subjects>
+				<subject>Maths</subject>
+				<subject>Economics</subject>
+				<subject>Arts</subject>
+			</subjects>
+			<hobbies />
+			<address type="mailing">
+				<house>114</house>
+				<street>First Ave</street>
+				<city>Lucknow</city>
+				<state>Uttar Pradesh</<state>>
+				<postalCode>10005</postalCode>
+			</address>
+		</person>
+		<person>
+			<f_name>Andrew</f_name>
+			<l_name>Clark</l_name>
+			<dob month="JUN" day="11" year="1969" />
+			<gender>male</gender>
+			<contact type="mobile">832-872-6464</contact>
+			<contact type="home">281-365-72589</contact>
+			<subjects>
+				<subject>English</subject>
+				<subject>Physics</subject>
+			</subjects>
+			<hobbies>
+				<hobby>Sports</hobby>
+			</hobbies>
+			<address type="mailing">
+				<house>75152</house>
+				<street>125th Street</street>
+				<city>Delhi</city>
+				<state>NCR</state>
+				<postalCode>10027</postalCode>
+			</address>
+		</person>
+		<person>
+			<f_name>John</f_name>
+			<l_name>Hughes</l_name>
+			<dob month="SEPT" day="07" year="1955" />
+			<gender>male</gender>
+			<contact type="mobile">213-915-5365</contact>
+			<subjects>
+				<subject>Social Studies</subject>
+				<subject>Computer Science</subject>
+			</subjects>
+			<address type="mailing">
+				<house>4205</house>
+				<street>White Cedar</street>
+				<city>Gurgaon</city>
+				<state>NCR</state>
+				<postalCode>85009</postalCode>
+			</address>
+		</person>
+	</fall>
+</semester>

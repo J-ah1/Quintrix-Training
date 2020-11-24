@@ -34,12 +34,7 @@ import theInternet.pages.WYSIWYGEditorPage;
 
 import java.io.File;
 import java.io.IOException;
-import java.net.URISyntaxException;
-import java.net.URL;
-import java.nio.file.Paths;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 import org.testng.Assert;
 
