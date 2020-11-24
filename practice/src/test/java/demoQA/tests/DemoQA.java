@@ -1,5 +1,11 @@
 package demoQA.tests;
 
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.sql.Connection;
 import java.util.List;
 
 import org.testng.annotations.Test;
@@ -19,7 +25,7 @@ Test 4 (3 students) - Get the data from a database. Use the DB Query to insert t
 	@Test
 	public void getDataFromCSV() {
 		List<List<String>> returnList = new CSVReader("Students.csv").readFileAs2DList();
-		
+		// Make a "convertToKeyValuePairs" that returns a List<Map>
 	}
 	
 	@Test
@@ -34,6 +40,48 @@ Test 4 (3 students) - Get the data from a database. Use the DB Query to insert t
 	
 	@Test
 	public void getDataFromDB() {
-		
+		String dbAddress = "jdbc:mysql://localhost:3306/sakila";
+		String dbUsername = "root";
+		String dbPassword = "fillThisIn";
+		Connection connToDB = null;
+		PreparedStatement prepStatement = null;
+		ResultSet results = null;
+		try {
+			connToDB = DriverManager.getConnection(dbAddress , dbUsername , dbPassword);
+			String sqlQuery = "";
+			prepStatement = connToDB.prepareStatement(sqlQuery);
+			prepStatement.execute();
+			results = prepStatement.getResultSet();
+			
+			
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}finally {
+			if(connToDB != null) {
+				try {
+					connToDB.close();
+				  } catch (SQLException e) {
+					  e.printStackTrace();
+				  }
+				connToDB = null;
+			}
+			if(prepStatement != null) {
+				try {
+					prepStatement.close();
+				  } catch (SQLException e) {
+					  e.printStackTrace();
+				  }
+				prepStatement = null;
+			}
+			if(results != null) {
+				try {
+					  results.close();
+				  } catch (SQLException e) {
+					  e.printStackTrace();
+				  }
+				  results = null;
+			}
+		}
 	}
 }
