@@ -9,11 +9,15 @@ import java.sql.Connection;
 import java.util.List;
 import java.util.Map;
 
+import javax.xml.parsers.DocumentBuilderFactory;
+
+import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 import demoQA.foundation.CSVReader;
 import demoQA.foundation.DemoQATestBase;
 import demoQA.foundation.PracticeFormPage;
+import demoQA.foundation.XMLReader;
 import framework.Helpers;
 
 public class DemoQA extends DemoQATestBase{
@@ -33,14 +37,32 @@ Test 4 (3 students) - Get the data from a database. Use the DB Query to insert t
 			.navigate();
 	}
 	
-	@Test
-	public void getDataFromDPO() {
+	
+	@DataProvider(name = "studentData")
+    public Object[][] dataProviderMethod() {
+        return new Object[][] { { "data one" }, { "data two" } };
+    }
+	
+	@Test(dataProvider = "studentData")
+	public void getDataFromDPO(
+			String lastFirst,
+			String dob,
+			String email,
+			String houseNumber,
+			String street,
+			String state,
+			String city,
+			String postalCode,
+			String mobile,
+			String gender,
+			String subjects,
+			String hobby) {
 		
 	}
 	
 	@Test
 	public void getDataFromXML() {
-		
+		XMLReader studentXML = new XMLReader("Students.xml"); 
 	}
 	
 	@Test

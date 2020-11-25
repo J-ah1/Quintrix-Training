@@ -51,5 +51,13 @@ public class PracticeFormPage extends PageObjectBase{
 		super.navigate();
 		return this;
 	}
+	
+	// Web Elemen extension?
+	// Also, could gather all the inputs from a given div
+	// Thus making a "checkbox Group" and "radio button group"
+	public PracticeFormPage sendTextToFirstNameInput(String textToSend) {
+		firstNameInput.sendKeys(textToSend);
+		return this;
+	}
 
 }
