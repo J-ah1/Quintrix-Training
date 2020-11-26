@@ -6,8 +6,8 @@
       <class name="demoQA.tests.DemoQA">
         <methods>
           <include name="beforeTest"/>
+          <include name="getDataFromXML"/>
           <include name="afterTest"/>
-          <include name="getDataFromDPO" invocation-numbers="0"/>
         </methods>
       </class> <!-- demoQA.tests.DemoQA -->
     </classes>

@@ -92,7 +92,8 @@ public class PracticeFormPage extends PageObjectBase{
 	public PracticeFormPage selectGenderWithText(String genderText) {
 		String[] genderOptions = {"Male","Female", "Other"};
 		for(String gender : genderOptions) {
-			if(genderText.toUpperCase().equals(gender.toUpperCase()))
+			if(genderText.toUpperCase().charAt(0) == gender.toUpperCase().charAt(0)
+					|| genderText.toUpperCase().equals(gender.toUpperCase()))
 				genderText = gender;
 		}
 		WebElement checkboxToSelect = new CheckboxGroup(genderCheckboxesWrapper).getCheckboxWithLabel(genderText);

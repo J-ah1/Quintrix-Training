@@ -37,9 +37,21 @@ Test 4 (3 students) - Get the data from a database. Use the DB Query to insert t
 	@Test
 	public void getDataFromCSV() {
 		List<List<String>> returnList = new CSVReader("Students.csv").readFileAs2DList();
-		List<Map<String, String>> studentData = Helpers.convert2DListToKeyValueMaps(returnList);
-		new PracticeFormPage(webDriver, baseUrl)
-			.navigate();
+		List<Map<String, String>> studentsData = Helpers.convert2DListToKeyValueMaps(returnList);
+		boolean successfulSubmits = true;
+		for(Map<String, String> studentData : studentsData) {
+			if(!(new PracticeFormPage(webDriver, baseUrl)
+					.navigate()
+					.sendTextToFirstNameInput(studentData.get("lastFirst").split(",")[1])
+					.sendTextToLastNameInput(studentData.get("lastFirst").split(",")[0])
+					.selectGenderWithText(studentData.get("gender"))
+					.sendTextToUserNumberInput(studentData.get("mobile"))
+					.submitForm()
+					.isModalActive()))
+				successfulSubmits = false;
+		}
+		
+		Assert.assertTrue(successfulSubmits);
 	}
 	
 	
