@@ -90,6 +90,11 @@ public class PracticeFormPage extends PageObjectBase{
 	
 	// Gender radio button inputs
 	public PracticeFormPage selectGenderWithText(String genderText) {
+		String[] genderOptions = {"Male","Female", "Other"};
+		for(String gender : genderOptions) {
+			if(genderText.toUpperCase().equals(gender.toUpperCase()))
+				genderText = gender;
+		}
 		WebElement checkboxToSelect = new CheckboxGroup(genderCheckboxesWrapper).getCheckboxWithLabel(genderText);
 		// Doing the below to bypass "click intercepted by label"
 		JavascriptExecutor js = (JavascriptExecutor) driver;

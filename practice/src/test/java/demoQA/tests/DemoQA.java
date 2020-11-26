@@ -14,6 +14,10 @@ import javax.xml.parsers.DocumentBuilderFactory;
 import org.junit.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
+import org.w3c.dom.Element;
+import org.w3c.dom.NamedNodeMap;
+import org.w3c.dom.Node;
+import org.w3c.dom.NodeList;
 
 import demoQA.foundation.CSVReader;
 import demoQA.foundation.DemoQATestBase;
@@ -92,7 +96,23 @@ Test 4 (3 students) - Get the data from a database. Use the DB Query to insert t
 	
 	@Test
 	public void getDataFromXML() {
-		XMLReader studentXML = new XMLReader("Students.xml"); 
+		XMLReader studentXML = new XMLReader("Students.xml");
+		boolean successfulSubmits = true;
+		NodeList studentNodes = studentXML.getElementsInFileWithTag("person");
+		for(int i = 0; i < studentNodes.getLength(); i++) {
+			Node studentNode = studentNodes.item(i);
+			Element studentNodeAsElement  = (Element) studentNode;
+			if(!(new PracticeFormPage(webDriver, baseUrl)
+					.navigate()
+					.sendTextToFirstNameInput(studentNodeAsElement.getElementsByTagName("f_name").item(0).getTextContent())
+					.sendTextToLastNameInput(studentNodeAsElement.getElementsByTagName("l_name").item(0).getTextContent())
+					.selectGenderWithText(studentNodeAsElement.getElementsByTagName("gender").item(0).getTextContent())
+					.sendTextToUserNumberInput(studentNodeAsElement.getElementsByTagName("contact").item(0).getTextContent())
+					.submitForm()
+					.isModalActive()))
+				successfulSubmits = false;			
+		}
+		Assert.assertTrue(successfulSubmits);
 	}
 	
 	@Test

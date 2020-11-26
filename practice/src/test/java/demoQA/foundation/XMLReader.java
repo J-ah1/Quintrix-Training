@@ -33,12 +33,11 @@ public class XMLReader {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-		NodeList nodeList = this.fileAsDoc.getElementsByTagName("fall");  
-		for (int itr = 0; itr < nodeList.getLength(); itr++){  
-		Node node = nodeList.item(itr);  
-		System.out.println("\nNode Name :" + node.getNodeName());
-		}
 		
 	}
 
+	public NodeList getElementsInFileWithTag(String tagName) {
+		return this.fileAsDoc.getElementsByTagName(tagName);
+	}
+	
 }
