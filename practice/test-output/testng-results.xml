@@ -2,20 +2,87 @@
 <testng-results ignored="3" total="4" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2020-11-24T17:54:35 EST" name="Default suite" finished-at="2020-11-24T17:54:39 EST" duration-ms="4365">
+  <suite started-at="2020-11-26T13:01:21 EST" name="Default suite" finished-at="2020-11-26T13:01:28 EST" duration-ms="7067">
     <groups>
     </groups>
-    <test started-at="2020-11-24T17:54:35 EST" name="Default test" finished-at="2020-11-24T17:54:39 EST" duration-ms="4365">
+    <test started-at="2020-11-26T13:01:21 EST" name="Default test" finished-at="2020-11-26T13:01:28 EST" duration-ms="7067">
       <class name="demoQA.tests.DemoQA">
-        <test-method is-config="true" signature="beforeTest()[pri:0, instance:demoQA.tests.DemoQA@769e7ee8]" started-at="2020-11-24T17:54:35 EST" name="beforeTest" finished-at="2020-11-24T17:54:38 EST" duration-ms="3723" status="PASS">
+        <test-method is-config="true" signature="beforeTest()[pri:0, instance:demoQA.tests.DemoQA@6d2a209c]" started-at="2020-11-26T13:01:21 EST" name="beforeTest" finished-at="2020-11-26T13:01:25 EST" duration-ms="3751" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeTest -->
-        <test-method signature="getDataFromCSV()[pri:0, instance:demoQA.tests.DemoQA@769e7ee8]" started-at="2020-11-24T17:54:38 EST" name="getDataFromCSV" finished-at="2020-11-24T17:54:38 EST" duration-ms="11" status="PASS">
+        <test-method signature="getDataFromDPO(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:demoQA.tests.DemoQA@6d2a209c]" started-at="2020-11-26T13:01:25 EST" name="getDataFromDPO" data-provider="studentData" finished-at="2020-11-26T13:01:28 EST" duration-ms="2664" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Brian]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Johnson]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[04/04/1970]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[brianjohnson@test.com]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[114]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[First Ave]]>
+              </value>
+            </param>
+            <param index="6">
+              <value>
+                <![CDATA[Uttar Pradesh]]>
+              </value>
+            </param>
+            <param index="7">
+              <value>
+                <![CDATA[Lucknow]]>
+              </value>
+            </param>
+            <param index="8">
+              <value>
+                <![CDATA[10005]]>
+              </value>
+            </param>
+            <param index="9">
+              <value>
+                <![CDATA[281-253-7321]]>
+              </value>
+            </param>
+            <param index="10">
+              <value>
+                <![CDATA[Male]]>
+              </value>
+            </param>
+            <param index="11">
+              <value>
+                <![CDATA[Maths;Economics;Arts]]>
+              </value>
+            </param>
+            <param index="12">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- getDataFromCSV -->
-        <test-method is-config="true" signature="afterTest()[pri:0, instance:demoQA.tests.DemoQA@769e7ee8]" started-at="2020-11-24T17:54:38 EST" name="afterTest" finished-at="2020-11-24T17:54:39 EST" duration-ms="597" status="PASS">
+        </test-method> <!-- getDataFromDPO -->
+        <test-method is-config="true" signature="afterTest()[pri:0, instance:demoQA.tests.DemoQA@6d2a209c]" started-at="2020-11-26T13:01:28 EST" name="afterTest" finished-at="2020-11-26T13:01:28 EST" duration-ms="614" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterTest -->

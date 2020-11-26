@@ -3,13 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="theInternet.tests.TheInternet">
+      <class name="demoQA.tests.DemoQA">
         <methods>
-          <include name="tc5CanScrollFor30Seconds"/>
           <include name="beforeTest"/>
           <include name="afterTest"/>
+          <include name="getDataFromDPO" invocation-numbers="0"/>
         </methods>
-      </class> <!-- theInternet.tests.TheInternet -->
+      </class> <!-- demoQA.tests.DemoQA -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

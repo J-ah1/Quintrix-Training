@@ -11,6 +11,7 @@ import java.util.Map;
 
 import javax.xml.parsers.DocumentBuilderFactory;
 
+import org.junit.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
@@ -40,12 +41,27 @@ Test 4 (3 students) - Get the data from a database. Use the DB Query to insert t
 	
 	@DataProvider(name = "studentData")
     public Object[][] dataProviderMethod() {
-        return new Object[][] { { "data one" }, { "data two" } };
+		Object[][] returnObject = new Object[1][13];
+		returnObject[0][0] = "Brian";
+		returnObject[0][1] = "Johnson";
+		returnObject[0][2] = "04/04/1970";
+		returnObject[0][3] = "brianjohnson@test.com";
+		returnObject[0][4] = "114";
+		returnObject[0][5] = "First Ave";
+		returnObject[0][6] = "Uttar Pradesh";
+		returnObject[0][7] = "Lucknow";
+		returnObject[0][8] = "10005";
+		returnObject[0][9] = "281-253-7321";
+		returnObject[0][10] = "Male";
+		returnObject[0][11] = "Maths;Economics;Arts";
+		returnObject[0][12] = "";
+        return returnObject;
     }
 	
 	@Test(dataProvider = "studentData")
 	public void getDataFromDPO(
-			String lastFirst,
+			String firstName,
+			String lastName,
 			String dob,
 			String email,
 			String houseNumber,
@@ -53,10 +69,24 @@ Test 4 (3 students) - Get the data from a database. Use the DB Query to insert t
 			String state,
 			String city,
 			String postalCode,
-			String mobile,
+			String phoneNumber,
 			String gender,
 			String subjects,
 			String hobby) {
+		
+		boolean successfulSubmit = new PracticeFormPage(webDriver, baseUrl)
+			.navigate()
+			.sendTextToFirstNameInput(firstName)
+			.sendTextToLastNameInput(lastName)
+			.sendTextToUserEmailInput(email)
+			.selectGenderWithText(gender)
+			.sendTextToUserNumberInput(phoneNumber)
+			.sendTextToDateOfBirthInput(dob)
+			.sendTextToCurrentAddressInput(houseNumber + " " + street)
+			.submitForm()
+			.isModalActive();
+		
+		Assert.assertTrue(successfulSubmit);
 		
 	}
 	
