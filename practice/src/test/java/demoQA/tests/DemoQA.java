@@ -98,7 +98,11 @@ Test 4 (3 students) - Get the data from a database. Use the DB Query to insert t
 			.selectGenderWithText(gender)
 			.sendTextToUserNumberInput(phoneNumber)
 			.sendTextToDateOfBirthInput(dob)
+			.sendSubjectsToSubjectInput(subjects)
+			.selectHobbiesWithText(hobby)
+			.selectStateFromDropdown(state)
 			.sendTextToCurrentAddressInput(houseNumber + " " + street)
+			.selectCityFromDropdown(city)
 			.submitForm()
 			.isModalActive();
 		

@@ -1,7 +1,5 @@
 package demoQA.foundation;
 
-import java.util.List;
-
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
@@ -24,41 +22,24 @@ public class PracticeFormPage extends PageObjectBase{
 	WebElement lastNameInput;
 	@FindBy(id="userEmail")
 	WebElement userEmailInput;
-	
 	@FindBy(xpath="//div[@id=\"genterWrapper\"]/div[position()=2]")
 	WebElement genderCheckboxesWrapper;
-	@FindBy(id="gender-radio-1")
-	WebElement genderRadio1;
-	@FindBy(id="gender-radio-2")
-	WebElement genderRadio2;
-	@FindBy(id="gender-radio-3")
-	WebElement genderRadio3;
-	
 	@FindBy(id="userNumber")
 	WebElement userNumberInput;
 	@FindBy(id="dateOfBirthInput")
 	WebElement dateOfBirthInput;
 	@FindBy(id="subjectsInput")
 	WebElement subjectsInput;
-	
 	@FindBy(xpath="//div[@id=\"hobbiesWrapper\"]/div[position()=2]")
 	WebElement hobbiesCheckboxesWrapper;
-	@FindBy(id="hobbies-checkbox-1")
-	WebElement hobbiesCheckbox1;
-	@FindBy(id="hobbies-checkbox-2")
-	WebElement hobbiesCheckbox2;
-	@FindBy(id="hobbies-checkbox-3")
-	WebElement hobbiesCheckbox3;
-	
-	
 	@FindBy(id="uploadPicture")
 	WebElement uploadPictureFileSelect;
 	@FindBy(id="currentAddress")
 	WebElement currentAddressInput;
-	@FindBy(id="react-select-3-input")
-	WebElement selectStateInput;
-	@FindBy(id="react-select-4-input")
-	WebElement selectCityInput;
+	@FindBy(xpath="//div[@id=\"stateCity-wrapper\"]/div[position()=2]")
+	WebElement selectStateInputDiv;
+	@FindBy(xpath="//div[@id=\"stateCity-wrapper\"]/div[position()=3]")
+	WebElement selectCityInputDiv;
 	@FindBy(id="submit")
 	WebElement submitButton;
 	
@@ -70,9 +51,6 @@ public class PracticeFormPage extends PageObjectBase{
 		return this;
 	}
 	
-	// Web Elemen extension?
-	// Also, could gather all the inputs from a given div
-	// Thus making a "checkbox Group" and "radio button group"
 	public PracticeFormPage sendTextToFirstNameInput(String textToSend) {
 		firstNameInput.sendKeys(textToSend);
 		return this;
@@ -88,7 +66,6 @@ public class PracticeFormPage extends PageObjectBase{
 		return this;
 	}
 	
-	// Gender radio button inputs
 	public PracticeFormPage selectGenderWithText(String genderText) {
 		String[] genderOptions = {"Male","Female", "Other"};
 		for(String gender : genderOptions) {
@@ -117,12 +94,26 @@ public class PracticeFormPage extends PageObjectBase{
 		return this;
 	}
 	
-	// Subjects input
 	
-	// Hobbies checkboxes input
-	// Hmmm, need to worry about multiple hobbies
+	public PracticeFormPage sendSubjectsToSubjectInput(String subjects) {
+		if(subjects == null || subjects.equals(""))
+			return this;
+		for(String subject : subjects.split(";")) {
+			subjectsInput.sendKeys(subject);
+			subjectsInput.sendKeys(Keys.ENTER);
+		}
+		return this;
+	}
+	
 	public PracticeFormPage selectHobbiesWithText(String hobbies) {
-		//new CheckboxGroup().getCheckboxWithLabel().click();
+		if(hobbies == null || hobbies.equals(""))
+			return this;
+		for(String hobby : hobbies.split(";")) {
+			WebElement checkboxToSelect = new CheckboxGroup(hobbiesCheckboxesWrapper).getCheckboxWithLabel(hobby);
+			// Doing the below to bypass "click intercepted by label"
+			JavascriptExecutor js = (JavascriptExecutor) driver;
+			js.executeScript("arguments[0].click();", checkboxToSelect);
+		}
 		return this;
 	}
 	
@@ -133,11 +124,22 @@ public class PracticeFormPage extends PageObjectBase{
 		return this;
 	}
 	
-	// State dropdown input
+	public PracticeFormPage selectStateFromDropdown(String stateToSelect) {
+		// Had to include driver to include "scrolling past the footer"
+		// to allow clicking of the element.
+		new ReactDropdown(selectStateInputDiv, driver).selectByText(stateToSelect);;
+		return this;
+	}
 	
-	// City dropdown input
+	public PracticeFormPage selectCityFromDropdown(String cityToSelect) {
+		// Had to include driver to include "scrolling past the footer"
+		// to allow clicking of the element.
+		new ReactDropdown(selectCityInputDiv, driver).selectByText(cityToSelect);;
+		return this;
+	}
 
 	public PracticeFormPage submitForm() {
+		// Do the following to scroll past the footer
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("arguments[0].scrollIntoView(true);", submitButton);
 		submitButton.click();
