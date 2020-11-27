@@ -52,21 +52,33 @@ public class PracticeFormPage extends PageObjectBase{
 	}
 	
 	public PracticeFormPage sendTextToFirstNameInput(String textToSend) {
+		if(textToSend == null || textToSend.equals(""))
+			return this;
+		textToSend = textToSend.trim();
 		firstNameInput.sendKeys(textToSend);
 		return this;
 	}
 	
 	public PracticeFormPage sendTextToLastNameInput(String textToSend) {
+		if(textToSend == null || textToSend.equals(""))
+			return this;
+		textToSend = textToSend.trim();
 		lastNameInput.sendKeys(textToSend);
 		return this;
 	}
 	
 	public PracticeFormPage sendTextToUserEmailInput(String textToSend) {
+		if(textToSend == null || textToSend.equals(""))
+			return this;
+		textToSend = textToSend.trim();
 		userEmailInput.sendKeys(textToSend);
 		return this;
 	}
 	
 	public PracticeFormPage selectGenderWithText(String genderText) {
+		if(genderText == null || genderText.equals(""))
+			return this;
+		genderText = genderText.trim();
 		String[] genderOptions = {"Male","Female", "Other"};
 		for(String gender : genderOptions) {
 			if(genderText.toUpperCase().charAt(0) == gender.toUpperCase().charAt(0)
@@ -85,6 +97,9 @@ public class PracticeFormPage extends PageObjectBase{
 	}
 	
 	public PracticeFormPage sendTextToUserNumberInput(String textToSend) {
+		if(textToSend == null || textToSend.equals(""))
+			return this;
+		textToSend = textToSend.trim();
 		textToSend = textToSend.replace("-", "");
 		textToSend = textToSend.replace("(", "");
 		textToSend = textToSend.replace(")", "");
@@ -93,6 +108,9 @@ public class PracticeFormPage extends PageObjectBase{
 	}
 	
 	public PracticeFormPage sendTextToDateOfBirthInput(String textToSend) {
+		if(textToSend == null || textToSend.equals(""))
+			return this;
+		textToSend = textToSend.trim();
 		dateOfBirthInput.sendKeys(Keys.CONTROL + "a");
 		dateOfBirthInput.sendKeys(textToSend);
 		dateOfBirthInput.sendKeys(Keys.ENTER);
@@ -101,9 +119,9 @@ public class PracticeFormPage extends PageObjectBase{
 	
 	
 	public PracticeFormPage sendSubjectsToSubjectInput(String subjects) {
-		subjects = subjects.trim();
 		if(subjects == null || subjects.equals(""))
 			return this;
+		subjects = subjects.trim();
 		for(String subject : subjects.split(";")) {
 			subjectsInput.sendKeys(subject);
 			subjectsInput.sendKeys(Keys.TAB);
@@ -114,6 +132,7 @@ public class PracticeFormPage extends PageObjectBase{
 	public PracticeFormPage selectHobbiesWithText(String hobbies) {
 		if(hobbies == null || hobbies.equals(""))
 			return this;
+		hobbies = hobbies.trim();
 		for(String hobby : hobbies.split(";")) {
 			WebElement checkboxToSelect = new CheckboxGroup(hobbiesCheckboxesWrapper).getCheckboxWithLabel(hobby);
 			if(checkboxToSelect == null) {
@@ -130,6 +149,9 @@ public class PracticeFormPage extends PageObjectBase{
 	// Upload picture fileSelect Input
 	
 	public PracticeFormPage sendTextToCurrentAddressInput(String textToSend) {
+		if(textToSend == null || textToSend.equals(""))
+			return this;
+		textToSend = textToSend.trim();
 		currentAddressInput.sendKeys(textToSend);
 		return this;
 	}
@@ -137,6 +159,9 @@ public class PracticeFormPage extends PageObjectBase{
 	public PracticeFormPage selectStateFromDropdown(String stateToSelect) {
 		// Had to include driver to include "scrolling past the footer"
 		// to allow clicking of the element.
+		if(stateToSelect == null || stateToSelect.equals(""))
+			return this;
+		stateToSelect = stateToSelect.trim();
 		new ReactDropdown(selectStateInputDiv, driver).selectByText(stateToSelect);;
 		return this;
 	}
@@ -144,6 +169,9 @@ public class PracticeFormPage extends PageObjectBase{
 	public PracticeFormPage selectCityFromDropdown(String cityToSelect) {
 		// Had to include driver to include "scrolling past the footer"
 		// to allow clicking of the element.
+		if(cityToSelect == null || cityToSelect.equals(""))
+			return this;
+		cityToSelect = cityToSelect.trim();
 		new ReactDropdown(selectCityInputDiv, driver).selectByText(cityToSelect);;
 		return this;
 	}

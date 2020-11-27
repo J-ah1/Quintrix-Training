@@ -29,7 +29,6 @@ public class CSVReader {
 			int r;
 			while((r = br.read()) != -1) {
 				char ch = (char) r;
-				System.out.print(ch);
 				if(ch == '"') {
 					isInQuotes = !isInQuotes;
 					continue;
