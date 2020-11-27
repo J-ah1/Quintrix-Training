@@ -48,8 +48,6 @@ Test 4 (3 students) - Get the data from a database. Use the DB Query to insert t
 					.selectGenderWithText(studentData.get("gender"))
 					.sendTextToUserNumberInput(studentData.get("mobile"))
 					.sendTextToDateOfBirthInput(studentData.get("dob"))
-					// For some reason, presses Enter on subjects on the last student
-					// likely due to carriage return
 					.sendSubjectsToSubjectInput(studentData.get("subjects"))
 					.selectHobbiesWithText(studentData.get("hobby"))
 					.sendTextToCurrentAddressInput(studentData.get("houseNumber")
@@ -131,21 +129,39 @@ Test 4 (3 students) - Get the data from a database. Use the DB Query to insert t
 		for(int i = 0; i < studentNodes.getLength(); i++) {
 			Node studentNode = studentNodes.item(i);
 			Element studentNodeAsElement  = (Element) studentNode;
-			if(!(new PracticeFormPage(webDriver, baseUrl)
+			Element dobNodeAsElement = (Element) studentNodeAsElement.getElementsByTagName("dob").item(0);
+			String dob = dobNodeAsElement.getAttribute("month")
+					+ " "
+					+ dobNodeAsElement.getAttribute("day")
+					+ " "
+					+ dobNodeAsElement.getAttribute("year");
+			PracticeFormPage practiceFormPage = new PracticeFormPage(webDriver, baseUrl)
 					.navigate()
 					.sendTextToFirstNameInput(studentNodeAsElement.getElementsByTagName("f_name").item(0).getTextContent())
 					.sendTextToLastNameInput(studentNodeAsElement.getElementsByTagName("l_name").item(0).getTextContent())
 					.selectGenderWithText(studentNodeAsElement.getElementsByTagName("gender").item(0).getTextContent())
 					.sendTextToUserNumberInput(studentNodeAsElement.getElementsByTagName("contact").item(0).getTextContent())
-					.sendTextToDateOfBirthInput(studentNodeAsElement.getElementsByTagName("dob").item(0).getTextContent())
-					.sendSubjectsToSubjectInput(studentNodeAsElement.getElementsByTagName("subjects").item(0).getTextContent())
-					.selectHobbiesWithText(studentNodeAsElement.getElementsByTagName("hobby").item(0).getTextContent())
-					.sendTextToCurrentAddressInput(studentNodeAsElement.getElementsByTagName("houseNumber").item(0).getTextContent()
-							+ " "
-							+ studentNodeAsElement.getElementsByTagName("street").item(0).getTextContent())
-					.selectStateFromDropdown(studentNodeAsElement.getElementsByTagName("state").item(0).getTextContent())
-					.selectCityFromDropdown(studentNodeAsElement.getElementsByTagName("city").item(0).getTextContent())
-					.submitForm()
+					.sendTextToDateOfBirthInput(dob);
+			NodeList subjectNodes = ((Element)studentNodeAsElement.getElementsByTagName("subjects").item(0)).getElementsByTagName("subject");
+			for(int z = 0 ; z < subjectNodes.getLength(); z++) {
+				practiceFormPage.sendSubjectsToSubjectInput(subjectNodes.item(0).getTextContent());
+			}
+			// Done for case 3, where hobbies is missing
+			// What to do about improper xml data?
+			if(studentNodeAsElement.getElementsByTagName("hobbies").item(0) != null) {
+				NodeList hobbyNodes = ((Element)studentNodeAsElement.getElementsByTagName("hobbies").item(0)).getElementsByTagName("hobby");
+				for(int z = 0 ; z < hobbyNodes.getLength(); z++) {
+					practiceFormPage.sendSubjectsToSubjectInput(hobbyNodes.item(0).getTextContent());
+				}
+			}
+			Element addressNodeAsElement = (Element) studentNodeAsElement.getElementsByTagName("address").item(0);
+			String address = addressNodeAsElement.getElementsByTagName("house").item(0).getTextContent()
+					+ " "
+					+ addressNodeAsElement.getElementsByTagName("street").item(0).getTextContent();
+			practiceFormPage.sendTextToCurrentAddressInput(address);
+			practiceFormPage.selectStateFromDropdown(addressNodeAsElement.getElementsByTagName("state").item(0).getTextContent());
+			practiceFormPage.selectCityFromDropdown(addressNodeAsElement.getElementsByTagName("city").item(0).getTextContent());
+			if(!(practiceFormPage.submitForm()
 					.isModalActive()))
 				successfulSubmits = false;			
 		}
