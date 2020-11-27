@@ -27,13 +27,6 @@ import framework.Helpers;
 
 public class DemoQA extends DemoQATestBase{
 
-	/*
-	 * Test 1 (3 students) - Get the data from a CSV file. Ideally you will read the data into value objects (POJOs). src/test/java/dataDriven/CsvDriven.java
-Test 2 (3 students) - Take a collection of Data Provider Objects passed into the test. src/test/java/dataDriven/ParameterDriven.java
-Test 3 (3 students) - Get the data from a XML file. Ideally you will read the data into value objects (POJOs). src/test/java/dataDriven/XmlDriven.java
-Test 4 (3 students) - Get the data from a database. Use the DB Query to insert the data. src/test/java/dataDriven/DbDriven.java
-	 */
-	
 	@Test
 	public void getDataFromCSV() {
 		List<List<String>> returnList = new CSVReader("Students.csv").readFileAs2DList();
@@ -68,7 +61,8 @@ Test 4 (3 students) - Get the data from a database. Use the DB Query to insert t
 	
 	@DataProvider(name = "studentData")
     public Object[][] dataProviderMethod() {
-		Object[][] returnObject = new Object[1][13];
+		Object[][] returnObject = new Object[3][13];
+		// Would be best to refactor this into the StudentPOJO
 		returnObject[0][0] = "Brian";
 		returnObject[0][1] = "Johnson";
 		returnObject[0][2] = "04/04/1970";
@@ -82,6 +76,32 @@ Test 4 (3 students) - Get the data from a database. Use the DB Query to insert t
 		returnObject[0][10] = "Male";
 		returnObject[0][11] = "Maths;Economics;Arts";
 		returnObject[0][12] = "";
+		returnObject[1][0] = "Andrew";
+		returnObject[1][1] = "Clark";
+		returnObject[1][2] = "06/11/1969";
+		returnObject[1][3] = "andrewclark@test.com";
+		returnObject[1][4] = "75152";
+		returnObject[1][5] = "125th Street";
+		returnObject[1][6] = "NCR";
+		returnObject[1][7] = "Delhi";
+		returnObject[1][8] = "10027";
+		returnObject[1][9] = "832-872-6464";
+		returnObject[1][10] = "Male";
+		returnObject[1][11] = "English;Physics";
+		returnObject[1][12] = "Sports";
+		returnObject[2][0] = "John";
+		returnObject[2][1] = "Hughes";
+		returnObject[2][2] = "09/07/1955";
+		returnObject[2][3] = "johnhughes@test.com";
+		returnObject[2][4] = "4205";
+		returnObject[2][5] = "White Cedar";
+		returnObject[2][6] = "NCR";
+		returnObject[2][7] = "Gurgaon";
+		returnObject[2][8] = "85009";
+		returnObject[2][9] = "213-915-5365";
+		returnObject[2][10] = "Male";
+		returnObject[2][11] = "Social Studies;ComputerScience";
+		returnObject[2][12] = "";
         return returnObject;
     }
 	
