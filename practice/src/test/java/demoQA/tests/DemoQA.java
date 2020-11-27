@@ -129,23 +129,35 @@ Test 4 (3 students) - Get the data from a database. Use the DB Query to insert t
 	
 	@Test
 	public void getDataFromDB() {
-		String dbAddress = "jdbc:mysql://localhost:3306/sakila";
+		String dbAddress = "jdbc:mysql://localhost:3306/world_x";
 		String dbUsername = "root";
-		String dbPassword = "fillThisIn";
+		String dbPassword = "";
 		Connection connToDB = null;
 		PreparedStatement prepStatement = null;
 		ResultSet results = null;
+		boolean successfulSubmits = true;
 		try {
 			connToDB = DriverManager.getConnection(dbAddress , dbUsername , dbPassword);
-			String sqlQuery = "";
+			String sqlQuery = "SELECT * FROM students;";
 			prepStatement = connToDB.prepareStatement(sqlQuery);
 			prepStatement.execute();
 			results = prepStatement.getResultSet();
 			
-			
+			while(results.next()) {
+				if(!(new PracticeFormPage(webDriver, baseUrl)
+						.navigate()
+						.sendTextToFirstNameInput(results.getString("first_name"))
+						.sendTextToLastNameInput(results.getString("last_name"))
+						.selectGenderWithText(results.getInt("isMale") == 1 ? "Male" : "Female")
+						.sendTextToUserNumberInput(results.getString("phone"))
+						.submitForm()
+						.isModalActive()))
+					successfulSubmits = false;
+			}
 			
 		} catch (SQLException e) {
 			e.printStackTrace();
+			successfulSubmits = false;
 		}finally {
 			if(connToDB != null) {
 				try {
@@ -172,5 +184,8 @@ Test 4 (3 students) - Get the data from a database. Use the DB Query to insert t
 				  results = null;
 			}
 		}
+		
+		Assert.assertTrue(successfulSubmits);
+		
 	}
 }
