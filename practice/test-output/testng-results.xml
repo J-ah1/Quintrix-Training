@@ -2,20 +2,20 @@
 <testng-results ignored="3" total="4" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2020-11-26T20:31:33 EST" name="Default suite" finished-at="2020-11-26T20:31:46 EST" duration-ms="12487">
+  <suite started-at="2020-11-26T21:14:14 EST" name="Default suite" finished-at="2020-11-26T21:14:25 EST" duration-ms="10809">
     <groups>
     </groups>
-    <test started-at="2020-11-26T20:31:33 EST" name="Default test" finished-at="2020-11-26T20:31:46 EST" duration-ms="12487">
+    <test started-at="2020-11-26T21:14:14 EST" name="Default test" finished-at="2020-11-26T21:14:25 EST" duration-ms="10809">
       <class name="demoQA.tests.DemoQA">
-        <test-method is-config="true" signature="beforeTest()[pri:0, instance:demoQA.tests.DemoQA@6d2a209c]" started-at="2020-11-26T20:31:33 EST" name="beforeTest" finished-at="2020-11-26T20:31:37 EST" duration-ms="3738" status="PASS">
+        <test-method is-config="true" signature="beforeTest()[pri:0, instance:demoQA.tests.DemoQA@6d2a209c]" started-at="2020-11-26T21:14:14 EST" name="beforeTest" finished-at="2020-11-26T21:14:18 EST" duration-ms="3734" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeTest -->
-        <test-method signature="getDataFromCSV()[pri:0, instance:demoQA.tests.DemoQA@6d2a209c]" started-at="2020-11-26T20:31:37 EST" name="getDataFromCSV" finished-at="2020-11-26T20:31:45 EST" duration-ms="8080" status="PASS">
+        <test-method signature="getDataFromDB()[pri:0, instance:demoQA.tests.DemoQA@6d2a209c]" started-at="2020-11-26T21:14:18 EST" name="getDataFromDB" finished-at="2020-11-26T21:14:24 EST" duration-ms="6401" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- getDataFromCSV -->
-        <test-method is-config="true" signature="afterTest()[pri:0, instance:demoQA.tests.DemoQA@6d2a209c]" started-at="2020-11-26T20:31:45 EST" name="afterTest" finished-at="2020-11-26T20:31:46 EST" duration-ms="637" status="PASS">
+        </test-method> <!-- getDataFromDB -->
+        <test-method is-config="true" signature="afterTest()[pri:0, instance:demoQA.tests.DemoQA@6d2a209c]" started-at="2020-11-26T21:14:24 EST" name="afterTest" finished-at="2020-11-26T21:14:25 EST" duration-ms="640" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterTest -->

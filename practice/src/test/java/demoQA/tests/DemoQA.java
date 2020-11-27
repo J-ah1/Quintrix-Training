@@ -170,11 +170,14 @@ Test 4 (3 students) - Get the data from a database. Use the DB Query to insert t
 	
 	@Test
 	public void getDataFromDB() {
+		// DB information should be entered below (particularly userName and password)
 		String dbAddress = "jdbc:mysql://localhost:3306/world_x";
 		String dbUsername = "root";
 		String dbPassword = "";
+		
 		Connection connToDB = null;
 		PreparedStatement prepStatement = null;
+		PreparedStatement prepStatement2 = null;
 		ResultSet results = null;
 		boolean successfulSubmits = true;
 		try {
@@ -185,13 +188,21 @@ Test 4 (3 students) - Get the data from a database. Use the DB Query to insert t
 			results = prepStatement.getResultSet();
 			
 			while(results.next()) {
-				if(!(new PracticeFormPage(webDriver, baseUrl)
+				PracticeFormPage practiceFormPage = new PracticeFormPage(webDriver, baseUrl)
 						.navigate()
 						.sendTextToFirstNameInput(results.getString("first_name"))
 						.sendTextToLastNameInput(results.getString("last_name"))
 						.selectGenderWithText(results.getInt("isMale") == 1 ? "Male" : "Female")
 						.sendTextToUserNumberInput(results.getString("phone"))
-						.submitForm()
+						.sendTextToDateOfBirthInput(results.getString("birthdate"))
+						.sendTextToCurrentAddressInput(results.getString("address"));
+				// Was going to try searching for corresponding State and City below...
+				// String sqlQueryGetStateCity = "";
+				// prepStatement2 = connToDB.prepareStatement(sqlQueryGetStateCity);
+				// prepStatement2.execute();
+				// ...however, world_x doesn't provide state information
+				
+				if(!(practiceFormPage.submitForm()
 						.isModalActive()))
 					successfulSubmits = false;
 			}
@@ -215,6 +226,14 @@ Test 4 (3 students) - Get the data from a database. Use the DB Query to insert t
 					  e.printStackTrace();
 				  }
 				prepStatement = null;
+			}
+			if(prepStatement2 != null) {
+				try {
+					prepStatement2.close();
+				  } catch (SQLException e) {
+					  e.printStackTrace();
+				  }
+				prepStatement2 = null;
 			}
 			if(results != null) {
 				try {
