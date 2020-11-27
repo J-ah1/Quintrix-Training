@@ -5,8 +5,8 @@
     <classes>
       <class name="demoQA.tests.DemoQA">
         <methods>
+          <include name="getDataFromCSV"/>
           <include name="beforeTest"/>
-          <include name="getDataFromXML"/>
           <include name="afterTest"/>
         </methods>
       </class> <!-- demoQA.tests.DemoQA -->

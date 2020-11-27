@@ -44,12 +44,25 @@ Test 4 (3 students) - Get the data from a database. Use the DB Query to insert t
 					.navigate()
 					.sendTextToFirstNameInput(studentData.get("lastFirst").split(",")[1])
 					.sendTextToLastNameInput(studentData.get("lastFirst").split(",")[0])
+					.sendTextToUserEmailInput(studentData.get("email"))
 					.selectGenderWithText(studentData.get("gender"))
 					.sendTextToUserNumberInput(studentData.get("mobile"))
+					.sendTextToDateOfBirthInput(studentData.get("dob"))
+					// For some reason, presses Enter on subjects on the last student
+					// likely due to carriage return
+					.sendSubjectsToSubjectInput(studentData.get("subjects"))
+					.selectHobbiesWithText(studentData.get("hobby"))
+					.sendTextToCurrentAddressInput(studentData.get("houseNumber")
+							+ " "
+							+ studentData.get("street"))
+					.selectStateFromDropdown(studentData.get("state"))
+					.selectCityFromDropdown(studentData.get("city"))
 					.submitForm()
 					.isModalActive()))
 				successfulSubmits = false;
 		}
+		
+		
 		
 		Assert.assertTrue(successfulSubmits);
 	}
@@ -124,6 +137,14 @@ Test 4 (3 students) - Get the data from a database. Use the DB Query to insert t
 					.sendTextToLastNameInput(studentNodeAsElement.getElementsByTagName("l_name").item(0).getTextContent())
 					.selectGenderWithText(studentNodeAsElement.getElementsByTagName("gender").item(0).getTextContent())
 					.sendTextToUserNumberInput(studentNodeAsElement.getElementsByTagName("contact").item(0).getTextContent())
+					.sendTextToDateOfBirthInput(studentNodeAsElement.getElementsByTagName("dob").item(0).getTextContent())
+					.sendSubjectsToSubjectInput(studentNodeAsElement.getElementsByTagName("subjects").item(0).getTextContent())
+					.selectHobbiesWithText(studentNodeAsElement.getElementsByTagName("hobby").item(0).getTextContent())
+					.sendTextToCurrentAddressInput(studentNodeAsElement.getElementsByTagName("houseNumber").item(0).getTextContent()
+							+ " "
+							+ studentNodeAsElement.getElementsByTagName("street").item(0).getTextContent())
+					.selectStateFromDropdown(studentNodeAsElement.getElementsByTagName("state").item(0).getTextContent())
+					.selectCityFromDropdown(studentNodeAsElement.getElementsByTagName("city").item(0).getTextContent())
 					.submitForm()
 					.isModalActive()))
 				successfulSubmits = false;			

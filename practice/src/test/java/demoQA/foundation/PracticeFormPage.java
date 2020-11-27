@@ -74,6 +74,10 @@ public class PracticeFormPage extends PageObjectBase{
 				genderText = gender;
 		}
 		WebElement checkboxToSelect = new CheckboxGroup(genderCheckboxesWrapper).getCheckboxWithLabel(genderText);
+		if(checkboxToSelect == null) {
+			System.out.println("Checkbox with text: '" + genderText + "' does not exist");
+			return this;
+		}
 		// Doing the below to bypass "click intercepted by label"
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("arguments[0].click();", checkboxToSelect);
@@ -89,6 +93,7 @@ public class PracticeFormPage extends PageObjectBase{
 	}
 	
 	public PracticeFormPage sendTextToDateOfBirthInput(String textToSend) {
+		dateOfBirthInput.sendKeys(Keys.CONTROL + "a");
 		dateOfBirthInput.sendKeys(textToSend);
 		dateOfBirthInput.sendKeys(Keys.ENTER);
 		return this;
@@ -96,11 +101,12 @@ public class PracticeFormPage extends PageObjectBase{
 	
 	
 	public PracticeFormPage sendSubjectsToSubjectInput(String subjects) {
+		subjects = subjects.trim();
 		if(subjects == null || subjects.equals(""))
 			return this;
 		for(String subject : subjects.split(";")) {
 			subjectsInput.sendKeys(subject);
-			subjectsInput.sendKeys(Keys.ENTER);
+			subjectsInput.sendKeys(Keys.TAB);
 		}
 		return this;
 	}
@@ -110,6 +116,10 @@ public class PracticeFormPage extends PageObjectBase{
 			return this;
 		for(String hobby : hobbies.split(";")) {
 			WebElement checkboxToSelect = new CheckboxGroup(hobbiesCheckboxesWrapper).getCheckboxWithLabel(hobby);
+			if(checkboxToSelect == null) {
+				System.out.println("Checkbox with text: '" + hobby + "' does not exist");
+				continue;
+			}
 			// Doing the below to bypass "click intercepted by label"
 			JavascriptExecutor js = (JavascriptExecutor) driver;
 			js.executeScript("arguments[0].click();", checkboxToSelect);
