@@ -242,6 +242,9 @@ public class SQLProject{
 	  
   }
   
+  
+  // "Works on my end"
+  // Requires uncommenting and adding your db info
   @BeforeTest
   public void beforeTest() throws Exception {
 	  // Uncomment and set the db adress, username, and password...

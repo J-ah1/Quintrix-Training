@@ -188,6 +188,8 @@ public class DemoQA extends DemoQATestBase{
 		Assert.assertTrue(successfulSubmits);
 	}
 	
+	// "Works on my end"
+	// Requires adding your db info
 	@Test
 	public void getDataFromDB() {
 		// DB information should be entered below (particularly userName and password)

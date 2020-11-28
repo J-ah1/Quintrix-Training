@@ -480,6 +480,8 @@ public class TheInternet extends TheInternetTestBase {
 	  Assert.assertEquals(cellText, expectedCellText);
   }
 
+  // "Works on my end"
+  // Requires wget and (currently) an absolute path to a folder outside the project
   @Test
   public void tc18CanDownloadFile() {
 	  // Requires wget
