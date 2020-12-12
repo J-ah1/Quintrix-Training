@@ -38,6 +38,20 @@ public class CheckboxGroup extends WebElementControlExtension{
 		}
 	}
 	
+	public CheckboxGroup clickCheckboxWithLabel(String label) {
+		for(WebElement checkbox: checkboxes) {
+			String checkboxLabel = new LabellessElement(driver, checkbox).getLabelFromNextSibling();
+			if(checkboxLabel == null)
+				continue;
+			if(checkboxLabel.equals(label)) {
+				new Checkbox(checkbox).click();
+				return this;
+			}
+		}
+		System.err.println("Checkbox with label '" + label + "' couldn't be found");
+		return this;
+	}	
+	
 	public CheckboxGroup checkBoxesByLabels(String[] labelsForBoxesToCheck) {
 		for(String labelForBoxToCheck: labelsForBoxesToCheck) {
 			for(WebElement checkbox: checkboxes) {
@@ -51,10 +65,21 @@ public class CheckboxGroup extends WebElementControlExtension{
 		return this;
 	}
 	
+	public Boolean getBoxStateByLabel(String label) {
+		for(WebElement checkbox: checkboxes) {
+			String checkboxLabel = new LabellessElement(driver, checkbox).getLabelFromNextSibling();
+			if(checkboxLabel == null)
+				continue;
+			if(checkboxLabel.equals(label))
+				return new Checkbox(checkbox).getState();
+		}
+		return null;
+	}
+	
 	public List<Boolean> getAllBoxStates() {
 		List<Boolean> boxStates = new ArrayList<Boolean>();
-		for(WebElement checkBox: checkboxes) {
-			boxStates.add(new Checkbox(checkBox).getState());
+		for(WebElement checkbox: checkboxes) {
+			boxStates.add(new Checkbox(checkbox).getState());
 		}
 		return boxStates;
 	}
@@ -87,6 +112,8 @@ public class CheckboxGroup extends WebElementControlExtension{
 		}
 
 		return array; 
-	}	
+	}
+
+	
 
 }

@@ -9,6 +9,11 @@ public class Checkbox extends WebElementControlExtension{
 	public Checkbox(WebElement extendedElement) {
 		super(extendedElement);
 	}
+	
+	public Checkbox click() {
+		extendedElement.click();
+		return this;
+	}
 
 	public Checkbox setState(boolean state) {
 		if(getState() != state)
