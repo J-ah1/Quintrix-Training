@@ -26,6 +26,11 @@ public class CheckboxPage extends PageObjectBase {
 		return this;
 	}
 	
+	public CheckboxPage clickCheckboxWithLabel(String label) {
+		new CheckboxGroup(checkboxGroup, driver).clickCheckboxWithLabel(label);
+		return this;
+	}
+	
 	public CheckboxPage checkBoxesByLabels(String[] labelsForBoxesToCheck) {
 		new CheckboxGroup(checkboxGroup, driver).checkBoxesByLabels(labelsForBoxesToCheck);
 		return this;
@@ -39,6 +44,10 @@ public class CheckboxPage extends PageObjectBase {
 	public CheckboxPage uncheckAllBoxes() {
 		new CheckboxGroup(checkboxGroup, driver).uncheckAllBoxes();
 		return this;
+	}
+	
+	public Boolean getBoxStateByLabel(String label) {
+		return new CheckboxGroup(checkboxGroup, driver).getBoxStateByLabel(label);
 	}
 
 	public List<Boolean> getAllBoxStates() {
