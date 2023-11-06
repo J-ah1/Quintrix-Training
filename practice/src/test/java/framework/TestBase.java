@@ -6,7 +6,7 @@ import java.util.HashMap;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
-
+import org.openqa.selenium.chrome.ChromeDriver;
 public class TestBase {
 	protected WebDriver webDriver;
 	protected String urlProtocol;
@@ -26,7 +26,9 @@ public class TestBase {
 	}
 	
 	protected void setupWebDriver() {
-		this.webDriver = webDriverManager.loadWebDriver().getWebDriver();
+		// 11/2/23 BELOW, seems to cause a "json/cant determine type from: i" error?
+		//this.webDriver = webDriverManager.loadWebDriver().getWebDriver();
+		this.webDriver = new ChromeDriver();
 	}
 	
 	private WebDriverManager getWebDriverManager(String webDriverType) {

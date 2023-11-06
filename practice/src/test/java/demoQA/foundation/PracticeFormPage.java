@@ -1,5 +1,6 @@
 package demoQA.foundation;
 
+import java.time.Duration;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
@@ -162,7 +163,7 @@ public class PracticeFormPage extends PageObjectBase{
 		if(stateToSelect == null || stateToSelect.equals(""))
 			return this;
 		stateToSelect = stateToSelect.trim();
-		new ReactDropdown(selectStateInputDiv, driver).selectByText(stateToSelect);;
+		new ReactDropdown(selectStateInputDiv, driver).selectByText(stateToSelect);
 		return this;
 	}
 	
@@ -172,7 +173,7 @@ public class PracticeFormPage extends PageObjectBase{
 		if(cityToSelect == null || cityToSelect.equals(""))
 			return this;
 		cityToSelect = cityToSelect.trim();
-		new ReactDropdown(selectCityInputDiv, driver).selectByText(cityToSelect);;
+		new ReactDropdown(selectCityInputDiv, driver).selectByText(cityToSelect);
 		return this;
 	}
 
@@ -186,7 +187,7 @@ public class PracticeFormPage extends PageObjectBase{
 	
 	public boolean isModalActive() {
 		try {
-			WebDriverWait wait = new WebDriverWait(driver, 10);
+			WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 			wait.until(ExpectedConditions.visibilityOf(modalWindow));
 			return true;
 		} catch (Exception e) {

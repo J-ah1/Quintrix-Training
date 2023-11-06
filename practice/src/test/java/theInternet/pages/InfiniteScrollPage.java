@@ -1,5 +1,6 @@
 package theInternet.pages;
 
+import java.time.Duration;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -29,7 +30,7 @@ public class InfiniteScrollPage extends PageObjectBase{
         while(System.currentTimeMillis()<end) {
             js.executeScript(scrollScript, "");
             try {
-            	WebDriverWait wait = new WebDriverWait(driver, checkIntervalInSeconds);
+            	WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(checkIntervalInSeconds));
             	wait.until(NotAtBottomOfPage.customCondition());
             }catch(Throwable e) {
             	System.err.println("Error came while waiting for javascript return: "+e.getMessage());

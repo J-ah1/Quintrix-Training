@@ -1,5 +1,6 @@
 package theInternet.pages;
 
+import java.time.Duration;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -26,7 +27,7 @@ public class EntryAdPage extends PageObjectBase{
 	
 	public EntryAdPage closeAd() {
 		try {
-			WebDriverWait wait = new WebDriverWait(driver, 10);
+			WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 			wait.until(ExpectedConditions.visibilityOf(ad));
 		} catch (Exception e) {
 			e.printStackTrace();

@@ -1,5 +1,6 @@
 package theInternet.foundation;
 
+import java.time.Duration;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -22,7 +23,7 @@ public class AlertExtension{
 	
 	private void findAlert() {
 		try {
-			WebDriverWait wait = new WebDriverWait(driver, 10);
+			WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 			wait.until(ExpectedConditions.alertIsPresent());
 			alert = driver.switchTo().alert();
 		}catch(Throwable e){
